@@ -1,0 +1,39 @@
+<header class="page-header {{ header_box }} variant-6 {{ settings.sticky }} {{ settings.sticky_color }} {{ settings.sticky_behavior }} {{ dark }} {{ settings.sticky_style }}">
+<div class="navbar">
+        <div class="container">
+            <!-- Menu Toggle -->
+            <div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+            <!-- /Menu Toggle -->
+            <!-- Header Middle Row -->
+            <div class="header-middle-row">
+                <div class="header-middle-left">
+                    <div class="header-logo">
+                        {% include 'header-logo' %}
+                    </div>
+                </div>
+                <div class="header-middle-right">
+                    <!-- Header Cart -->
+                    {% include 'header-cart' %}
+                    <!-- /Header Cart -->
+                    <!-- Header Links -->
+                    <div class="header-links">
+                        {% include 'header-languages' %}
+                        {% include 'currency-picker' %}
+                        {% include 'header-login-form' %}
+                    </div>
+                    <!-- /Header Links -->
+                </div>
+            </div>
+            <!-- /Header Middle Row -->
+            <!-- Header Search -->
+            {% include 'header-search' %}
+            <!-- /Header Search -->
+        </div>
+        <div class="menu-wrapper">
+            <div class="container">
+                {% include 'mobile-nav' %}
+                {% include 'megamenu-nav' %}
+            </div>
+        </div>
+    </div>
+</header>

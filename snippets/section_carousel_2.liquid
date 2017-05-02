@@ -1,0 +1,53 @@
+{% assign title=settings.products_carousel_title_2 %}
+{% assign title_bg=settings.products_carousel_title_bg_2 %}
+{% assign collection_id=settings.products_carousel_collection_2 %}
+{% assign rows=settings.products_carousel_rows_2 %}
+{% assign slides_to_show=settings.products_carousel_slides_to_show_2 %}
+{% assign slides_to_scroll=settings.products_carousel_slides_to_scroll_2 %}
+{% assign view=1 %}
+{% assign check_left_html=settings.products_carousel_left_2 %}
+{% assign left_html=settings.products_carousel_title_left_html_2 %}
+<div class="block">
+    <div class="container">
+
+        {% if check_left_html %}
+            <div class="row">
+                <div class="col-sm-4 col-md-3 col-lg-3">
+                    {{ left_html }}
+                </div>
+                <div class="col-sm-8 col-md-9 col-lg-9">
+        {% endif %}
+                <div class="title">
+                    <h2 {% if title_bg %}class="h-bg"{% endif %}>
+                        {% if title == '' %}
+                            {{ collections[collection_id].title | escape }}
+                        {% else %}
+                            {{ title }}
+                        {% endif %}
+                    </h2>
+                    <div class="carousel-arrows"></div>
+                </div>
+                    {% if collection_id != blank %}
+                        <div class="products-grid products-carousel product-variant-{{ view }} carousel_2" data-slick='{"responsive": [{ "breakpoint": 481, "settings": { "slidesToShow": 1 } }]}'>
+                            {% for product in collections[collection_id].products %}
+                                {% if view contains 5 %}
+                                    {% include 'product-item-big' image_size:'large', carousel:'yes' %}
+                                {% else %}
+                                    {% include 'product-item' image_size:'large', view:view, carousel:'yes' %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div>apply collection for carousel Theme -> Section Carousel 2 -> choose collection</div>
+                        <div>&nbsp;</div>
+                    {% endif %}
+        {% if check_left_html %}
+        </div></div>
+        {% endif %}
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        productsCarousel($('.carousel_2.products-carousel'),{{ rows }},{{ slides_to_show }},{{ slides_to_scroll }}, {{ view }});
+    })
+</script>

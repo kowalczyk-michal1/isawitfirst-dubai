@@ -1,0 +1,28 @@
+{% capture blog_id %}{{ settings.from_blog_id }}{% endcapture %}
+<div class="collapsed-content">
+    <div class="blog-carousel">
+        {% if blog_id != blank %}
+        {% for article in blogs[blog_id].articles limit:settings.from_blog_limit %}
+        <div class="blog-item">
+            {% if article.image %}
+                {% assign image_alt = article.title | escape %}
+                <a href="{{ article.url }}" class="blog-item-photo"> <img class="product-image-photo" src=" {{ article | img_url: 'large'}}" alt="{{ image_alt }}"> </a>
+            {% endif %}
+            <div class="blog-item-info">
+                <a href="{{ article.url }}" class="blog-item-title"> {{ article.title }} </a>
+                <div class="blog-item-teaser">
+                    {{ article.excerpt  | strip_html | truncatewords: 20 }}
+                </div>
+                    <div class="blog-item-links"> <span class="pull-left"> <span><a href="{{ article.url }}" class="readmore">{{ 'blogs.article.read_more' | t }}</a></span> </span>
+                    <span class="pull-right"> {% if blogs[blog_id]comments_enabled? %}
+                            <span><a href='{{ article.url | append:"#comments" }}'>{{ article.comments.size }} {{ 'general.theme.comments' | t }}</a></span>
+                        {% endif %} </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+            <div class="blog-item">choose blog category -> Section from the blog,deal, contact -> Blog category  or use custom html instead blog posts</div>
+        {% endif %}
+    </div>
+</div>

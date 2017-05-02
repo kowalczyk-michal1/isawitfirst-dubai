@@ -1,0 +1,89 @@
+{% capture section_1 %}home_{{ settings.home_page }}_section_1{% endcapture %}
+{% if template == "index" or page contains 3 %}
+     {% if variant contains '3' %}
+         {% assign variant_header=variant %}
+     {% else %}
+         {% if settings[section_1] contains 'slider'%}
+             {% assign variant_header=1 %}
+         {% else  %}
+             {% assign variant_header=2 %}
+         {% endif %}
+     {% endif %}
+{% else  %}
+    {% assign variant_header=2 %}
+{% endif %}
+
+
+<header class="page-header {{ header_box }} variant-{{ variant_header }} {% unless template == 'index' and settings.home_page contains 3   %}{% unless page contains 3  %}{{ settings.sticky }} {{ settings.sticky_color }} {{ settings.sticky_behavior }} {% endunless %}{% endunless %} {{ dark }} {{ settings.sticky_style }}">
+    
+   <div class="cust-section-top bg-white">
+     <div class="container">
+       <div class="row">
+    	 <div class="col-sm-4">
+     	 {% include 'header-search' %}	
+     </div>
+     <div class="col-sm-8">
+     	{% include 'header-cart' %}
+    <div class="header-links wishlist">
+                {% include 'wishlist' %}
+            </div>
+            <div class="header-links login">
+                {% include 'header-login-form' %}
+            </div>
+          <div class="header-links">
+                {% include 'header-multilanguages-redirect' %}
+                {% include 'header-languages' %}
+                {% include 'currency-picker' %}
+            </div>
+     </div>
+     </div>
+     </div>
+  </div>
+  
+     <div class="cust-section-second bg-white">
+       <div class="custom-logo">
+         <a href="https://isawitfirst-dubai.myshopify.com/">
+         <img src="{{ 'logo.png' | asset_url }}" class="sticky-logo"  alt='{{ shop.name }}' />
+       </a>
+       </div>
+  
+  <div class="navbar">
+        <div class="container">
+            <!-- Menu Toggle -->
+            <div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+            <!-- /Menu Toggle -->
+           {% comment %} {% include 'header-cart' %}{% endcomment %}
+            <!-- /Header Cart -->
+            <!-- Header Links -->
+          
+       
+            <!-- /Header Links -->
+            {% comment %}{% include 'header-search' %}{% endcomment %}
+
+            <!-- Logo -->
+            {% unless template == 'index' and settings.home_page contains 3   %}{% unless page contains 3  %}
+            <div class="header-logo">
+              <!--<div class="header-logo">-->
+            
+                {% comment %}{% include 'header-logo' %}{% endcomment %}
+            </div>
+            {% endunless %}{% endunless %}
+            <!-- /Logo -->
+            <!-- Mobile Menu -->
+            {% include 'mobile-nav' %}
+            <!-- /Mobile Menu -->
+         
+          {% include 'megamenu-nav' %}
+           {% comment %} 
+          {% include 'custom-menu' %}{% endcomment %}
+      </div>
+    </div>
+
+    {% include 'countdown' %}
+
+    {% include 'section-below-menu' %}
+
+</header>
+  
+  
+  

@@ -1,0 +1,137 @@
+{% assign number_of_comments = article.comments_count %}
+
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+{% paginate article.comments by 50 %}
+
+<div class='container'>
+  <!-- Page Title -->
+  <div class='page-title'>
+    <div class='title center'>
+      <h1>
+        {% if current_tags %}
+          {{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}
+        {% else %}
+          {{ blog.title }}
+        {% endif %}
+      </h1>
+    </div>
+    <div class='text-wrapper'>
+      <p class='text-center'>{{ setti3ngs.blog_desc }}</p>
+    </div>
+  </div>
+  <!-- /Page Title -->
+  <!-- Two columns -->
+  <div class='row'>
+    <!-- Center column -->
+    <div class='col-md-8'>
+      <div class="blog-post" itemscope itemtype="http://schema.org/Article">
+        {% if article.image %}
+          {% assign image_alt = article.title | escape %}
+          <div class='blog-photo'>
+            {{ article | img_url: 'master' | img_tag: image_alt, 'article__image' }}
+          </div>
+        {% endif %}
+        <div class="blog-content">
+          <h2 class="blog-title">{{ article.title }}</h2>
+          <div class="blog-meta">
+            <div class="pull-left">
+              <span>{{ 'general.theme.author' | t }} <a>{{ article.author }}</a></span>
+              {% if blog.comments_enabled? %}
+                <span class='last'><a href='{{ article.url | append:"#comments" }}'>{{ article.comments.size }} {{ 'general.theme.comments' | t }}</a></span>
+              {% endif %}
+              <span>              <time datetime='{{ article.published_at | date: '%Y-%m-%d' }}'>{{ article.published_at | date: format: 'month_day_year' }}</time>
+</span>
+            </div>
+            <div class="pull-right">
+              {% if settings.social_sharing_blog %}
+                {% capture share %}{{ 'general.theme.share' | t }}{% endcapture %}
+                {% include 'social-sharing' position:'toRight', title:share %}
+              {% endif %}
+            </div>
+
+          </div>
+          <div class="blog-text rte"  itemprop="articleBody">
+            {{ article.content }}
+          </div>
+          <div class="blog-tags">
+            {% if article.tags.size > 0 %}
+              <div class="pull-left">
+                <span>{{ 'general.theme.tags' | t }}</span>
+                <ul class="tags">
+                  {% for tag in article.tags %}
+                    <li><a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+
+          </div>
+
+          {% if blog.next_article or blog.previous_article %}
+            <div class="row">
+              <div class="pull-left">
+                {% if blog.previous_article %}
+                  <a href="{{  blog.previous_article }}" class="btn">&lt;&lt; {{ 'blogs.article.older_post' | t }}</a>
+                {% endif %}
+              </div>
+              <div class="pull-right">
+                {% if blog.next_article %}
+                  <a href="{{  blog.next_article }}" class="btn">{{ 'blogs.article.newer_post' | t }} >></a>
+                {% endif %}
+              </div>
+            </div>
+            <br /><br />
+          {% endif %}
+
+          {% if blog.comments_enabled? %}
+          <div class="blog-comments" id="comments">
+            <h3>{{ 'general.theme.post_comments' | t }}</h3>
+            {% if comment and comment.created_at %}
+              <p class="note form-success">
+                {% if blog.moderated? %}
+                  {{ 'blogs.comments.success_moderated' | t }}
+                {% else %}
+                  {{ 'blogs.comments.success' | t }}
+                {% endif %}
+              </p>
+            {% endif %}
+
+            {% if number_of_comments > 0 %}
+                {% for comment in article.comments %}
+                    {% include 'comment' %}
+                {% endfor %}
+            {% endif %}
+
+            <h3>{{ 'blogs.comments.title' | t }}</h3>
+            {% form 'new_comment', article, class: 'post-comment' %}
+              {{ form.errors | default_errors }}
+              <input  class="form-control {% if form.errors contains "author" %}error{% endif %}" type="text" name="comment[author]" placeholder="{{ 'blogs.comments.name' | t }}" id="CommentAuthor" value="{{ form.author }}" />
+              <input  class="form-control {% if form.errors contains "email" %}error{% endif %}" type="email" name="comment[email]" placeholder="{{ 'blogs.comments.email' | t }}" id="CommentEmail" value="{{ form.email }}"  />
+              <textarea class="form-control {% if form.errors contains "body" %}error{% endif %}" name="comment[body]" id="CommentBody" placeholder="{{ 'blogs.comments.message' | t }}">{{ form.body }}</textarea>
+              <div><button class="btn" type="submit">{{ 'blogs.comments.post' | t }}</button></div>
+              {% if blog.moderated? %}
+                <br /><p><small>{{ 'blogs.comments.moderated' | t }}</small></p>
+              {% endif %}
+            {% endform %}
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+    <!-- /Center column -->
+    <!-- Right column -->
+    <div class='col-md-4'>
+      {% include 'blog-sidebar' %}
+    </div>
+    <!-- /Right column -->
+  </div>
+  <!-- /Two columns -->
+</div>
+
+{% endpaginate %}

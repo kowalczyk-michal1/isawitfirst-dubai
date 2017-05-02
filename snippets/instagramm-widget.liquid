@@ -1,0 +1,17 @@
+{{ 'instafeed.min.js' | asset_url | script_tag }}
+
+<script type="text/javascript">
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: 'self',
+        accessToken: '{{ settings.insta_token }}',
+        limit:{{ settings.insta_limit }},
+        sortBy: '{{ settings.insta_sort }}'
+    });
+    userFeed.run();
+</script>
+
+<div class='sideblock'>
+    <h2>{{ settings.insta_title }}</h2>
+    <div id="instafeed" class="instagramm-feed"></div>
+</div>

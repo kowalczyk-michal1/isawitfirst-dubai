@@ -1,0 +1,51 @@
+{% assign title=settings.products_carousel_title_new %}
+{% assign collection_id=settings.products_carousel_collection_new %}
+<div class="block">
+    <div class="container">
+        <div class="row">
+            {% assign col2='col-sm-12 col-md-12 col-lg-12'  %}
+            {%  if settings.products_carousel_new_yes %}
+            {% assign col2='col-sm-12 col-md-8 col-lg-8'  %}
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="title">
+                    <h2> {% if title == '' %}
+                            {{ collections[collection_id].title | escape }}
+                        {% else %}
+                            {{ title }}
+                        {% endif %}
+                    </h2>
+                    <div class="toggle-arrow"></div>
+                    <div class="carousel-arrows"></div>
+                </div>
+                <div class="product-vertical-carousel product-small-list variant2">
+                    {% for product in collections[collection_id].products %}
+                        {% include 'product-item-small' %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="{{ col2 }}">
+                {%  if settings.advantages_yes %}
+                    <div class="title">
+                        <h2>{{ settings.advantages_title }}</h2>
+                    </div>
+                    <div class="bottom-space">
+                        <div class="row">
+                            {{ settings.advantages }}
+                        </div>
+                    </div>
+                {% endif %}
+                {%  if settings.topbrands_yes %}
+                    <div class="title">
+                        <h2>{{ settings.topbrands_title }}</h2>
+                        <div class="toggle-arrow"></div>
+                        <div class="carousel-arrows"></div>
+                    </div>
+                    <div class="brand-grid brand-carousel white-bg">
+                        {{ settings.topbrands_html }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

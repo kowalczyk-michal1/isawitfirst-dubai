@@ -1,0 +1,37 @@
+{% assign current_url = '' %}
+
+{% case template %}
+	{% when 'page' %}
+		{% assign current_url = page.url %}
+		{% assign current_title = page.title %}
+	{% when 'blog' %}
+		{% assign current_url = blog.url %}
+		{% assign current_title = blog.title %}
+	{% when 'article' %}
+		{% assign current_url = blog.url %}
+		{% assign current_title = blog.title %}
+	{% when 'collection' %}
+		{% assign current_url = collection.url %}
+		{% assign current_title = collection.title %}
+	{% when 'product' %}
+		{% assign current_url = product.url %}
+		{% assign current_title = product.title %}
+{% endcase %}
+
+
+  {% capture permalinkURL %}{{ shop.url }}{{ current_url }}{% endcapture %}
+  {% capture shareTitle %}{{ current_title | url_param_escape }}{% endcapture %}
+
+
+{% comment %}
+  Share button styles are:
+  * toRight
+  * toTop
+  * toBottom
+{% endcomment %}
+
+<div class="share-button {{ position }}">
+  <span class="toggle"></span>
+  {% include 'social-sharing-list' %}
+</div>
+

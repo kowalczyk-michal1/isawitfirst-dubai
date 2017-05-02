@@ -1,0 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+{{ 'buddha-megamenu.css' | asset_url | stylesheet_tag }}
+<script> var linkLists = {}; {% for list in linklists %} linkLists["{{ list.handle }}"] = {}; linkLists["{{ list.handle }}"].title = "{{ list.title | replace: '"', '\"' }}"; linkLists["{{ list.handle }}"].items = []; {% for link in linklists[list.handle].links %} linkLists["{{ list.handle }}"].items[linkLists["{{ list.handle }}"].items.length] = "{{ link.url | replace: '"', '\"' }}"; {% endfor %} {% endfor %} </script>
+{{ 'buddha-megamenu-before.js' | asset_url | script_tag }}

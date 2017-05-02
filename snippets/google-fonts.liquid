@@ -1,0 +1,10 @@
+{% if settings.color_product_page_name_font_family != blank %}
+  {{ '//fonts.googleapis.com/css?family=' | append: settings.color_product_page_name_font_family | stylesheet_tag }}
+{% endif %}
+{% if settings.color_product_page_price_font_family != blank %}
+  {{ '//fonts.googleapis.com/css?family=' | append: settings.color_product_page_price_font_family | stylesheet_tag }}
+{% endif %}
+{% if settings.color_topnav_level_1_font_family != blank %}
+  {{ '//fonts.googleapis.com/css?family=' | append: settings.color_topnav_level_1_font_family | stylesheet_tag }}
+{% endif %}
+

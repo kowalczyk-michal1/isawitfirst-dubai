@@ -1,0 +1,35 @@
+<footer class="page-footer fullboxed variant3">
+    <div class="container">
+        <div class="footer-nav">
+            <ul>
+                {% for link in linklists[settings.footer_nav]links %}
+                    <li>{{ link.title | link_to: link.url }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="footer-payment-link">
+                {% if settings.footer_show_methods_of_payment %}
+                    <a><img src="{{ 'icon-pay-1.png' | asset_url }}" alt=""></a>
+                    <a><img src="{{ 'icon-pay-2.png' | asset_url }}" alt=""></a>
+                    <a><img src="{{ 'icon-pay-3.png' | asset_url }}" alt=""></a>
+                    <a><img src="{{ 'icon-pay-4.png' | asset_url }}" alt=""></a>
+                    <a><img src="{{ 'icon-pay-5.png' | asset_url }}" alt=""></a>
+                {% endif %}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                {% if settings.footer_social_icons != blank  %}
+                    <div class="footer-social">
+                        {{ settings.footer_social_icons }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="footer-logo">  {% include 'footer-logo' %}</div>
+    </div>
+    <div class="after-footer">
+        <div class="footer-copyright text-center"> &copy; {{ settings.copyright }} </div>
+    </div>
+</footer>

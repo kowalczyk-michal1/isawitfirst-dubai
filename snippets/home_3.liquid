@@ -1,0 +1,53 @@
+<div class="page-wrapper">
+    <!-- Journal -->
+    <div class="overflow">
+        <section class="journal"><!--for html valid--><h6 class="hidden">.</h6>
+            <!-- Logo -->
+            <div class="logo-center">{{ 'logo-white.png' | asset_url | img_tag | link_to:  shop.url ,shop.name}}</div>
+            <!-- /Logo -->
+            <article class="journal-category journal-category-left"><!--for html valid--><h6 class="hidden">.</h6>
+                <div class="journal-category journal-category-inner-left">
+                    <div class="products-grid product-variant-1">
+                        <div class="title center"><h2>{{ settings.left_collection_title }}</h2></div>
+                        {% for product in collections[settings.left_collection].products %}
+                            {% include 'product-item' image_size:'large' %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="journal-category journal-category-inner" style="background-image: url({{ 'category-1-bg.jpg' | asset_url }});">
+                    <div class="toggle-panel"><i class="icon icon-angle-left"></i></div>
+                    <div class="toggle-panel-mobile"><span class="show-icon"><i class="icon icon-dots-three-horizontal"></i></span>
+                        <span class="close-icon"><i class="icon icon-close"></i></span></div>
+                    <div class="irregular-grid">
+                        {% include 'product-home-3' config_id:'left_product_1' %}
+                        {% include 'product-home-3' config_id:'left_product_2' %}
+                    </div>
+                </div>
+            </article>
+            <article class="journal-category journal-category-right"><!--for html valid--><h6 class="hidden">.</h6>
+                <div class="journal-category journal-category-inner" style="background-image: url({{ 'category-2-bg.jpg' | asset_url }});">
+                    <div class="toggle-panel"><i class="icon icon-angle-right"></i></div>
+                    <div class="toggle-panel-mobile"><span class="show-icon"><i class="icon icon-dots-three-horizontal"></i></span>
+                        <span class="close-icon"><i class="icon icon-close"></i></span></div>
+                    <div class="irregular-grid">
+                        {% include 'product-home-3' config_id:'right_product_1' %}
+                        {% include 'product-home-3' config_id:'right_product_2' %}
+                    </div>
+                </div>
+                <div class="journal-category journal-category-inner-right">
+                    <div class="products-grid product-variant-1">
+                        <div class="title center"><h2>{{ settings.right_collection_title }}</h2></div>
+                        {% for product in collections[settings.right_collection].products %}
+                            {% include 'product-item' image_size:'large' %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <!-- /Journal -->
+    <!-- Menu Toggle -->
+    <a href="#" class="toggleHeader"><span class="close-icon"><i class="icon icon-close"></i></span><span class="open-icon"><i class="icon icon-menu"></i></span></a>
+    <!-- /Menu Toggle -->
+    {% include 'header_default' variant:'3' dark:'dark'%}
+</div>

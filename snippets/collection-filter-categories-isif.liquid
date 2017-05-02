@@ -1,0 +1,23 @@
+{% unless settings.collections_filter_categories == blank %}
+    {% assign a=settings.collections_filter_categories | replace:" ","" | split:","  %}
+    {% for b in a  %}
+        {% if linklists[b]links.size > 0 %}
+            <div class="sidebar-block collapsed {% unless collection_filter_fixed == 1 %}open{% endunless %}">
+                <div class="block-title">
+                    <div class="filter-arrow"><span class="fa fa-chevron-right"></span></div>
+                    <span class="filter-title">{{ linklists[b].title }}</span>
+                </div>
+                <div class="block-content">
+                    <ul class="category-list categories">
+                        {% for link in  linklists[b]links  %}
+                            {% if link.type == 'collection_link' %}
+                            <li {% if link.active %}class="active"{% endif %}>{{ link.title | link_to: link.url }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <div class="bg-striped"></div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endunless %}

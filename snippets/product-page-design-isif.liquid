@@ -1,0 +1,195 @@
+{% assign right = settings.product_right_description_yes %}
+{% if product_image_size == '6' %}{% assign right = false %}{% endif %}
+{% case product_image_size %}
+  {% when '3' %}
+    {% assign column_1 = 'col-sm-5 col-md-3' %}
+    {% assign column_2 = 'col-sm-7 col-md-9' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-3 col-lg-3' %}
+        {% assign column_2 = 'col-sm-6 col-md-9 col-lg-6' %}
+    {% endif %}
+  {% when '4' %}
+    {% assign column_1 = 'col-sm-5 col-md-4' %}
+    {% assign column_2 = 'col-sm-7 col-md-8' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-4 col-lg-4' %}
+        {% assign column_2 = 'col-sm-6 col-md-8 col-lg-5' %}
+    {% endif %}
+  {% when '5' %}
+    {% assign column_1 = 'col-sm-5 col-md-5' %}
+    {% assign column_2 = 'col-sm-7 col-md-7' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-5 col-lg-5' %}
+        {% assign column_2 = 'col-sm-6 col-md-7 col-lg-4' %}
+    {% endif %}
+  {% when '6' %}
+    {% assign column_1 = 'col-sm-5 col-md-6' %}
+    {% assign column_2 = 'col-sm-7 col-md-6' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-6  col-lg-6' %}
+        {% assign column_2 = 'col-sm-6 col-md-6  col-lg-3' %}
+    {% endif %}
+{% endcase  %}
+{% assign column_1 = 'col-md-6' %}
+{% assign column_2 = 'col-md-6' %}
+{% assign column_3 = 'col-md-4 hidden-quickview' %}
+
+
+<div class="block product-block page-design-lotd">
+    <div class="container">
+        <div class="row">
+            <div class="{{ column_1 }}">
+                <!-- Product Gallery -->
+                <div class="col-md-12 lotd-product-images">
+                    <div class="col-md-9">
+                        <div class="main-image">
+                            {% assign featured_image = product.featured_image %}
+                            <img src="{{ featured_image | img_url: 'master' }}" alt="{{ featured_image.alt | escape }}"  class="zoom" data-zoom-image="{{ featured_image | img_url: 'master' }}">
+                            <div class="dblclick-text"><span>Double click for enlarge</span></div>
+                            {% if product.description contains '[video]' %} <a href="{{ product.description | split:'[video]' | last | split :'[/video]' | first }}" class="video-link"><i class="icon icon-film"></i></a>{% endif %}
+                            <a href="{{ featured_image | img_url: 'master' }}" class="zoom-link{% if product.images.size < 2 %} disable-gallery{% endif %}"><i class="icon icon-zoomin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="vertical-carousel">
+                            {% for image in product.images %}
+                                <a href="#" data-image="{{ image.src | img_url: 'master' }}" data-zoom-image="{{ image.src | img_url: 'master' }}"><img src="{{ image.src | img_url: 'medium' }}" alt="" /></a>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% if product.images.size > 1 %}
+                    {% for image in product.images %}
+                        <!--gallery buffer-->
+                        <img alt="" src="{{ image.src | img_url: 'master' }}" style="display: none" />
+                    {% endfor %}
+                    <div class="product-previews-wrapper">
+                        <div class="product-previews-carousel" id="previewsGallery">
+                            {% for image in product.images %}
+                                    <a href="#" data-image="{{ image.src | img_url: 'master' }}" data-zoom-image="{{ image.src | img_url: 'master' }}"><img src="{{ image.src | img_url: 'medium' }}" alt="" /></a>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- /Product Gallery -->
+            </div>
+            <div class="{{ column_2 }}">
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    {% assign variant = product.selected_or_first_available_variant %}
+                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                    <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+                    <div class="product-info-block classic">
+                        <div class="product-name-wrapper">
+                            <h1 itemprop="name" class="product-name">{{ product.title | capitalize }}</h1>
+                            <div class="price" itemprop="price" content="{{ product.price | money_without_currency }}">
+                                {% capture price %}{{ product.price | money }}{% endcapture %}
+                                {% if on_sale %}
+                                    <span class="old-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+                                {% endif %}
+                                <span class="special-price"> {{ product.selected_or_first_available_variant.price | money }}</span>
+                            </div>
+                            {% if product.description %}
+                                <div class="product-description">
+                                    {{ product.description | replace: '[i]', '<div class="product-info-icon"><span class="product-info-icon"></span></div>' }}
+                                </div>
+                            {% endif %}
+                            <div class="product-labels">
+                                {% if on_sale  and settings.show_label_sale %}<span class="product-label sale">{{ 'products.product.sale' | t }}</span>{% endif %}
+                                {% assign new = 0 %}
+                                {% for tag in product.tags %}{% if tag == 'new' %}{% assign new = 1 %}{% endif %} {% endfor %}
+                                {% if new == 1  and settings.show_label_new %}<span class="product-label new">{{ 'general.theme.new' | t }}</span>{% endif %}
+                            </div>
+                        </div>
+                        {% comment %}
+                        <h3 itemprop="brand">{{ product.vendor }}</h3>
+                        {% endcomment %}
+
+                        {% if product.available %}
+                            {% if product.description contains '[countdown]' %}
+                                {% assign countdown=product.description|split:'[countdown]' %}
+                                {% assign countdown=countdown[1]|split:'[/countdown]' %}
+                                {% assign countdown=countdown[0] %}
+                                {% if on_sale %}
+                                    <div class="countdown-circle">
+                                        <div class="countdown-wrapper">
+                                            <div class="countdown" data-countdown="{{ countdown }}"></div>
+                                            <div class="countdown-text">
+                                                {% assign percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by:product.compare_at_price | times: 100 | divided_by: 100 | floor  %}
+                                                <div class="text1">{{ 'general.theme.discount' | t :percent:percent }}</div>
+                                                <div class="text2">{{ 'general.theme.have_time_to_buy' | t }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endif  %}
+                        <form action="/cart/add" method="post" enctype="multipart/form-data">
+                            {% include 'product-page-options-form' design:'default' %}
+                            {% if product.available %}
+                                <div class="product-actions">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="actions">
+                                                {% assign link_to = false %}
+                                                {% if product.description contains '[link_to]' %}
+                                                    {% assign link_to = true %}
+                                                    {% assign link_to_href = product.description | split:'[link_to]' | last | split :'[/link_to]' | first %}
+                                                {% endif %}
+                                                {% if link_to %}
+                                                    <a  class="btn btn-lg " href="{{ link_to_href }}" target="_blank"><span>{{ 'products.product.add_to_cart' | t }}</span></a>
+                                                {% else %}
+                                                    <button type="submit" class="btn btn-lg add_to_cart_product_page"><span>{{ 'products.product.add_to_cart' | t }}</span></button>
+                                                {% endif %}
+                                                <a href="{{ product.url }}" target="_parent" class="btn btn-lg product-details" title="More Info"><i class="icon icon-external-link"></i></a>
+                                            </div>
+                                            
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="product-meta">
+                                                <span>{% include 'wishlist-product' %}</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif  %}
+                        </form>
+
+                        <div class="buy-related-products">
+                            {% include 'buy-related-products' %}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+</div>
+
+<script type="text/javascript">
+    $("#vertical-carousel").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        vertical: true,
+        adaptiveHeight: true
+    });
+</script>
+
+<div class="row">
+    <div class="block fullwidth">
+        {% if settings.product_related_enable %}
+            {% include 'related-products-isif' %}
+        {% endif %}
+    </div>
+</div>

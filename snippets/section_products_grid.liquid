@@ -1,0 +1,23 @@
+{% assign title=settings.products_grid_title %}
+{% assign collection_id=settings.products_grid_collection %}
+<div class="block">
+    <div class="container">
+        <div class="title center">
+            <h1> {% if title == '' %}
+                    {{ collections[collection_id].title | escape }}
+                {% else %}
+                    {{ title }}
+                {% endif %}</h1>
+        </div>
+        <div class="text-wrapper">
+            <p class="text-center">{{ settings.products_grid_desc }}</p>
+        </div>
+        <div class="products-grid five-in-row product-variant-5 min-{{ settings.collections_products_per_row_mobile }}">
+
+            {% for product in collections[collection_id].products limit:5 %}
+                {% include 'product-item-big' image_size:'large' %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>

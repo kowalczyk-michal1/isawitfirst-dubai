@@ -1,0 +1,77 @@
+<header class="page-header {{ header_box }} variant-9 {{ settings.sticky }} {{ settings.sticky_color }} {{ settings.sticky_behavior }} {{ dark }} {{ settings.sticky_style }}">
+<!-- Header Top Row -->
+    <div class="header-top-row">
+        <div class="container">
+            <div class="header-top-left">
+                <div class="header-custom-text">
+                    <ul class="social-list-simple small">
+                        <li>
+                            <a href="#" class="icon icon-google google"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon icon-twitter-logo twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon icon-facebook-logo facebook"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-custom-text">
+                    {% if settings.header_phone_1 != blank %}<span><i class="icon icon-phone"></i> {{ settings.header_phone_1 }}</span>{% endif %}
+                    <span class="hidden-xs">{% if settings.header_address != blank %}<span>{{ settings.header_address }}</span>{% endif %}</span>
+                </div>
+            </div>
+            <div class="header-top-right">
+                <!-- Header Links -->
+                <div class="header-links">
+
+                    <!-- Header Language -->
+                    {% include 'header-languages' %}
+                    <!-- /Header Language -->
+                    <!-- Header Currency -->
+                    {% include 'currency-picker' %}
+                    <!-- /Header Currency -->
+
+                </div>
+                <!-- /Header Links -->
+            </div>
+        </div>
+    </div>
+    <!-- /Header Top Row -->
+    <div class="navbar">
+        <div class="container">
+            <!-- Menu Toggle -->
+            <div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+            <!-- /Menu Toggle -->
+            <div class="header-right-links">
+                <div class="collapsed-links-wrapper">
+                    <div class="collapsed-links">
+                        <!-- Header Links -->
+                        <div class="header-links">
+                            <!-- Header WishList -->
+                            {% include 'header-wishlist' %}
+                            <!-- Header WishList -->
+                            <!-- Header Account -->
+                            {% include 'header-login-form' header:7 %}
+                            <!-- /Header Account -->
+                        </div>
+                        <!-- /Header Links -->
+                        <!-- Header Cart -->
+                        {% include 'header-cart' header:7, view:2 %}
+                        <!-- /Header Cart -->
+                    </div>
+                </div>
+                <!-- Header Search -->
+                {% include 'header-search' %}
+                <!-- /Header Search -->
+            </div>
+            <!-- Logo -->
+            <div class="header-logo">
+                {% include 'header-logo' %}
+            </div>
+            <!-- /Logo -->
+            {% include 'mobile-nav' %}
+            {% include 'megamenu-nav' %}
+        </div>
+    </div>
+</header>

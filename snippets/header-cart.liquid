@@ -1,0 +1,118 @@
+{% unless template == 'cart' %}
+<script type="text/javascript">
+    locales={
+        recently_added_items:"{{ 'general.theme.recently_added_items' | t }}",
+        no_items_in_cart:"{{ 'general.theme.no_items_in_cart' | t }}",
+        remove:"{{ 'cart.general.remove' | t }}",
+        edit:"{{ 'general.theme.edit' | t }}",
+        qty:"{{ 'cart.label.quantity' | t }}",
+        apply:"{{ 'general.theme.apply' | t }}"
+    }
+</script>
+<div class="header-link dropdown-link header-cart variant-{{ settings.header_cart_view }}">
+    <a href="/cart">
+        <i class="icon"><img class="mt-4 header-isif-cart" src=" {{ 'cart.png' | asset_url }}" > </i>
+       
+        <span class="badge">{{ cart.item_count }}</span>
+        {% if header == 7 %}<span class="link-text">{{ 'general.theme.my_cart' | t }}</span>{% endif %}
+    </a>
+    <div class="dropdown-container right">
+        <div class="block block-minicart">
+            <div id="minicart-content-wrapper">
+                <div class="block-title">
+
+                    {% if cart.item_count > 0 %}
+                    <span>{{ 'general.theme.recently_added_items' | t }}</span>
+                    {% else %}
+                        <span class="empty">{{ 'general.theme.no_items_in_cart' | t }}</span>
+                    {% endif} %}
+
+                </div>
+                <a class="btn-minicart-close"><i class="icon icon-close"></i></a>
+                <div {% if cart.item_count == 0 %} style="display: none" {% endif %} class="block-content">
+                    <div class="minicart-items-wrapper overflowed">
+                        <ol id="mini-cart" class="minicart-items">
+                            {% for item in cart.items %}
+                                <li class="item product product-item">
+                                    <div class="product">
+                                        <a class="product-item-photo" href="{{ item.url }}" title="{{ item.title | escape }}">
+                                            <span class="product-image-container">
+                                                <span class="product-image-wrapper">
+                                                    <img class="product-image-photo" src="{{ item | img_url: 'grande' }}" alt="{{ item.title | escape }}">
+                                                </span>
+                                            </span>
+                                        </a>
+                                        <div class="product-item-details">
+                                            <div class="product-item-name">
+                                                <a href="{{ item.url }}">{{ item.title }}</a>
+                                            </div>
+                                            <div class="product-item-qty">
+                                                <label class="label">{{ 'cart.label.quantity' | t }}</label>
+                                                <input class="item-qty cart-item-qty" maxlength="12" value="{{ item.quantity }}" disabled>
+                                            </div>
+                                            <div class="product-item-pricing">
+                                                <div class="price-container">
+                                                    <span class="price-wrapper">
+                                                        <span class="price-excluding-tax">
+                                                            <span class="minicart-price">
+                                                                <span class="price">
+                                                                     {{ item.price | money }}
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="product actions">
+                                                    <div class="secondary">
+                                                        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+                                                           data-variant-id="{{ item.variant_id }}" class="action delete"
+                                                           title="{{ 'cart.general.remove' | t }}">
+                                                            <span>{{ 'cart.general.remove' | t }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="primary">
+                                                        <a class="action edit" href="{{ item.url }}"
+                                                           title="{{ 'general.theme.edit' | t }}">
+                                                            <span>{{ 'general.theme.edit' | t }}</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                    <div class="subtotal">
+                        <span class="label">
+                            <span>{{ 'cart.general.subtotal' | t }}</span>
+                        </span>
+
+                        <div class="amount price-container">
+                            <span class="price-wrapper"><span class="price">{{ cart.total_price | money }}</span></span>
+                            {% if cart.total_discounts > 0 %}
+                                {% assign savings = cart.total_discounts | money %}
+                                <small class="cart-subtotal__savings">{{ 'cart.general.savings_html' | t: price: savings }}</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="secondary">
+                            <a href="/cart" class="btn btn-alt">
+                                <i class="icon icon-cart"></i><span>{{ 'general.theme.view_and_edit_cart' | t }}</span>
+                            </a>
+                        </div>
+                        <div class="primary">
+                            <a class="btn" href="/checkout">
+                                <i class="icon icon-external-link"></i><span>{{ 'general.theme.go_to_checkout' | t }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endunless %}

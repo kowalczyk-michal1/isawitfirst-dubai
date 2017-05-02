@@ -1,0 +1,62 @@
+{% capture lookbook_title %}lookbook_title_{{ suff }}{% endcapture %}
+{% capture lookbook_bg_1 %}lookbook_bg_{{ suff }}.jpg{% endcapture %}
+{% capture lookbook_bg_2 %}lookbook-bg-cat-{{ suff }}.png{% endcapture %}
+<div class="block bg bot-null" style="background-image: url({{ lookbook_bg_1 | asset_url}});">
+    <div class="container">
+        <div class="title center">
+            <h2>{{ settings[lookbook_title] }}</h2>
+        </div>
+        <div class="lookbook">
+            <div class="lookbook-bg-image"><img src="{{ lookbook_bg_2 | asset_url}}" alt=""></div>
+            {% for i in (1..10) %}
+            {% capture lookbook_product_yes %}lookbook_{{ suff }}_product_yes_{{ i }}{% endcapture %}
+            {% capture lookbook_product_id %}lookbook_{{ suff }}_product_id_{{ i }}{% endcapture %}
+            {% capture lookbook_product_image %}lookbook_{{ suff }}_product_image_{{ i }}.png{% endcapture %}
+            {% capture lookbook_product_left %}lookbook_{{ suff }}_product_left_{{ i }}{% endcapture %}
+            {% capture lookbook_product_top %}lookbook_{{ suff }}_product_top_{{ i }}{% endcapture %}
+            {% capture lookbook_product_width %}lookbook_{{ suff }}_product_width_{{ i }}{% endcapture %}
+            {% capture lookbook_product_popup_to_left %}lookbook_{{ suff }}_product_popup_to_left_{{ i }}{% endcapture %}
+            {% assign product_id = settings[lookbook_product_id] %}
+            {% assign product = all_products[product_id] %}
+            {% if settings[lookbook_product_yes] %}
+            {% capture price %}{{ product.price | money }}{% endcapture %}
+            <div class="product-lookbook data-{% if settings[lookbook_product_popup_to_left] %}left{% else %}right{% endif %}" style="top: {{ settings[lookbook_product_top] }}%; left: {{ settings[lookbook_product_left] }}%; width: {{ settings[lookbook_product_width] }}%;">
+                <a href="{{ product.url | within: collection }}" class="visible-xs lookbook-open"><i class="icon icon-plus"></i></a>
+                <div class="product-item-inside">
+                    <!-- Product Image -->
+                    <div class="product-item-photo">
+                        <a href="{{ product.url | within: collection }}"> <img class="product-image-photo" src="{{ lookbook_product_image | asset_url }}" alt=""></a>
+                    </div>
+                    <!-- /Product Image -->
+                    <!-- Product Info -->
+                    <div class="product-item-info">
+                        <div class="product-item-details vert-wrapper">
+                            <div class="vert">
+                                <div class="product-item-name"><a title="{{ product.title }}" href="{{ product.url | within: collection }}" class="product-item-link">{{ product.title }}</a></div>
+                                <div class="product-item-rating"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></div>
+                                <div class="product-item-description">
+                                    {% if product.description contains '[short_description]' %}
+                                            {% assign desc = product.description  | split:"|config|" | first  | split:"[short_description]" | last | split:"[/short_description]" | first %}
+                                            {% assign desc = desc | strip_html | truncate:100 %}
+                                            <p>{{ desc }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="price-box"> <span class="price-container"> <span class="price-wrapper "> <span class="special-price">{% if product.price_varies %}{{ 'products.general.from_html' | t: price: price }}{% else %}{{ price }}{% endif %} </span></span> </span> </div>
+                                <!-- Product Actions -->
+                                <div class="product-item-actions">
+                                    <div class="actions-primary">
+                                        <button class="btn btn-invert add_to_cart" data-variant-id="{{ product.variants.first.id }}"> <i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </button>
+                                    </div>
+                                </div>
+                                <!-- /Product Actions -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Product Info -->
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

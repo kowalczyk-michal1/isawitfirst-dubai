@@ -1,0 +1,76 @@
+<!-- assign global vars ================================================== -->
+{% assign left_panel=settings.left_panel %}
+{% assign boxed=settings.boxed %}
+{% assign header_box=settings.header_box %}
+{% capture header %}header_{{ settings.header }}{% endcapture %}
+{% capture footer %}footer_{{ settings.footer }}{% endcapture %}
+{% if settings.rtl %}{% assign rtl = 1 %}{% else %}{% assign rtl = 0 %}{% endif %}
+{% if template == 'page.rtl' %}{% assign rtl = 1 %}{% endif %}<!-- if page.rtl -->
+<!-- assign home page vars ================================================== -->
+{% if template == 'index' %}
+    {% capture header_n %}home_{{ settings.home_page }}_header{% endcapture %}
+    {% if settings[header_n] == 'global' %}
+        {% capture header %}header_{{ settings.header }}{% endcapture %}
+    {% else %}
+        {% capture header %}header_{{ settings[header_n] }}{% endcapture %}
+    {% endif %}
+
+    {% capture footer_n %}home_{{ settings.home_page }}_footer{% endcapture %}
+    {% if settings[footer_n] == 'global' %}
+        {% capture footer %}footer_{{ settings.footer }}{% endcapture %}
+    {% else %}
+        {% capture footer %}footer_{{ settings[footer_n] }}{% endcapture %}
+    {% endif %}
+
+
+    {% capture left_panel_n %}left_panel_{{ settings.home_page }}{% endcapture %}
+    {% assign left_panel=settings[left_panel_n] %}
+
+    {% capture boxed_n %}boxed_{{ settings.home_page }}{% endcapture %}
+    {% assign boxed=settings[boxed_n] %}
+
+    {% capture header_box_n %}header_box_{{ settings.home_page }}{% endcapture %}
+    {% assign header_box=settings[header_box_n] %}
+{% endif %}
+<!-- assign home page vars if home page is article page ====================== -->
+
+{% if page.template_suffix contains 'home-page-' %}
+    {% assign page=page.template_suffix  | replace: 'home-page-', '' %}
+    {% capture header_n %}home_{{ page }}_header{% endcapture %}
+    {% if settings[header_n] == 'global' %}
+        {% capture header %}header_{{ settings.header }}{% endcapture %}
+    {% else %}
+        {% capture header %}header_{{ settings[header_n] }}{% endcapture %}
+    {% endif %}
+
+    {% capture footer_n %}home_{{ page }}_footer{% endcapture %}
+    {% if settings[footer_n] == 'global' %}
+        {% capture footer %}footer_{{ settings.footer }}{% endcapture %}
+    {% else %}
+        {% capture footer %}footer_{{ settings[footer_n] }}{% endcapture %}
+    {% endif %}
+
+    {% capture left_panel_n %}left_panel_{{ page }}{% endcapture %}
+    {% assign left_panel=settings[left_panel_n] %}
+
+    {% capture boxed_n %}boxed_{{ page }}{% endcapture %}
+    {% assign boxed=settings[boxed_n] %}
+
+    {% capture header_box_n %}header_box_{{ page }}{% endcapture %}
+    {% assign header_box=settings[header_box_n] %}
+{% endif %}
+{% assign megamenu_animation = settings.megamenu_style %}
+{% if template == 'collection' or template == 'product' %}
+    {% if template == 'collection' %}{% assign source_desc = collection.description %}{% endif %}
+    {% if template == 'product' %}{% assign source_desc = product.description %}{% endif %}
+    {% if source_desc contains 'special-header-default' %}{% assign header = 'header_default' %}{% endif %}
+    {% if source_desc contains 'special-header-2' %}{% assign header = 'header_2' %}{% endif %}
+    {% if source_desc contains 'special-header-3' %}{% assign header = 'header_3' %}{% endif %}
+    {% if source_desc contains 'special-header-4' %}{% assign header = 'header_4' %}{% endif %}
+    {% if source_desc contains 'special-header-5' %}{% assign header = 'header_5' %}{% endif %}
+    {% if source_desc contains 'special-header-6' %}{% assign header = 'header_6' %}{% endif %}
+    {% if source_desc contains 'special-header-7' %}{% assign header = 'header_7' %}{% endif %}
+    {% if source_desc contains 'megamenu-animation-none' %}{% assign megamenu_animation = 'none' %}{% endif %}
+    {% if source_desc contains 'megamenu-animation-fadein' %}{% assign megamenu_animation = 'fadein' %}{% endif %}
+    {% if source_desc contains 'megamenu-animation-slidetop' %}{% assign megamenu_animation = 'slidetop' %}{% endif %}
+{% endif %}

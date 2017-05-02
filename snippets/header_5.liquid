@@ -1,0 +1,74 @@
+<header class="page-header {{ header_box }} variant-7 {{ settings.sticky }} sticky{{ settings.sticky_color }} {{ settings.sticky_behavior }} {{ dark }}">
+<div class="navbar">
+        <!-- Header Top Row -->
+        <div class="header-top-row">
+            <div class="container">
+                <div class="header-top-left">
+                    {% if settings.header_socials != blank %}{{ settings.header_socials }}{% endif %}
+                    </div>
+                <div class="header-top-right">
+                    <!-- Header Links -->
+                    <div class="header-links">
+                        <div class="header-link">
+                            <a href="/pages/my-wishlist"><i class="icon icon-heart"></i><span>{{ 'general.theme.wishlist' | t }}</span></a>
+                        </div>
+                        {% include 'header-languages' %}
+                        {% include 'currency-picker' %}
+                        {% include 'header-login-form' %}
+                    </div>
+                    <!-- /Header Links -->
+                </div>
+            </div>
+        </div>
+        <!-- /Header Top Row -->
+        <div class="container">
+          	<div class="visible-xs">
+            <!-- Header Search -->
+                {% include 'header-search' %}
+            <!-- /Header Search -->
+          	</div>
+            <!-- Menu Toggle -->
+            <div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+            <!-- /Menu Toggle -->
+            <!-- Header Middle Row -->
+            <div class="header-middle-row">
+                <div class="header-middle-left">
+                    <div class="header-logo">
+                        {% include 'header-logo' %}
+                    </div>
+                </div>
+                <div class="header-middle-center hidden-xs">
+                    <!-- Header Search -->
+                    {% include 'header-search' %}
+                    <!-- /Header Search -->
+                </div>
+                <div class="header-middle-center">
+                    <div class="header-custom-text">
+                        <div>
+                            {% if settings.header_phone_1 != blank %}<span><i class="icon icon-close-envelope"></i> {{ settings.header_phone_1 }}</span>{% endif %}
+                            {% if settings.header_phone_2 != blank %}<span><i class="icon icon-phone"></i> {{ settings.header_phone_2 }}</span>{% endif %}
+                        </div>
+                        <div>{% if settings.header_address != blank %}{{ settings.header_address }}{% endif %}</div>
+                    </div>
+                </div>
+                <div class="header-middle-center visible-xlg">
+                    {% if settings.header_info != blank %}
+                        {{ settings.header_info }}
+                    {% endif %}
+                </div>
+                <div class="header-middle-right">
+                    <!-- Header Cart -->
+                    {% include 'header-cart' %}
+                    <!-- /Header Cart -->
+                </div>
+            </div>
+            <!-- /Header Middle Row -->
+        </div>
+        <div class="menu-wrapper">
+            <div class="container">
+                {% include 'mobile-nav' %}
+                {% include 'megamenu-nav' %}
+            </div>
+        </div>
+    </div>
+</header>

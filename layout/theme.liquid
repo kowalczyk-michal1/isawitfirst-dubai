@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head' %}
+    {% include 'buddha-megamenu-before' %}
+  {% include 'buddha-megamenu' %}
+  {{content_for_header}}
+    <script type="text/javascript">
+        var price_format="{{ shop.money_with_currency_format | strip }}";
+        window.shopCurrency = "{{ shop.currency }}";
+        window.supported_currencies = "{{ settings.supported_currencies }}";
+    </script>
+</head>
+<body class="page-{{ template }} {{ settings.main_bg }} {% if boxed %}boxed{% else %}fullwidth{% endif %}  {% if left_panel %}open-panel{% endif %} {% if settings.fly_to_cart %}fly_to_cart{% endif %} {% if settings.ajax_cart %}ajax_cart{% endif %}  {% if settings.home_page contains '3' and template == "index" %}no-rtl{% endif %} {% if rtl == 1 %}rtl{% endif %} {% if settings.rounded %}rounded{% endif %}{% if template == "product.isif" or template == "collection.isif" %}custom-prod{% endif %}">
+  {% include 'buddha-megamenu-wireframe' %}
+{% include 'body_loader' %}
+    {% if settings.home_page contains '3' and template == "index" %}
+        {% include 'home_3' %}
+    {% elsif page contains 3 %}
+        {% include 'home_3' %}
+    {% else %}
+        {% include 'tools_panel' %}
+        <div id="wrapper">
+            {% include 'left_panel' %}
+            <div class="page-wrapper">
+                {% include header %}
+                <main class="page-main">
+                    {% unless template == 'cart' and  cart.item_count == 0 %}{% unless template == '404' %}{% unless template == 'page.rtl' %}{% include 'breadcrumb' %}{% endunless %}{% endunless %}{% endunless %}
+                    {{content_for_layout}}
+                </main>
+                {% unless template == 'cart' and  cart.item_count == 0 %}{% unless template == '404' %}
+                        {% include footer %}
+                {% endunless %}{% endunless %}
+            </div>
+        </div>
+    {% endif %}
+    {% include 'before_body_end' %}
+  {% comment %}
+  {% include 'manish' %}
+  {% endcomment %}
+  
+ 
+  
+  <script>
+  $(document).ready(function(){
+    $('.customSignInPopup #customer_register_link').click(function(){
+$('.customRegisterPopup').show();
+$('.customSignInPopup').hide();
+});
+});
+  </script>
+  
+</body>
+</html>

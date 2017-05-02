@@ -1,0 +1,67 @@
+{% assign number_of_products = 7 %}
+{% assign number_of_products_to_fetch = number_of_products | plus: 1 %}
+
+{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+    {% assign found_a_collection = false %}
+    {% for c in product.collections %}
+        {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.all_products_count > 1 %}
+            {% assign found_a_collection = true %}
+            {% assign collection = c %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if collection and collection.products_count > 1 %}
+    <div class="block related-products-lotd lotd-padding" id="productsCarouselShow">
+        <div class="container">
+            <div class="title"><h2><span>/</span> {{ 'products.general.related_products_title' | t }} <span>/</span></h2></div>
+            <div class="carousel-arrows"></div>
+
+            <div class="products-grid products-carousel product-variant-5 carousel_2 products-related-default" style="width: 100%;" data-slick='{"responsive": [{
+               "breakpoint": 1401,
+               "settings": {
+                   "slidesToShow": 4
+               }
+               },{
+                   "breakpoint": 1201,
+                   "settings": {
+                      "slidesToShow": 4
+                   }
+               }, {
+                   "breakpoint": 993,
+                   "settings": {
+                      "slidesToShow": 4
+                   }
+               }, {
+                   "breakpoint": 769,
+                   "settings": {
+                      "slidesToShow": 4
+                   }
+               }, {
+                   "breakpoint": 667,
+                   "settings": {
+                      "slidesToShow": 4
+                   }
+                },{ "breakpoint": 481, "settings": { "slidesToShow": {{ settings.collections_products_per_row_mobile }} } }]}'>
+                {% assign current_product = product %}
+                {% assign current_product_found = false %}
+                {% for product in collection.products limit: number_of_products_to_fetch %}
+                    {% if product.handle == current_product.handle %}
+                        {% assign current_product_found = true %}
+                    {% else %}
+                        {% unless current_product_found == false and forloop.last %}
+                        {% include 'product-item-big-isif' image_size:'2048x2048', carousel:'yes' %}
+                        {% endunless %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+<script type="text/javascript">
+    $(function(){
+        productsCarousel_related($('.carousel_2.products-carousel'),1,4,1);
+    });
+
+
+</script>

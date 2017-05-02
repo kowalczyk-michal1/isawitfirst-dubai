@@ -1,0 +1,48 @@
+{% assign slider_enabled = true %}
+{% capture fullscreen %}slider_fullscreen{{ suff }}{% endcapture %}
+{% capture slider_home_show_dots %}slider_home_show_dots{{ suff }}{% endcapture %}
+{% capture slider_home_show_dots_previews %}slider_home_show_dots_previews{{ suff }}{% endcapture %}
+{% capture slider_dot_preview_width %}slider_dot_preview_width{{ suff }}{% endcapture %}
+{% capture slider_dot_preview_height %}slider_dot_preview_height{{ suff }}{% endcapture %}
+<!-- Main Slider -->
+<div class="block full-nopad small-margin fullwidth" style="margin-bottom:50px">
+    <div class="container">
+        <div class="mainSlider {% if settings[fullscreen] %}fullscreen{% endif %}" {% if settings[slider_home_show_dots_previews] %}data-thumb="true" data-thumb-width="{{ settings[slider_dot_preview_width] | default:230 }}" data-thumb-height="{{ settings[slider_dot_preview_height]  | default:100 }}{% endif %}">
+            <div class="sliderLoader"><div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></div>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for i in (1..6) %}
+                        {% capture slide %}slide_{{ i }}{{ suff }}{% endcapture %}
+                        {% capture slide_link %}slide_{{ i }}_link{{ suff }}{% endcapture %}
+                        {% capture slide_img %}slide_{{ i }}{{ suff }}.jpg{% endcapture %}
+                        {% capture slide_img_preview %}slide_preview_{{ i }}{{ suff }}.jpg{% endcapture %}
+                        {% capture slide_alt %}slide_{{ i }}_alt{{ suff }}{% endcapture %}
+                        {% capture slide_text %}slide_text_{{ i }}{{ suff }}{% endcapture %}
+                        {% if settings[slide] %}
+                            {% if settings[fullscreen] %}
+                                <div {% unless settings[slide_link] == '' %} onClick="location.href='{{ settings[slide_link] }}'" {% endunless %} class="swiper-slide {% if settings[slide_text] contains '.mp4' %}overlay{% endif %}" {% if settings[slider_home_show_dots_previews] %}data-thumb="{{ slide_img_preview | asset_img_url: 'master' }}"{% endif %} style="{% unless settings[slide_link] == '' %}cursor:pointer;{% endunless %}background-image: url('{{ slide_img | asset_img_url: 'master' }}')">
+                                    <div class="wrapper">
+                                        {{ settings[slide_text] }}
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div  {% unless settings[slide_link] == '' %} onClick="location.href='{{ settings[slide_link] }}'" style="cursor:pointer"{% endunless %} class="swiper-slide" {% if settings[slider_home_show_dots_previews] %}data-thumb="{{ slide_img_preview | asset_img_url: 'master' }}"{% endif %}>
+                                    <div class="wrapper">
+                                        <figure>{{ slide_img | asset_img_url: 'master' | img_tag: settings[slide_alt] }}</figure>
+                                        {{ settings[slide_text] }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- pagination -->
+                {% if settings[slider_home_show_dots] %}<div class="swiper-pagination"></div>{% endif %}
+                <!-- pagination thumbs -->
+                <div class="swiper-pagination-thumbs"><div class="thumbs-wrapper"><div class="thumbs"></div></div></div>
+            </div>
+        </div>
+        <!-- /Main Slider -->
+    </div>
+</div>

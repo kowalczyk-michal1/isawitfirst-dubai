@@ -1,0 +1,82 @@
+<header class="page-header {{ header_box }} variant-8 {{ settings.sticky }} {{ settings.sticky_color }} {{ settings.sticky_behavior }} {{ dark }} {{ settings.sticky_style }}">
+    <div class="navbar">
+        <!-- Header Top Row -->
+        <div class="header-top-row">
+            <div class="container">
+                <div class="header-top-left">
+                    <div class="header-custom-text">
+                        {% if settings.header_socials != blank %}{{ settings.header_socials }}{% endif %}
+                    </div>
+                </div>
+                <div class="header-top-right">
+                    <div class="header-custom-text">
+                        <div>
+                            {% if settings.header_phone_1 != blank %}<span><i class="icon icon-phone"></i> {{ settings.header_phone_1 }}</span>{% endif %}
+                            {% if settings.header_phone_2 != blank %}<span><i class="icon icon-phone"></i> {{ settings.header_phone_2 }}</span>{% endif %}
+                        </div>
+                        <div>{% if settings.header_address != blank %}{{ settings.header_address }}{% endif %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Header Top Row -->
+        <div class="container">
+            <!-- Menu Toggle -->
+            <div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+            <!-- /Menu Toggle -->
+            <!-- Header Middle Row -->
+            <div class="header-middle-row">
+                <div class="header-middle-left">
+                    <div class="header-logo">
+                        {% include 'header-logo' %}
+                    </div>
+                </div>
+                <div class="header-middle-center">
+                    <!-- Header Search -->
+                    {% include 'header-search' %}
+                    <!-- /Header Search -->
+                </div>
+                <div class="header-middle-right hidden-md">
+                    {% if settings.header_info != blank %}
+                        {{ settings.header_info }}
+                    {% endif %}
+                </div>
+            </div>
+            <!-- /Header Middle Row -->
+
+            <!-- Mobile Menu -->
+            {% include 'mobile-nav' %}
+            <!-- /Mobile Menu -->
+        </div>
+        <!-- Header Bottom Row -->
+        <div class="header-bottom-row">
+            <div class="container">
+                <div class="header-bottom-left">
+                        <a href="#" class="nav-department">{{ 'general.theme.departments' | t }}</a>
+                        <span class="header-custom-link hide-sticky">
+                             {% if settings.header_links != blank %}{{ settings.header_links }}{% endif %}
+                        </span>
+                </div>
+                <div class="header-bottom-right">
+                    <!-- Header Cart -->
+                    {% include 'header-cart' %}
+                    <!-- /Header Cart -->
+                    <!-- Header Links -->
+                    <div class="header-links">
+                        <div class="header-link">
+                            <a href="/pages/my-wishlist"><i class="icon icon-heart"></i><span>{{ 'general.theme.wishlist' | t }}</span></a>
+                        </div>
+                        {% include 'header-languages' %}
+                        {% include 'currency-picker' %}
+                        {% include 'header-login-form' %}
+                    </div>
+                    <!-- /Header Links -->
+                </div>
+                <!-- Mega Menu -->
+                {% include 'megamenu-nav' department:"department" %}
+                <!-- /Mega Menu -->
+            </div>
+        </div>
+        <!-- /Header Bottom Row -->
+    </div>
+</header>

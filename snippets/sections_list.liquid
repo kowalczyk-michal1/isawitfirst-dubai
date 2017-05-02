@@ -1,0 +1,6 @@
+{% for i in (1..6) %}
+  {% capture section %}home_{{ home_page }}_section_{{ i }}{% endcapture %}
+  {% if settings[section] != blank %}
+    {% include settings[section] %}
+  {% endif %}
+{% endfor %}

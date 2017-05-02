@@ -1,0 +1,7 @@
+{% if settings.logo_svg_yes %}
+    <a href="{{ shop.url }}" title="{{ shop.name }}">{{ settings.footer_logo_svg_code }}</a>
+{% else %}
+    <a href="{{ shop.url }}" title="{{ shop.name }}">
+        <img src="{{ 'footer_logo.png' | asset_url }}" alt='{{ shop.name }}' />
+    </a>
+{% endif %}

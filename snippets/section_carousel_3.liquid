@@ -1,0 +1,27 @@
+{% assign title=settings.products_carousel_title_3 %}
+{% assign collection_id=settings.products_carousel_collection_3 %}
+{% assign rows=settings.products_carousel_rows_3 %}
+{% assign slides_to_show=settings.products_carousel_slides_to_show_3 %}
+{% assign slides_to_scroll=settings.products_carousel_slides_to_scroll_3 %}
+<div class="block">
+    <div class="container">
+        <div class="title">
+            <h2>{% if title == '' %}
+                    {{ collections[collection_id].title | escape }}
+                {% else %}
+                    {{ title }}
+                {% endif %}</h2>
+            <div class="carousel-arrows"></div>
+        </div>
+        <div class="products-grid products-carousel three-in-row product-variant-5 carousel_3" data-slick='{"responsive": [{ "breakpoint": 481, "settings": { "slidesToShow": {{ settings.collections_products_per_row_mobile }} } }]}'>
+            {% for product in collections[collection_id].products %}
+                {% include 'product-item-big' image_size:'large', carousel:'yes' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        productsCarousel($('.carousel_3.products-carousel'),{{ rows }},{{ slides_to_show }},{{ slides_to_scroll }},5);
+    })
+</script>

@@ -1,0 +1,21 @@
+<div class="block fullwidth">
+    <div class="container">
+        <!-- Testimonial Single Slider -->
+        <div class="testimonial-single-slider">
+            {% for i in (1..4) %}
+            {% capture testimonial %}testimonial_{{ i }}{% endcapture %}
+            {% capture testimonial_img %}testimonial_{{ i }}.jpg{% endcapture %}
+            {% capture testimonial_text %}testimonial_text_{{ i }}{% endcapture %}
+            {% if settings[testimonial] %}
+            <div class="item">
+                <div class="text">
+                    <p>{{ settings[testimonial_text] }}</p>
+                </div>
+                <div class="author-photo">{{ testimonial_img | asset_img_url: 'small' | img_tag }}</div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- /Testimonial Single Slider -->
+    </div>
+</div>

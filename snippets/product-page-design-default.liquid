@@ -1,0 +1,268 @@
+{% assign right = settings.product_right_description_yes %}
+{% if product_image_size == '6' %}{% assign right = false %}{% endif %}
+{% case product_image_size %}
+  {% when '3' %}
+    {% assign column_1 = 'col-sm-5 col-md-3' %}
+    {% assign column_2 = 'col-sm-7 col-md-9' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-3 col-lg-3' %}
+        {% assign column_2 = 'col-sm-6 col-md-9 col-lg-6' %}
+    {% endif %}
+  {% when '4' %}
+    {% assign column_1 = 'col-sm-5 col-md-4' %}
+    {% assign column_2 = 'col-sm-7 col-md-8' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-6 col-lg-6' %}
+        {% assign column_2 = 'col-sm-6 col-md-6 col-lg-6' %}
+    {% endif %}
+  {% when '5' %}
+    {% assign column_1 = 'col-sm-5 col-md-5' %}
+    {% assign column_2 = 'col-sm-7 col-md-7' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-5 col-lg-5' %}
+        {% assign column_2 = 'col-sm-6 col-md-7 col-lg-4' %}
+    {% endif %}
+  {% when '6' %}
+    {% assign column_1 = 'col-sm-5 col-md-6' %}
+    {% assign column_2 = 'col-sm-7 col-md-6' %}
+    {% if right %}
+        {% assign column_1 = 'col-sm-6 col-md-6  col-lg-6' %}
+        {% assign column_2 = 'col-sm-6 col-md-6  col-lg-3' %}
+    {% endif %}
+{% endcase  %}
+{% assign column_3 = 'col-md-12 col-lg-3 hidden-quickview' %}
+<div class="block product-block">
+    <div class="container">
+        <div class="row">
+            <div class="{{ column_1 }} custom-setting">
+                <!-- Product Gallery -->
+                <div class="main-image">
+                    {% assign featured_image = product.featured_image %}
+                    <img class='zoom' id='ex1' src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}"  class="zoom" data-zoom-image="{{ featured_image | img_url: '1024x1024' }}">
+                    <div class="dblclick-text"><span>Double click for enlarge</span></div>
+                    {% if product.description contains '[video]' %} <a href="{{ product.description | split:'[video]' | last | split :'[/video]' | first }}" class="video-link"><i class="icon icon-film"></i></a>{% endif %}
+                    <a href="{{ featured_image | img_url: '1024x1024' }}" class="zoom-link{% if product.images.size < 2 %} disable-gallery{% endif %}"><i class="icon icon-zoomin"></i></a>
+                </div>
+                {% if product.images.size > 1 %}
+                    {% for image in product.images %}
+                        <!--gallery buffer-->
+                        <img alt="" src="{{ image.src | img_url: '1024x1024' }}" style="display: none" />
+                    {% endfor %}
+                    <div class="product-previews-wrapper">
+                        <div class="product-previews-carousel" id="previewsGallery">
+                            {% for image in product.images %}
+                                <a href="#" data-image="{{ image.src | img_url: '1024x1024' }}" data-zoom-image="{{ image.src | img_url: '1024x1024' }}"><img src="{{ image.src | img_url: 'medium' }}" alt="" /></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- /Product Gallery -->
+            </div>
+            <div class="{{ column_2 }}">
+                <div class="custom-set-gallery" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    {% assign variant = product.selected_or_first_available_variant %}
+                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                    <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+                    <div class="product-info-block classic">
+                       <!--<div class="product-info-top">
+                            {% if settings.product_sku and product.selected_or_first_available_variant.sku.size > 0 %}
+                            <div class="product-sku">{{ 'general.theme.sku' | t }}: <span>{{ product.selected_or_first_available_variant.sku }}</span></div>
+                            {% endif %}
+                            {% if settings.product_rating %}
+                                <div class="rating">
+                                    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                                </div>
+                            {% endif %}
+                        </div>-->
+                        <div class="product-name-wrapper">
+                            <h1 itemprop="name" class="product-name">{{ product.title }}</h1>
+                            <div class="product-labels">
+                                {% if on_sale  and settings.show_label_sale %}<span class="product-label sale">{{ 'products.product.sale' | t }}</span>{% endif %}
+                                {% assign new = 0 %}
+                                {% for tag in product.tags %}{% if tag == 'new' %}{% assign new = 1 %}{% endif %} {% endfor %}
+                                {% if new == 1  and settings.show_label_new %}<span class="product-label new">{{ 'general.theme.new' | t }}</span>{% endif %}
+                            </div>
+                        </div>
+                      <form action="/cart/add" method="post" enctype="multipart/form-data">
+                      <div class="price" itemprop="price" content="{{ product.price | money_without_currency }}">
+                                                {% capture price %}{{ product.price | money }}{% endcapture %}
+                                                {% if on_sale %}
+                                                    <span class="old-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+                                                {% endif %}
+                                                <span class="special-price"> {{ product.selected_or_first_available_variant.price | money }}</span>
+                                            </div>
+                      
+                      <div class="short_description">
+                       {% if product.description contains '[short_description]' %}
+                            <div class="product-description">
+                                <p>{{ product.description  | split:"|config|" | first  | split:"[short_description]" | last | split:"[/short_description]" | first }}</p>
+                            </div>
+                        {% endif %}
+                      </div>
+                      
+                       
+                            {% include 'product-options-form' design:'default' %}
+                            {% if product.available %}
+                                <div class="product-actions">
+                                    <div class="row">
+                                        {% comment %}  <div class="col-md-6">
+                                            <div class="product-meta">
+                                                <span>{% include 'wishlist-product' %}</span>
+                                            </div>
+                                            {% if settings.social_sharing_products %}
+                                                <div class="social">
+                                                    <div class="share-button toLeft">
+                                                       <span class="toggle">{{ 'general.theme.share' | t }}</span>
+                                                       {% include 'social-sharing-product-item' product_url:product.url, product_title:product.title %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>{% endcomment %}
+                                        <div class="col-md-12 custom-cart">
+
+                                            
+                                            <div class="actions">
+                                                {% assign link_to = false %}
+                                                {% if product.description contains '[link_to]' %}
+                                                    {% assign link_to = true %}
+                                                    {% assign link_to_href = product.description | split:'[link_to]' | last | split :'[/link_to]' | first %}
+                                                {% endif %}
+                                                {% if link_to %}
+                                                    <a  class="btn btn-lg " href="{{ link_to_href }}" target="_blank"><span>{{ 'products.product.add_to_cart' | t }}</span></a>
+                                                {% else %}
+                                                    <button type="submit" class="btn btn-lg add_to_cart_product_page"><span>buy me now</span></button>
+                                                {% endif %}
+                                                <a href="{{ product.url }}" target="_parent" class="btn btn-lg product-details" title="More Info"><i class="icon icon-external-link"></i></a>
+                                            </div>
+                                         <div class="col-sm-12 col-md-12 cust-heart-section"> 
+                                          
+                                       <img src=" {{ 'heart.png' | asset_img_url: '20x' }}" >   
+                                     
+                                      {{ 'add to my wishlist' | link_to: 'https://isawitfirst-dubai.myshopify.com/pages/my-wishlist' }}
+                                          </div>
+                                          
+                                          
+                                          {% include 'cust-delivery-banner' %}
+                                          {% include 'cust-size-guide' %}
+                                          
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif  %}
+                        </form>
+                      
+                      
+                      
+                        {% comment %}
+                        <h3 itemprop="brand">{{ product.vendor }}</h3>
+                        {% endcomment %}
+                        {% if settings.product_availability %}
+                          {% comment %}  <div class="product-availability">
+
+                                {% assign total=0 %}
+                                {%for variant in product.variants %}
+                                    {% capture i %}{{ total | plus:variant.inventory_quantity }}{%endcapture%}
+                                    {% assign total = i %}
+                                {%endfor%}
+
+                                {% capture text_item %}{{ 'general.theme.item' | t }}{% endcapture %}
+                                {% capture text_items %}{{ 'general.theme.items' | t }}{% endcapture %}
+                                {{ 'general.theme.availability' | t }}: <span>{% if sold_out %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'general.theme.in_stock' | t }}{% endif %} {% if settings.product_inventory_count %} {{ total }} {{ total  | pluralize: text_item, text_items }} {% endif %}</span>
+                            </div>{% endcomment %}
+                        {% endif %}
+                        {% if product.description contains '[short_description]' %}
+                            <!--<div class="product-description">
+                                <p>{{ product.description  | split:"|config|" | first  | split:"[short_description]" | last | split:"[/short_description]" | first }}</p>
+                            </div>-->
+                        {% endif %}
+                        {% if product.available %}
+                            {% if product.description contains '[countdown]' %}
+                                {% assign countdown=product.description|split:'[countdown]' %}
+                                {% assign countdown=countdown[1]|split:'[/countdown]' %}
+                                {% assign countdown=countdown[0] %}
+                                {% if on_sale %}
+                                    <div class="countdown-circle">
+                                        <div class="countdown-wrapper">
+                                            <div class="countdown" data-countdown="{{ countdown }}"></div>
+                                            <div class="countdown-text">
+                                                {% assign percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by:product.compare_at_price | times: 100 | divided_by: 100 | floor  %}
+                                                <div class="text1">{{ 'general.theme.discount' | t :percent:percent }}</div>
+                                                <div class="text2">{{ 'general.theme.have_time_to_buy' | t }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endif  %}
+                      {% comment %}  <form action="/cart/add" method="post" enctype="multipart/form-data">
+                           
+                            {% if product.available %}
+                              <div class="product-actions">
+                                    <div class="row">
+                                       {% comment %} <div class="col-md-6">
+                                            <div class="product-meta">
+                                                <span>{% include 'wishlist-product' %}</span>
+                                            </div>
+                                            {% if settings.social_sharing_products %}
+                                                <div class="social">
+                                                    <div class="share-button toLeft">
+                                                        <span class="toggle">{{ 'general.theme.share' | t }}</span>
+                                                       {% include 'social-sharing-product-item' product_url:product.url, product_title:product.title %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>{% endcomment %}
+                                        <div class="col-md-12 custom-cart">
+
+                                          <div class="price" itemprop="price" content="{{ product.price | money_without_currency }}">
+                                                {% capture price %}{{ product.price | money }}{% endcapture %}
+                                                {% if on_sale %}
+                                                    <span class="old-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+                                                {% endif %}
+                                                <span class="special-price"> {{ product.selected_or_first_available_variant.price | money }}</span>
+                                            </div>
+                                            <div class="actions">
+                                                {% assign link_to = false %}
+                                                {% if product.description contains '[link_to]' %}
+                                                    {% assign link_to = true %}
+                                                    {% assign link_to_href = product.description | split:'[link_to]' | last | split :'[/link_to]' | first %}
+                                                {% endif %}
+                                                {% if link_to %}
+                                                    <a  class="btn btn-lg " href="{{ link_to_href }}" target="_blank"><i class="icon icon-cart"></i><span>{{ 'products.product.add_to_cart' | t }}</span></a>
+                                                {% else %}
+                                                    <button type="submit" class="btn btn-lg add_to_cart_product_page"><span>buy me now</span></button>
+                                                {% endif %}
+                                                <a href="{{ product.url }}" target="_parent" class="btn btn-lg product-details" title="More Info"><i class="icon icon-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                      {{ 'heart.png' | asset_img_url: '30x' }}
+                                      {{ 'add to my wishlist' | link_to: 'https://isawitfirst-dubai.myshopify.com/pages/my-wishlist' }}
+                                  {% include 'cust-size-guide' %}
+                                  {% include 'cust-delivery-banner' %}
+                                      
+                                      
+                                    </div>
+                                </div>
+                            {% endif  %}
+                        </form> {% endcomment %}
+                    </div>
+                </div>
+              <!-- start edit hj-->
+              {% comment %}{% include 'product-tabs-default' %}{% endcomment %}
+              <!-- end start edit hj-->
+              
+              
+            </div>
+			{% comment %}
+            {% if right %}
+                <div class="{{ column_3 }}">
+                    {{ settings.product_right_description_content }}
+                </div>
+            {% endif %}
+			{% endcomment %}
+        </div>
+    </div>
+</div>
+
+{% include 'product-tabs' %}

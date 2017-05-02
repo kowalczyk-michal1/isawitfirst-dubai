@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Sensations and Qualities';
+    src: url(Sensations_and_Qualities.ttf) format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Carolina Hills';
+    src: url(Carolina_Hills.ttf) format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Antro Vectra';
+    src: url(Antro_Vectra.otf) format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Top Secret';
+    src: url(Top_Secret.ttf) format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Queen of Camelot';
+    src: url(Queen_of_Camelot.otf) format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Captain Redemption';
+    src: url(Captain_Redemption.ttf) format("truetype");
+    font-weight: normal;
+}
+
+
+
+
+
+
+/* ADDING CUSTOM FONTS TO MENU ITEMS */
+
+{% assign menuItems = "menu_font_1|menu_font_2|menu_font_3|menu_font_4|menu_font_5|menu_font_6|menu_font_7" | split: "|" %}
+
+{% for item in menuItems %}
+    {% if settings.[item] != '' %}
+
+
+    {% endif %}
+{% endfor %}
+

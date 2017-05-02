@@ -1,0 +1,23 @@
+<!--<div class="header-link">
+    <div class="header-link header-select dropdown-link header-language customlangShift">
+      <a href="#"><img src="{{ 'gb-flag.jpg' | asset_url }}" alt /><span>(£)</span></a>
+        <ul class="dropdown-container">
+            <li><a href="/"><img src="{{ 'usa.png' | asset_url }}" alt />English</a></li>
+
+            {% assign flagItems = "1|2" | split: "|" %}
+
+            {% for item in flagItems %}
+                {% assign language_title = 'language_' | append:forloop.index | append:"_title" %}
+
+                {% if settings.[language_title] != '' %}
+                    {% assign language_href = 'language_' | append:forloop.index | append:"_href" %}
+                    {% assign language_image = 'language_' | append:forloop.index | append:"_image.png" %}
+
+                    <img src="{{ language_image | asset_url }}" class="multilanguages-redirect-flag"  alt='{{ language_title }}' />
+
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>-->

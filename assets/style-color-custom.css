@@ -1,0 +1,1632 @@
+/* Replace All Defult(pink) color With Custom Color */
+/* ----------------------------------- */
+/*        Replace Default Color        */
+/* ----------------------------------- */
+/* BOOTSTRAP VARIABLES */
+/* SEIKO VARIABLES */
+/* Input */
+/* Navbar */
+/* Sidebar Colors */
+/* Product */
+/* Product variant 1 */
+/* Button */
+p a:not(.btn),
+.contact-list a,
+.product-meta a {
+  color: custom;
+}
+.contact-list a,
+.product-meta a {
+  color: custom;
+}
+.contact-list a:hover,
+.product-meta a:hover {
+  color: #333745;
+}
+.btn-link {
+  color: custom;
+}
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover {
+  border-color: custom;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: custom;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  color: custom;
+}
+.nav-pills > .active > a > .badge,
+a.list-group-item.active > .badge {
+  color: custom;
+}
+.header-link > a:hover i.icon {
+  color: custom;
+}
+.header-link > a:hover span {
+  color: custom;
+}
+.header-link.header-cart > a .badge {
+  background-color: custom;
+  color: #ffffff;
+}
+.header-logo svg {
+  fill: custom;
+}
+@media screen and (min-width: 992px) {
+  .nav > li.active > a:not(.menu-btn-special) {
+    color: custom;
+  }
+}
+/* Mobile header */
+@media screen and (max-width: 991px) {
+  .navbar:after {
+    background-color: custom;
+  }
+  .header-link.header-cart > a:hover i.icon {
+    color: custom;
+  }
+  .page-header.sticky.is-sticky .navbar .header-logo svg {
+    fill: custom;
+  }
+}
+@media screen and (min-width: 992px) {
+  .nav-department {
+    color: #fff !important;
+  }
+}
+.header-custom-text i.icon {
+  color: custom;
+}
+.menu-btn-special,
+.header-custom-link .menu-btn-special,
+.nav > li > a.menu-btn-special,
+.megamenu.department .nav > li > a.menu-btn-special {
+  background-color: custom;
+}
+.menu-btn-special:hover,
+.header-custom-link .menu-btn-special:hover,
+.nav > li > a.menu-btn-special:hover,
+.megamenu.department .nav > li > a.menu-btn-special:hover {
+  background-color: custom;
+}
+.page-header .box-left-icon:hover .box-text {
+  color: custom;
+}
+.page-header .box-left-icon:hover .box-icon i.icon {
+  background: custom;
+}
+@media screen and (max-width: 991px) {
+  .header-custom-text i.icon,
+  .header-top-row .header-custom-text i.icon {
+    color: custom;
+  }
+}
+.footer-logo svg {
+  fill: custom;
+}
+.footer-social a,
+.icons-social a {
+  color: custom;
+}
+.footer-social a:hover i.icon.icon-circled,
+.icons-social a:hover i.icon.icon-circled {
+  background-color: custom;
+}
+.footer-social i.icon.icon-circled,
+.icons-social i.icon.icon-circled {
+  border-color: custom;
+}
+footer.variant3 .after-footer {
+  background: custom;
+}
+.footer-nav ul li a:hover {
+  color: custom;
+}
+.cube-folding span::before {
+  background-color: custom;
+}
+.cube-folding .leaf2::before {
+  background-color: custom;
+  opacity: 0.75;
+}
+.cube-folding .leaf3::before {
+  background-color: custom;
+  opacity: 0.9;
+}
+.cube-folding .leaf4::before {
+  background-color: custom;
+  opacity: 0.6;
+}
+.sidebar-wrapper .sidebar-nav li a:before {
+  border-right-color: custom;
+}
+.sidebar-wrapper .sidebar-top a.slidepanel-toggle:hover {
+  color: custom;
+}
+.dropdown-link .dropdown-container {
+  border-bottom-color: custom;
+}
+.header-language .dropdown-container li a:hover {
+  color: custom;
+}
+.header-currency .dropdown-container li a:hover {
+  color: custom;
+}
+@media screen and (max-width: 991px) {
+  .header-language .dropdown-container li a:hover {
+    color: custom;
+  }
+  .header-currency .dropdown-container li a:hover {
+    color: custom;
+  }
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border-top-color: custom;
+  color: custom;
+}
+.hoverslide span:before,
+.hoverslide a:before {
+  background-color: custom;
+}
+@media screen and (max-width: 991px) {
+  .mobilemenu-header {
+    background: custom;
+  }
+  .navbar ul.nav li:hover > a,
+  .navbar ul.nav li.submenu-open > a {
+    background-color: #f8f8f8;
+    color: custom;
+  }
+  .navbar ul.nav li .arrow:hover:before {
+    color: custom;
+  }
+}
+.header-cart.variant-1 .dropdown-container .block-content .subtotal .price-container {
+  color: custom;
+}
+.header-cart.variant-1 .dropdown-container .block-content .action.viewcart:not(.btn-alt) {
+  border-color: custom;
+}
+.header-cart.variant-1 .dropdown-container .block-content .action.viewcart,
+.header-cart.variant-1 .dropdown-container .block-content .action.viewcart.focus,
+.header-cart.variant-1 .dropdown-container .block-content .action.viewcart:focus,
+.header-cart.variant-1 .dropdown-container .block-content .action.viewcart:active {
+  background-color: custom;
+  border-color: custom;
+}
+.header-cart.variant-1 .dropdown-containfbadgeer .block-content .action.viewcart:hover {
+  color: custom;
+  background-color: inherit;
+  border-color: custom;
+}
+.header-cart.variant-1 .dropdown-container .product-item-name a:hover {
+  color: custom;
+}
+.header-cart.variant-1 .dropdown-container .product-item-pricing .price-container {
+  color: custom;
+}
+.header-cart.variant-1 .dropdown-container .product.actions a:hover,
+.header-cart.variant-1 .dropdown-container .product.actions a:hover:after {
+  color: custom;
+}
+@media screen and (max-width: 991px) {
+  .header-cart.variant-1 .dropdown-container .block-title {
+    background: custom;
+  }
+}
+.header-cart.variant-2 .dropdown-container .block-content .btn-alt {
+  color: custom;
+}
+.header-cart.variant-2 .dropdown-container .block-content .btn-alt:hover {
+  background-color: custom;
+  border-color: custom;
+  color: #ffffff;
+}
+.header-cart.variant-2 .dropdown-container .product-item-name a:hover {
+  color: custom;
+}
+.header-cart.variant-2 .dropdown-container .product-item-pricing .price-container {
+  color: custom;
+}
+.header-cart.variant-2 .dropdown-container .product.actions a:hover {
+  color: custom;
+}
+@media screen and (min-width: 992px) {
+  .header-cart.variant-2.dropdown-link .minicart-content-wrapper:after,
+  .header-cart.variant-2.dropdown-link #minicart-content-wrapper:after {
+    background: custom;
+  }
+}
+.touch .header-cart.variant-2 .dropdown-container .btn-minicart-close:hover {
+  color: custom;
+}
+a.readmore {
+  color: custom;
+}
+.custom-color {
+  color: custom;
+}
+.text-lg p:first-child:first-letter {
+  color: custom;
+}
+.marker {
+  background: custom;
+}
+ul.marker-list li a:hover {
+  color: custom;
+}
+ul.marker-list li a:hover:before {
+  background-color: custom;
+}
+ul.simple-list li a {
+  color: custom;
+}
+ul.simple-list i.icon {
+  color: custom;
+}
+ul.marker-simple-list li a {
+  color: custom;
+}
+ul.marker-simple-list li:before {
+  color: custom;
+}
+.blockquote {
+  border-left-color: custom;
+}
+.info-block:after,
+.info-block:before {
+  border-left-color: custom;
+}
+.info-block p:first-child:first-letter {
+  background-color: custom;
+}
+ul.social-list-simple li a:hover {
+  color: custom;
+}
+ul.tags li span.value span:before,
+ul.tags li span.value a:before {
+  background-color: custom;
+}
+ul.tags li.active span.value span {
+  background: custom;
+}
+ul.tags li.active span.clear {
+  color: custom;
+}
+.product-action-btn:hover {
+  background-color: custom;
+}
+.product-item.large .product-item-actions .actions-secondary a:hover {
+  background-color: custom;
+}
+.product-item-rating {
+  color: custom;
+}
+.product-item-label.label-sale {
+  background-color: custom;
+}
+.price-box .price,
+.price-box .special-price {
+  color: custom;
+}
+@media screen and (max-width: 991px) {
+  .products-grid.product-variant-1 .product-item.large .product-item-actions .actions-secondary a:hover {
+    color: custom;
+  }
+}
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:hover {
+  background-color: custom;
+}
+@media screen and (min-width: 768px) {
+  .products-grid.product-variant-2 .product-item.large .product-item-inside:hover:after,
+  .products-grid.product-variant-2 .product-item.large.hover .product-item-inside:after {
+    background-color: custom;
+  }
+}
+@media screen and (max-width: 991px) {
+  .products-grid.product-variant-2 .product-item.large .product-item-photo .product-item-actions .actions-secondary a:hover,
+  .products-grid.product-variant-2 .product-item.large .product-item-photo .product-item-actions .actions-secondary button:hover {
+    color: custom;
+  }
+}
+@media screen and (max-width: 991px) {
+  .products-grid.product-variant-3 .product-item.large .product-item-actions .actions-secondary a:hover {
+    color: custom;
+  }
+}
+.product-variant-4 .product-item.large .product-item-name a:hover {
+  color: custom;
+}
+@media screen and (max-width: 991px) {
+  .product-variant-4 .product-item.large .product-item-actions .actions-secondary a:hover {
+    color: custom;
+  }
+}
+.product-item.small .price-box {
+  color: custom;
+}
+.product-small-list.variant2 .product-item.small .product-item-not-available span {
+  color: custom;
+}
+.product-small-list.variant2 .product-item.small .price-box .price,
+.product-small-list.variant2 .product-item.small .price-box .special-price {
+  color: custom;
+}
+.product-small-list.variant2 .product-item.small .product-item-actions .btn {
+  color: custom;
+}
+.product-small-list.variant2 .product-item.small .product-item-actions .btn.active {
+  color: custom;
+}
+.color-swatch li.active {
+  border-color: custom;
+}
+@media screen and (min-width: 992px) {
+  .products-listview .color-swatch li.active {
+    border-color: custom;
+  }
+}
+.products-listview.product-variant-1 .product-item.large .product-item-actions .actions-secondary a:hover,
+.products-listview.product-variant-2 .product-item.large .product-item-actions .actions-secondary a:hover,
+.products-listview.product-variant-3 .product-item.large .product-item-actions .actions-secondary a:hover,
+.products-listview.product-variant-4 .product-item.large .product-item-actions .actions-secondary a:hover {
+  color: custom;
+}
+@media screen and (min-width: 992px) {
+  .products-listview.product-variant-1 .product-item.large .product-item-label.label-sale,
+  .products-listview.product-variant-2 .product-item.large .product-item-label.label-sale,
+  .products-listview.product-variant-3 .product-item.large .product-item-label.label-sale,
+  .products-listview.product-variant-4 .product-item.large .product-item-label.label-sale {
+    background-color: custom;
+  }
+}
+.product-item.large .product-item-actions .actions-secondary a.wishlist.active {
+  color: custom;
+}
+.product-item.large .product-item-actions .actions-secondary a.wishlist.active:hover {
+  color: #fff;
+}
+.btn,
+.btn-primary,
+button.action {
+  border-color: custom;
+}
+.btn,
+.btn-primary,
+button.action,
+.btn.focus,
+.btn-primary.focus,
+button.action.focus,
+.btn:focus,
+.btn-primary:focus,
+button.action:focus,
+.btn:active,
+.btn-primary:active,
+button.action:active {
+  background-color: custom;
+  color: #ffffff;
+  border-color: custom;
+}
+.btn:hover,
+.btn-primary:hover,
+button.action:hover {
+  background-color: transparent;
+  color: custom;
+  border-color: custom;
+}
+.btn.btn-invert,
+.btn-primary.btn-invert,
+button.action.btn-invert {
+  background-color: transparent;
+  color: custom;
+}
+.btn.btn-invert:active,
+.btn-primary.btn-invert:active,
+button.action.btn-invert:active,
+.btn.btn-invert.focus,
+.btn-primary.btn-invert.focus,
+button.action.btn-invert.focus,
+.btn.btn-invert:focus,
+.btn-primary.btn-invert:focus,
+button.action.btn-invert:focus {
+  background-color: transparent;
+  color: custom;
+}
+.btn.btn-invert:hover,
+.btn-primary.btn-invert:hover,
+button.action.btn-invert:hover {
+  background-color: custom;
+  color: #ffffff;
+}
+.btn-alt:not(.back-to-top),
+.btn-alt:not(.back-to-top).focus,
+.btn-alt:not(.back-to-top):focus,
+.btn-alt:not(.back-to-top):active {
+  background-color: #333745 !important;
+  border-color: #333745 !important;
+  color: #ffffff !important;
+}
+.btn-alt:not(.back-to-top):hover {
+  background-color: transparent !important;
+  color: #333745 !important;
+  border-color: #333745 !important;
+}
+.btn-alt:not(.back-to-top).btn-invert,
+.btn-alt:not(.back-to-top).btn-invert:active,
+.btn-alt:not(.back-to-top).btn-invert.focus,
+.btn-alt:not(.back-to-top).btn-invert:focus {
+  background-color: transparent !important;
+  color: #333745 !important;
+}
+.btn-alt:not(.back-to-top).btn-invert:hover {
+  background-color: #333745 !important;
+  color: #ffffff !important;
+}
+.blog-carousel .blog-item-links a:not(.readmore) {
+  color: custom;
+}
+.testimonial-single-slider .slick-prev:hover:before,
+.testimonial-single-slider .slick-next:hover:before {
+  color: custom;
+}
+.required-text {
+  color: custom;
+}
+.form-card .back {
+  color: custom;
+}
+.form-card .back a {
+  color: custom;
+}
+.range-slider-range::-webkit-slider-thumb {
+  background: custom;
+}
+.range-slider-range::-moz-range-thumb {
+  background: custom;
+}
+.range-slider-value {
+  color: custom;
+}
+.mainSlider .swiper-container .caption {
+  background: custom;
+}
+.mainSlider .swiper-container .caption .text1 {
+  color: custom;
+}
+.mainSlider .swiper-container .caption .cool-btn:hover {
+  color: custom !important;
+}
+.mainSlider .swiper-container .text2-1 {
+  color: custom;
+}
+.mainSlider .swiper-container .text2-4 {
+  color: custom;
+}
+.mainSlider .swiper-container .text2-5 {
+  color: custom;
+}
+.mainSlider .swiper-container .text3-6 {
+  background-color: custom;
+}
+.mainSlider .swiper-container .text3-6:hover {
+  color: custom;
+}
+.mainSlider .swiper-container .text4-1 {
+  color: custom;
+}
+.mainSlider .swiper-container .text4-4 {
+  background-color: custom;
+}
+.mainSlider .swiper-container .text4-4:hover {
+  color: custom;
+}
+.carousel-inside .carousel-control:hover {
+  background: custom;
+}
+.countdown-box .countdown > span {
+  color: custom;
+}
+.countdown-circle .countdown-text .text1 {
+  color: custom;
+}
+.countdown-circle .countdown > span {
+  border-color: custom;
+  color: custom;
+}
+.banner.style-1 .banner-btn > span {
+  background-color: custom;
+}
+.banner.style-1 .banner-btn:hover > span {
+  color: custom;
+}
+.banner.style-3 .banner-btn > span {
+  background-color: custom;
+}
+.banner.style-3 .banner-btn:hover > span {
+  color: custom;
+}
+.banner.style-5 .banner-btn > span {
+  color: custom;
+}
+.banner.style-7 .banner-btn > span {
+  background-color: custom;
+}
+.banner.style-7 .banner-btn:hover > span {
+  color: custom;
+}
+.banner.style-9 .text-1 > span {
+  border-left-color: custom;
+}
+.banner.style-9 .text-1.text-hoverslide span.hoverbg {
+  background-color: custom;
+}
+/* banner style 10 */
+.banner.style-10 .text-1 {
+  color: custom;
+}
+.banner.style-10 .banner-btn > span {
+  background-color: custom;
+}
+.banner.style-10 .banner-btn.text-hoverslide:hover > span {
+  color: custom;
+}
+/* banner style 2 */
+.banner.style-2 .text-1 {
+  margin-top: -0.2em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.75em;
+  line-height: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.banner.style-2 .text-2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.35em;
+  line-height: 1em;
+  color: #ffffff;
+  margin-bottom: 0.6em;
+  margin-left: 3em;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.banner.style-2 .text-3,
+.banner.style-2 .text-4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.37em;
+  line-height: 1em;
+  color: #ffffff;
+  margin-bottom: 0.2em;
+  margin-left: 1.5em;
+  font-weight: 500;
+}
+.banner.style-2 .text-4 {
+  margin-top: 0.2em;
+  margin-left: 3em;
+}
+.banner.style-2 .horc .text-2 {
+  margin-left: 0;
+}
+.banner.style-2 .horc .text-3 {
+  margin-left: 0;
+}
+.banner.style-2 .horc .text-4 {
+  margin-left: 0;
+}
+.banner.style-2 .horc .banner-btn {
+  margin: 0 auto;
+}
+.banner.style-2 .horr .text-2 {
+  margin-left: 0;
+  margin-right: 3em;
+}
+.banner.style-2 .horr .text-3 {
+  margin-left: 0;
+  margin-right: 1.5em;
+}
+.banner.style-2 .horr .text-4 {
+  margin-left: 0;
+  margin-right: 3em;
+}
+.banner.style-2 .horr .banner-btn {
+  margin-left: 0;
+  margin-right: 0.8em;
+}
+.banner.style-2 .banner-btn {
+  color: #000000;
+  text-decoration: none;
+  margin-left: 0.8em;
+  -webkit-box-shadow: -4px -5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: -4px -5px 5px rgba(0, 0, 0, 0.2);
+}
+.banner.style-2 .banner-btn > span {
+  padding: 0 0.3em;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.35em;
+  line-height: 1.6em;
+  font-weight: 700;
+  height: auto;
+  background-color: #ffffff;
+  text-transform: none;
+}
+.banner.style-2 .banner-btn span.hoverbg {
+  background-color: #000000;
+}
+.banner.style-2 .banner-btn:hover > span {
+  color: #ffffff;
+}
+/* banner style 11 */
+.banner.style-11 .banner-caption {
+  left: 16%;
+  right: 16%;
+  bottom: 14%;
+}
+.banner.style-11 .text-1 {
+  margin-bottom: 0.3em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.62em;
+  font-weight: 700;
+  line-height: 1em;
+  color: #ffffff;
+}
+.banner.style-11 .text-2 {
+  margin-bottom: 0.9em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.25em;
+  line-height: 1.1em;
+  font-weight: 700;
+  color: custom;
+}
+.banner.style-11 .banner-btn-wrap,
+.banner.style-11 .banner-btn {
+  width: 100%;
+}
+.banner.style-11 .banner-btn {
+  color: #ffffff;
+  text-decoration: none;
+}
+.banner.style-11 .banner-btn > span {
+  width: 100%;
+  padding: 0 1em;
+  font-size: 0.24em;
+  line-height: 2.3em;
+  font-weight: 400;
+  height: auto;
+  background-color: custom;
+}
+.banner.style-11 .banner-btn span.hoverbg {
+  background-color: #ffffff;
+}
+.banner.style-11 .banner-btn:hover > span {
+  color: custom;
+}
+.banner.style-12 .banner-btn {
+  color: custom;
+}
+.banner.style-13 .text-2 {
+  color: custom;
+}
+.banner.style-14 .banner-btn > span {
+  background-color: custom;
+}
+.banner.style-14 .banner-btn:hover > span {
+  color: custom;
+}
+.banner.style-15 .banner-btn {
+  color: custom;
+}
+.banner.style-16 .text-1 {
+  color: custom;
+}
+.category-slider .item .text-style-1,
+.category-slider-item .text-style-1 {
+  color: custom;
+}
+.category-block .category-title {
+  color: custom;
+}
+.category-slider-item .banner-btn > span {
+  background-color: custom;
+}
+.category-slider-item .banner-btn:hover > span {
+  color: custom;
+}
+.box-icon i.icon {
+  border-color: custom;
+}
+.box .box-icon i.icon {
+  background-color: custom;
+}
+.box:hover .box-icon i.icon {
+  color: custom;
+  background-color: #ffffff;
+}
+.box-left-icon .box-icon i.icon {
+  color: custom;
+}
+.box-left-icon:hover .box-icon i.icon {
+  background-color: custom;
+  color: #ffffff;
+}
+.box-left-icon-bg .box-text {
+  color: custom;
+}
+.box-left-icon-bg:hover .box-icon i.icon {
+  color: custom;
+}
+@media screen and (max-width: 991px) {
+  .collapsed-mobile .toggle-arrow:hover:before {
+    color: custom;
+  }
+}
+#toolsPanel .tools-btn {
+  background: custom;
+}
+.productStack .productstack-content {
+  border-top-color: custom;
+}
+.productStack .toggleStack {
+  background: custom;
+}
+.productStack .total-cart .count,
+.productStack .total-cart .price {
+  color: custom;
+}
+.productStack .products-list .item-qty {
+  background-color: custom;
+}
+.productStack .products-list .actions .action {
+  color: custom;
+}
+.productStack .products-list .actions .action:hover {
+  background: custom;
+}
+.modal-header .close:hover {
+  color: custom;
+}
+.breadcrumbs li a:hover {
+  color: custom;
+}
+.person .person-name a:hover {
+  color: custom;
+}
+.person .person-links a:hover {
+  color: custom;
+}
+h2.blog-title a:hover {
+  color: custom;
+}
+.blog-meta a {
+  color: custom;
+}
+.blog-comments .comment.reply a.replylink {
+  color: custom;
+}
+.sideblock ul.simple-list li a:hover {
+  color: custom;
+}
+.cart-table .table-row .name,
+.cart-table .table-row name a,
+.cart-table .table-row .price,
+.cart-table .table-row .subtotal {
+  color: custom;
+}
+.cart-table .table-row name a:hover {
+  color: custom;
+}
+.cart-table .table-row .qty input[type="text"] {
+  color: custom;
+}
+.cart-table .table-row .remove a:hover {
+  color: custom;
+}
+.cart-table .table-row .continue a:hover {
+  color: custom;
+}
+.total-price .total {
+  color: custom;
+}
+.cart-action a {
+  color: custom;
+}
+.gallery-item .link a:hover {
+  background-color: custom;
+}
+.filters li a:hover,
+.filters li a.active {
+  color: custom;
+}
+button.mfp-arrow:hover {
+  background-color: custom;
+}
+.mfp-close:hover {
+  color: custom !important;
+}
+.mfp-arrow-right:after {
+  color: custom;
+}
+.mfp-arrow-left:after {
+  color: custom;
+}
+.mfp-arrow-left:hover:after,
+.mfp-arrow-right:hover:after {
+  color: #ffffff;
+}
+.sidebar-block .block-title:hover span {
+  color: custom;
+}
+.sidebar-block .block-title a:hover {
+  color: custom;
+}
+.sidebar-block:after {
+  border-color: custom transparent transparent transparent;
+}
+.sidebar-block.collapsed .toggle-arrow:hover:before {
+  color: custom;
+}
+ul.category-list li a:not(.clear):hover,
+ul.category-list li a:not(.clear).active {
+  color: custom;
+}
+ul.category-list li.active a {
+  color: custom;
+}
+ul.category-list li.active a.clear {
+  color: custom;
+}
+.selected-filters li a:hover {
+  color: custom;
+}
+.color-list li.active span.clear {
+  color: custom;
+}
+.color-list li.active span.value,
+.color-list li:hover span.value {
+  border-color: custom;
+}
+.size-list li.active span.value,
+.size-list li:hover span.value {
+  border-color: custom;
+  background: custom;
+}
+.size-list li.active span.clear {
+  color: custom;
+}
+.price-values {
+  color: custom;
+}
+.noUi-horizontal .noUi-handle {
+  background: custom;
+}
+@media screen and (max-width: 991px) {
+  .filter-col-header {
+    background: custom;
+  }
+}
+.filter-row .directions a:hover,
+.filter-row .directions a:active {
+  color: custom;
+}
+.filter-row .view-mode a:hover,
+.filter-row .view-mode a.active {
+  color: custom;
+}
+.product-creative-slider-control .slick-prev:before,
+.product-creative-slider-control .slick-next:before {
+  color: custom;
+}
+.product-creative-slider-control .slick-prev:hover:before,
+.product-creative-slider-control .slick-next:hover:before {
+  color: custom;
+}
+.product-info-block .price {
+  color: custom;
+}
+.product-info-block .product-sku span,
+.product-info-block .product-availability span {
+  color: custom;
+}
+.product-info-block .product-qty .qty input[type="text"] {
+  color: custom;
+}
+.product-info-block .product-label:not(.new) {
+  background-color: custom;
+}
+.rating i.icon.fill {
+  color: custom;
+}
+.product-previews-carousel .slick-next:before,
+.product-previews-carousel .slick-prev:before {
+  color: custom;
+}
+.product-previews-carousel .slick-slide.active:after {
+  box-shadow: inset -2px 0 0 custom, inset 0 -2px 0 custom, inset 0 2px 0 custom, inset 2px 0 0 custom;
+  -webkit-box-shadow: inset -2px 0 0 custom, inset 0 -2px 0 custom, inset 0 2px 0 custom, inset 2px 0 0 custom;
+}
+.main-image .zoomLens {
+  border-color: custom !important;
+}
+.product-nav > a .product-nav-preview span.price {
+  background-color: custom;
+}
+.zoom-link:hover,
+.video-link:hover {
+  color: custom;
+}
+.tabaccordion .panel-title a:not(.collapsed) {
+  background: custom;
+  border-color: custom;
+}
+@media (min-width: 768px) {
+  .overflow .logo-center > a {
+    background: custom;
+  }
+}
+.irregular-grid .product-preview .product-details .product-name:hover {
+  color: custom;
+}
+@media (max-width: 767px) {
+  .journal .logo-center {
+    background: custom;
+  }
+}
+.page-header.variant-3 .header-link:not(.header-cart) .dropdown-container {
+  border-top-color: custom;
+}
+.page-header.variant-3 .sub-menu {
+  border-top-color: custom;
+}
+@media screen and (max-width: 991px) {
+  .page-header.variant-3 .navbar .header-logo svg {
+    fill: custom;
+  }
+}
+.page-header.variant-5:not(.is-sticky) .header-middle-row .header-custom-text i.icon {
+  color: custom;
+}
+.exp-search-close:hover,
+.exp-icon-search:hover {
+  color: custom;
+}
+@media screen and (min-width: 992px) {
+  .page-header.variant-7:not(.is-sticky) .header-link.header-search .exp-icon-search:hover {
+    color: custom;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-header.variant-8:not(.is-sticky) .header-link.header-search .exp-icon-search:hover {
+    color: custom;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-header.dark:not(.is-sticky) .navbar .nav > li:hover > a:after,
+  .page-header.stickydark.is-sticky .navbar .nav > li:hover > a:after,
+  .page-header.dark:not(.is-sticky) .navbar .nav > li.active > a:after,
+  .page-header.stickydark.is-sticky .navbar .nav > li.active > a:after {
+    background: custom;
+  }
+}
+.share-button .toggle:hover {
+  color: custom;
+}
+.share-button .social-list a {
+  background-color: custom;
+  border-color: custom;
+  color: #ffffff;
+}
+.rating i.spr-icon.spr-icon-star-half-alt,
+.rating i.spr-icon.spr-icon-star {
+  color: custom;
+}
+#shopify-product-reviews .spr-container .spr-review-header-byline strong {
+  color: custom;
+}
+#shopify-product-reviews .spr-container .spr-summary-starrating .spr-icon.spr-icon-star-half-alt,
+#shopify-product-reviews .spr-container .spr-starratings .spr-icon.spr-icon-star-half-alt,
+#shopify-product-reviews .spr-container .spr-summary-starrating .spr-icon.spr-icon-star,
+#shopify-product-reviews .spr-container .spr-starratings .spr-icon.spr-icon-star {
+  color: custom;
+}
+#shopify-product-reviews .spr-container .spr-form-review-rating .spr-icon.spr-icon-star:hover,
+#shopify-product-reviews .spr-container .spr-form-review-rating .spr-icon.spr-icon-star.spr-icon-star-hover {
+  color: custom;
+}
+.btn-primary.disabled,
+.btn-primary.disabled.active,
+.btn-primary.disabled:active,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:hover,
+.btn-primary[disabled],
+.btn-primary[disabled].active,
+.btn-primary[disabled]:active,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-primary.active,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:hover {
+  background-color: custom;
+  border-color: custom;
+}
+.slick-prev:not(.slick-disabled):hover,
+.slick-next:not(.slick-disabled):hover {
+  background: custom;
+}
+.slick-dots li.slick-active button {
+  background: custom;
+}
+/* Mega Menu */
+.sub-menu {
+  border-bottom-color: custom;
+}
+.sub-menu .category-title > a:hover {
+  color: custom;
+}
+.sub-menu .category-links a:hover {
+  color: custom;
+}
+.menu-label {
+  background: custom;
+}
+.simple-dropdown .sub-menu ul.category-links li:hover > a {
+  color: custom;
+}
+@media screen and (min-width: 992px) {
+  .megamenu.vertical .nav > li.active > a {
+    color: custom;
+  }
+}
+@media screen and (min-width: 992px) {
+  .megamenu.department .nav > li.active > a:not(.menu-btn-special) {
+    color: custom;
+  }
+}
+.view-all:not(.disabled):hover {
+  color: custom;
+}
+.back-to-top:hover {
+  background-color: custom !important;
+}
+.buy-fixed-btn:hover {
+  background: custom !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+.top-fixed-btn:hover,
+.fixed-btns.demo-mode .buy-fixed-btn:hover,
+#toolsPanel .tools-btn > a:hover {
+  background: custom !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+/* ----------------------------------- */
+/*           STYLE OVERLAY             */
+/* ----------------------------------- */
+/* -------------------------------- */
+/*           General Colors         */
+/* -------------------------------- */
+/*  1.1 General Colors - Text */
+body,
+.products-grid.product-variant-2 .product-item.large .product-item-description,
+.blog-carousel .blog-item-teaser,
+.variant-1 .testimonials-item-teaser,
+.variant-1 .testimonials-item-date,
+.variant-2 .testimonials-item-teaser,
+.variant-2 .testimonials-item-date,
+.services-list .box-left-icon .box-text,
+ul.simple-list li,
+ul.marker-list li,
+.info-block,
+#shopify-product-reviews .spr-container input.spr-form-input:not(.spr-starrating),
+#shopify-product-reviews .spr-container input.spr-form-input:not(.spr-starrating)[disabled],
+#shopify-product-reviews .spr-container input.spr-form-input:not(.spr-starrating)[readonly],
+fieldset[disabled] #shopify-product-reviews .spr-container input.spr-form-input:not(.spr-starrating),
+#shopify-product-reviews .spr-container div.spr-form-input textarea,
+#shopify-product-reviews .spr-container div.spr-form-input textarea[disabled],
+#shopify-product-reviews .spr-container div.spr-form-input textarea[readonly],
+fieldset[disabled] #shopify-product-reviews .spr-container div.spr-form-input textarea {
+  color: custom  !important;
+}
+/* 1.2 General Colors - Links */
+a,
+.blog-carousel .blog-item-links a:not(.readmore),
+a.readmore,
+ul.marker-list li a {
+  color: custom ;
+}
+ul.marker-list li a:before {
+  background-color: custom ;
+}
+/* 1.3 General Colors - Links Hover */
+a:focus,
+a:hover,
+.blog-carousel .blog-item-links a:not(.readmore):hover,
+.blog-carousel .blog-item-links a:not(.readmore):focus,
+a.readmore:hover,
+a.readmore:focus,
+ul.marker-list li a:hover,
+ul.marker-list li a:focus {
+  color: custom ;
+}
+ul.marker-list li a:hover:before,
+ul.marker-list li a:focus:before {
+  background-color: custom ;
+}
+/* 1.4 General Colors - Background */
+body {
+  background-color: custom ;
+}
+/* -------------------------------- */
+/*        2 Captions (h1-h7)        */
+/* -------------------------------- */
+/* 2.1 Captions - Font Family */
+h1,
+h1-style,
+h2,
+h2-style,
+h3,
+h4,
+h5,
+h6 {
+  font-family: ;
+}
+/* 2.2 Captions - Font Family */
+h1,
+h1-style {
+  font-size: custom ;
+  /* val */
+}
+@media screen and (min-width: 768px) {
+  .block.top-negative {
+    margin-top: calc(-val*1.75);
+  }
+}
+h2,
+h2-style {
+  font-size: custom ;
+}
+h3 {
+  font-size: custom ;
+}
+h4 {
+  font-size: custom ;
+}
+h5 {
+  font-size: custom ;
+}
+h6 {
+  font-size: custom ;
+}
+/* 2.3 Captions - Font Colors */
+h1,
+h1-style {
+  color: custom ;
+}
+h2,
+h2-style {
+  color: custom ;
+}
+h3 {
+  color: custom ;
+}
+h4 {
+  color: custom ;
+}
+h5 {
+  color: custom ;
+}
+h6 {
+  color: custom ;
+}
+/* 2.4 Captions - Font Colors & Background for Caption with Background */
+h1.h-bg,
+h2.h-bg {
+  color: custom;
+  background-color: custom;
+}
+/* -------------------------------- */
+/*          3 Left panel            */
+/* -------------------------------- */
+/* 3.1 Left panel - Background */
+.sidebar-wrapper {
+  background-color: custom;
+}
+/* 3.2 Left panel - Links Color */
+.sidebar-wrapper .sidebar-nav a,
+.sidebar-wrapper .sidebar-top a.slidepanel-toggle {
+  color: custom;
+}
+/* 3.3 Left panel - Links Hover */
+.sidebar-wrapper .sidebar-nav a:hover,
+.sidebar-wrapper .sidebar-nav a.active {
+  color: custom ;
+}
+.sidebar-wrapper .sidebar-nav li a:before,
+.sidebar-wrapper .sidebar-nav li:hover a:before {
+  background-color: custom ;
+}
+/* -------------------------------- */
+/*            4 Buttons             */
+/* -------------------------------- */
+/* 4.1 Buttons - Text Color */
+.btn,
+.btn-primary,
+button.action,
+.btn.focus,
+.btn-primary.focus,
+button.action.focus,
+.btn:focus,
+.btn-primary:focus,
+button.action:focus,
+.btn:active,
+.btn-primary:active,
+button.action:active {
+  color: custom;
+}
+.btn.btn-invert:hover,
+.btn-primary.btn-invert:hover,
+button.action.btn-invert:hover {
+  color: custom;
+}
+/* 4.2 Buttons - Text Hover */
+.btn:hover,
+.btn-primary:hover,
+button.action:hover {
+  color: custom;
+}
+.btn.btn-invert,
+.btn-primary.btn-invert,
+button.action.btn-invert,
+.btn.btn-invert:active,
+.btn-primary.btn-invert:active,
+button.action.btn-invert:active,
+.btn.btn-invert.focus,
+.btn-primary.btn-invert.focus,
+button.action.btn-invert.focus,
+.btn.btn-invert:focus,
+.btn-primary.btn-invert:focus,
+button.action.btn-invert:focus {
+  color: custom;
+}
+/* 4.3 Buttons - Background */
+.btn,
+.btn-primary,
+button.action,
+.btn.focus,
+.btn-primary.focus,
+button.action.focus,
+.btn:focus,
+.btn-primary:focus,
+button.action:focus,
+.btn:active,
+.btn-primary:active,
+button.action:active {
+  background-color: custom ;
+  border-color: custom ;
+}
+.btn.btn-invert:hover,
+.btn-primary.btn-invert:hover,
+button.action.btn-invert:hover {
+  background-color: custom ;
+  border-color: custom ;
+}
+/* 4.4 Buttons - Background Hover */
+.btn:hover,
+.btn-primary:hover,
+button.action:hover {
+  background-color: transparent;
+  border-color: custom ;
+}
+.btn.btn-invert,
+.btn-primary.btn-invert,
+button.action.btn-invert,
+.btn.btn-invert:active,
+.btn-primary.btn-invert:active,
+button.action.btn-invert:active,
+.btn.btn-invert.focus,
+.btn-primary.btn-invert.focus,
+button.action.btn-invert.focus,
+.btn.btn-invert:focus,
+.btn-primary.btn-invert:focus,
+button.action.btn-invert:focus {
+  background-color: transparent;
+  border-color: custom ;
+}
+/* -------------------------------- */
+/*            5 Header              */
+/* -------------------------------- */
+/* 5.1 Header - Text Color */
+.page-header,
+.header-custom-text {
+  color: custom;
+}
+/* 5.2 Header - Links Color */
+.page-header a:not(.btn),
+.header-custom-link a:not(.menu-btn-special):not(.btn),
+.dropdown-container li a:not(.btn) {
+  color: custom !important;
+}
+@media screen and (min-width: 992px) {
+  .nav > li > a:not(.menu-btn-special):not(.btn),
+  .nav > li > a:not(.menu-btn-special):not(.btn):focus {
+    color: custom !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar ul.nav li a:not(.btn) {
+    color: custom !important;
+  }
+}
+/* 5.3 Header - Links Hover & Active Color */
+.page-header a:not(.btn):hover,
+.dropdown-container li a:not(.btn):hover {
+  color: custom  !important;
+}
+/* 5.4   Header - Background */
+/* 5.4.1 Header - Header Background */
+@media screen and (min-width: 992px) {
+  .navbar {
+    background-color: custom;
+  }
+}
+/* 5.4.2 Header - Header Sticky Background */
+@media screen and (min-width: 992px) {
+  .page-header.is-sticky .navbar,
+  .page-header.variant-8.is-sticky .header-bottom-row {
+    background-color: custom !important;
+  }
+}
+/* 5.5 Header - Icon Color */
+.header-link > a i.icon,
+.exp-icon-search {
+  color: custom;
+}
+/* 5.6 Header - Icon Color Hover */
+.header-link > a:hover i.icon,
+.exp-icon-search:hover {
+  color: custom ;
+}
+/* 5.7 Header - Dropdown Background */
+.dropdown-link .dropdown-container {
+  background-color: custom;
+}
+.dropdown-link .dropdown-container:before,
+.dropdown-link .dropdown-container:after {
+  border-bottom-color: custom;
+}
+/* -------------------------------- */
+/*         6 Topnavigation          */
+/* -------------------------------- */
+/* 6.1   Topnavigation - First Level */
+/* 6.1.1 Topnavigation - First Level - Links Color */
+@media screen and (min-width: 992px) {
+  .nav > li > a:not(.menu-btn-special),
+  .nav > li > a:not(.menu-btn-special):focus {
+    color: custom !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar ul.nav li a {
+    color: custom !important;
+  }
+}
+/* 6.1.2 Topnavigation - First Level - Links Hover Color */
+@media screen and (min-width: 992px) {
+  .nav > li > a:not(.menu-btn-special):not(.btn):hover,
+  .nav > li > a:not(.menu-btn-special):not(.btn):focus:hover,
+  .nav > li.active > a:not(.menu-btn-special):not(.btn) {
+    color: custom !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar ul.nav li a:not(.btn):hover,
+  .navbar ul.nav li:hover > a:not(.btn),
+  .navbar ul.nav li.submenu-open > a:not(.btn) {
+    color: custom;
+  }
+}
+/* 6.1.3 Topnavigation - First Level - Background Hover Color */
+@media screen and (min-width: 992px) {
+  .nav > li:hover > a:not(.btn):not(.menu-btn-special) {
+    background-color: custom;
+  }
+}
+/* 6.2   Topnavigation - Second Level Megamenu */
+/* 6.2.1 Topnavigation - Second Level Megamenu - Links Color */
+@media screen and (min-width: 992px) {
+  .mega-dropdown .sub-menu .category-title > a:not(.btn),
+  .mega-dropdown .sub-menu .category-links > li > a:not(.btn) {
+    color: custom  !important;
+  }
+}
+/* 6.2.2 Topnavigation - Second Level Megamenu - Links Hover Color */
+@media screen and (min-width: 992px) {
+  .mega-dropdown .sub-menu .category-title > a:not(.btn):hover,
+  .mega-dropdown .sub-menu .category-links > li > a:not(.btn):hover {
+    color: custom  !important;
+  }
+}
+/* 6.3   Topnavigation - Third Level Megamenu ??????????? */
+/* 6.4   Topnavigation - Simple Menu */
+/* 6.4.1 Topnavigation - Simple Menu - Links Color */
+@media screen and (min-width: 992px) {
+  .simple-dropdown .sub-menu .category-title a:not(.btn),
+  .simple-dropdown .sub-menu .category-links a:not(.btn) {
+    color: custom !important;
+  }
+}
+/* 6.4.2 Topnavigation - Simple Menu - Links Hover Color */
+@media screen and (min-width: 992px) {
+  .simple-dropdown .sub-menu .category-title a:not(.btn):hover,
+  .simple-dropdown .sub-menu .category-links a:not(.btn):hover {
+    color: custom !important;
+  }
+}
+/* 6.4.3 Topnavigation - Simple Menu - Background Color */
+@media screen and (min-width: 992px) {
+  .simple-dropdown .sub-menu,
+  .simple-dropdown .sub-menu ul.category-links ul {
+    background-color: custom;
+  }
+}
+/* 6.5 Topnavigation - Label */
+/* 6.5.1 Topnavigation - Label (custom  default) Background Color */
+.menu-label {
+  background-color: custom ;
+}
+/* 6.5.2 Topnavigation - Label Alternative (custom  default) Background Color */
+.menu-label-alt {
+  background-color: custom;
+}
+/* -------------------------------- */
+/*         7 Header Cart            */
+/* -------------------------------- */
+/* 7.1 Header Cart - Icon Cart Color */
+.header-link.header-cart > a i.icon {
+  color: custom !important;
+}
+/* 7.2 Header Cart - Icon Cart Color Hover */
+.header-link.header-cart > a:hover i.icon {
+  color: custom  !important;
+}
+/* 7.3 Header Cart - Icon Cart Label Background Color */
+.header-link.header-cart > a .badge {
+  background-color: custom ;
+}
+/* 7.4 Header Cart - Dropdown Background Color */
+.header-cart.variant-2 .dropdown-container,
+.header-cart.variant-2 .dropdown-container .block-title,
+.header-cart.variant-2 .dropdown-container .product-item-qty input {
+  background-color: custom;
+}
+/* 7.5 Header Cart - Text Color */
+.header-cart.variant-2 .dropdown-container,
+.header-cart.variant-2 .dropdown-container .block-title,
+.header-cart.variant-2 .dropdown-container .product-item-qty .label,
+.header-cart.variant-2 .dropdown-container .product-item-qty input {
+  color: custom ;
+}
+/* 7.6 Header Cart - Links Color */
+.header-cart.variant-2 .dropdown-container .product.actions a,
+.header-cart.variant-2 .dropdown-container .product-item-name a {
+  color: custom !important;
+}
+/* 7.7 Header Cart - Links Hover Color */
+.header-cart.variant-2 .dropdown-container .product.actions a:hover,
+.header-cart.variant-2 .dropdown-container .product-item-name a:hover {
+  color: custom  !important;
+}
+/* -------------------------------- */
+/*            8 Product             */
+/* -------------------------------- */
+/* 8.1   Product - Product Name */
+/* 8.1.1 Product - Product Name - Font Family */
+.product-item .product-item-name a.product-item-link {
+  font-family: ;
+}
+/* 8.1.2 Product - Product Name - Color */
+.products-grid:not(.product-variant-2) .product-item .product-item-name a {
+  color: custom ;
+}
+/* 8.1.3 Product - Product Name - Hover Color */
+.products-grid:not(.product-variant-2) .product-item .product-item-name a {
+  color: custom ;
+}
+/* 8.2 Product - Addtocart  */
+/* 8.2.1 Product - Addtocart - Border + Color */
+.products-grid:not(.product-variant-2) .btn.btn-invert,
+.product-variant-4 .btn.btn-invert,
+.products-grid:not(.product-variant-2) .btn.btn-invert:active,
+.product-variant-4 .btn.btn-invert:active,
+.products-grid:not(.product-variant-2) .btn.btn-invert.focus,
+.product-variant-4 .btn.btn-invert.focus,
+.products-grid:not(.product-variant-2) .btn.btn-invert:focus,
+.product-variant-4 .btn.btn-invert:focus {
+  border-color: custom ;
+  color: custom ;
+}
+/* 8.2.2 Product - Addtocart - Border + Color Hover */
+.products-grid:not(.product-variant-2) .btn.btn-invert:hover,
+.product-variant-4 .btn.btn-invert:hover {
+  background-color: custom;
+  border-color: custom ;
+  color: #fff ;
+}
+/* 8.3 Product - Background Color */
+.product-item.large .product-item-info {
+  background-color: custom ;
+}
+/* 8.4 Product - Additional actions */
+/* 8.4.1 Product - Additional actions -  Background Color */
+.product-item.large .product-item-actions .actions-secondary a,
+.product-item.large .product-item-actions .actions-secondary a:focus,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:focus {
+  background-color: custom ;
+}
+/* 8.4.2 Product - Additional actions - Color */
+.product-item.large .product-item-actions .actions-secondary a,
+.product-item.large .product-item-actions .actions-secondary a:focus,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:hover {
+  color: custom ;
+}
+/* 8.4.3 Product - Additional actions -  Background Hover Color */
+.product-item.large .product-item-actions .actions-secondary a:hover,
+.product-item.large .product-item-actions .actions-secondary a:focus:hover,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:hover,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:focus:hover {
+  background-color: custom ;
+}
+/* 8.4.4 Product - Additional actions - Hover Color */
+.product-item.large .product-item-actions .actions-secondary a:hover,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:hover,
+.products-grid.product-variant-2 .product-item.large .product-item-details .product-item-actions .actions-primary button:focus:hover {
+  color: custom ;
+}
+/* 8.5 Product - Gallery arrows */
+/* 8.5.1 Product - Gallery arrows -  Background Color */
+.carousel-inside .carousel-control {
+  background-color: custom ;
+}
+/* 8.5.2 Product - Gallery arrows -  Background Hover Color */
+.carousel-inside .carousel-control:hover {
+  background-color: custom ;
+}
+/* 8.6 Product - Label */
+/* 8.6.1 Product - Label - NEW */
+.product-item-label.label-new {
+  background-color: custom ;
+}
+/* 8.6.2 Product - Label - SALE */
+.product-item-label.label-sale {
+  background-color: custom ;
+}
+/* -------------------------------- */
+/*            9 Footer              */
+/* -------------------------------- */
+/* 9 Footer - Background Color */
+.page-footer,
+.page-footer.variant2,
+.page-footer.variant2 .footer-bot {
+  background-color: custom ;
+}
+/* 9 Footer - Text Color */
+.page-footer,
+.footer-copyright {
+  color: custom ;
+}

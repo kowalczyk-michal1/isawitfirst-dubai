@@ -1,0 +1,12 @@
+{% if settings.logo_svg_yes %}
+    <a href="{{ shop.url }}" title="{{ shop.name }}">{{ settings.logo_svg_code }}</a>
+{% else %}
+    <a href="{{ shop.url }}" title="Logo">
+        <img src="{{ 'logo.png' | asset_url }}" alt='{{ shop.name }}' />
+        {% if settings.sticky_logo_yes %}
+        <img src="{{ 'sticky_logo.png' | asset_url }}" class="sticky-logo"  alt='{{ shop.name }}' />
+        {% else %}
+        <img src="{{ 'logo.png' | asset_url }}" class="sticky-logo"  alt='{{ shop.name }}' />
+        {% endif %}
+    </a>
+{% endif %}

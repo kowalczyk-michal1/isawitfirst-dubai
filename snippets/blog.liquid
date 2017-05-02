@@ -1,0 +1,79 @@
+{% paginate blog_list.articles by list_limit %}
+<div class='container'>
+    <!-- Page Title -->
+    <div class='page-title'>
+        <div class='title center'>
+            <h1>
+
+              {{ blog_list.title }}
+
+            </h1>
+        </div>
+        <div class='text-wrapper'>
+            <p class='text-center'>{{ settings.blog_desc }}</p>
+        </div>
+    </div>
+    <!-- /Page Title -->
+    <!-- Two columns -->
+    <!-- Center column -->
+   {% assign left_col='col-md-12' %}
+    <div class='{{ left_col }}'>
+        <div class="blog-grid-{{ blog_mode }}">
+            {% for article in blog_list.articles limit:list_limit %}
+                <div class='blog-post'>
+                    {% if article.image %}
+                        {% assign image_alt = article.title | escape %}
+                        <div class='blog-photo'>
+                            {{ article | img_url: 'master' | img_tag: image_alt, 'article__image' | link_to: article.url }}
+                        </div>
+                    {% endif %}
+                    <div class='blog-content'>
+                        <h2 class='blog-title'><a href='{{ article.url }}'>{{ article.title }}</a></h2>
+                        <div class='blog-meta'>
+                            <div class='pull-left'>
+                              <span>
+                                {% if article.tags.size > 0 %}
+                                    {% for tag in article.tags %}
+                                        <a href='{{ blog_list.url }}/tagged/{{ tag | handle }}'>{{ tag }}</a>{% unless forloop.last %} <span class='meta-sep'></span> {% endunless %}
+                                    {% endfor %}
+                                {% endif %}
+                              </span>
+
+                                <span>{{ 'general.theme.author' | t }} <b>{{ article.author }}</b></span>
+                                {% if blog_list.comments_enabled? %}
+                                    <span><a href='{{ article.url | append:"#comments" }}'>{{ article.comments.size }} {{ 'general.theme.comments' | t }}</a></span>
+                                {% endif %}
+                                <span  class='last'><time datetime='{{ article.published_at | date: '%Y-%m-%d' }}'>{{ article.published_at | date: format: 'month_day_year' }}</time></span>
+                            </div>
+                            <div class='pull-right'>
+                                {% if settings.social_sharing_blog %}
+                                    {% capture share %}{{ 'general.theme.share' | t }}{% endcapture %}
+                                    {% include 'social-sharing' position:'toRight', title:share %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class='blog-text'>
+                            {% if article.excerpt.size > 0 %}
+                                {{ article.excerpt | truncatewords: list_truncatewords }}
+                            {% else %}
+                                <p>{{ article.content | strip_html | truncatewords: list_truncatewords }}</p>
+                            {% endif %}
+                        </div>
+                        <a href='{{ article.url }}' class='btn'>{{ 'blogs.article.read_more' | t }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% if paginate.pages > 1 %}
+            <div class='text-center'>
+                {% include 'pagination-custom' %}
+            </div>
+        {% endif %}
+
+    </div>
+    <!-- /Center column -->
+
+
+<!-- /Two columns -->
+</div>
+{% endpaginate %}

@@ -1,0 +1,12 @@
+{% if settings.footer_2_newsletter %}
+    <!-- input-group -->
+    <form action="{{ settings.newsletter_action | strip }}" method="post"  name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div class="input-group">
+            <input  type="email" name="EMAIL" class="form-control required email" >
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="icon icon-close-envelope"></i></button>
+            </span>
+        </div>
+    </form>
+    <!-- /input-group -->
+{% endif %}

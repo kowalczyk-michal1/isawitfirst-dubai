@@ -1,0 +1,67 @@
+<div class="mobilemenu dblclick">
+  <div class="mobilemenu-header">
+    <div class="title">{{ 'general.theme.menu' | t }}</div>
+    <a href="#" class="mobilemenu-toggle"></a>
+  </div>
+  <div class="mobilemenu-content">
+    <ul class="nav">
+      {% for link in linklists[settings.top_nav]links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        {% capture mega_n %}item{{ forloop.index }}{% endcapture %}
+        {% assign mega = settings[mega_n] %}
+
+        {% capture menu_handles_n %}menu_handles{{ forloop.index }}{% endcapture %}
+        {% assign menu_handles = settings[menu_handles_n]|split:',' %}
+        {% if mega %}
+          {% if menu_handles.size > 0 %}
+            <span class="arrow"></span><ul>
+              {% for item in menu_handles %}
+
+                {% assign a=item|split:'|' %}
+                {% assign a=a[0]|strip %}
+                {% if linklists[a]links.size %}
+                {% assign  col_title=linklists[a]links.first.title|split:'|' %}
+                <li><a href="{{ linklists[a]links.first.url }}">{{ col_title[0] }}</a>
+
+                    {% if linklists[a]links.size > 0 %}
+                        <span class="arrow"></span>
+                        <ul>
+                            {% for link_2 in linklists[a]links %}
+                                {% unless forloop.first %}
+                                <li><a href="{{ link_2.url }}">{{ link_2.title }}</a></li>
+                                {% endunless %}
+                            {% endfor %}
+                        </ul>
+                    {% endif%}
+
+                </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% else %}
+          {% if linklists[link.handle]links.size > 0 %}
+            <span class="arrow"></span><ul>
+            {% for link_1 in linklists[link.handle]links %}
+              <li><a href="{{ link_1.url }}">{{ link_1.title }}</a>
+
+                {% if linklists[link_1.handle]links.size > 0 %}
+                <span class="arrow"></span>
+                <ul>
+                  {% for link_2 in linklists[link_1.handle]links %}
+                    <li><a href="{{ link_2.url }}">{{ link_2.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif%}
+
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif%}
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

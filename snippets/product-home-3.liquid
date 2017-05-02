@@ -1,0 +1,32 @@
+{% assign id=settings[config_id]|strip %}
+{% if id.size > 0 %}
+    {% assign product=all_products[id] %}
+    <div class="product-preview">
+        <div class="product-photo">
+            <a href="{{ product.url | within: collection }}" class="product-link"><img src="{{ product.featured_image.src | img_url:'large' }}" alt="{{ product.title }}" /></a>
+        </div>
+        <div class="product-details">
+            <a href="{{ product.url | within: collection }}" class="product-name">{{ product.title }}</a>
+            <div class="price-box">
+                <span class="price-container">
+                    <span class="price-wrapper ">
+                        {% capture price %}{{ product.price | money }}{% endcapture %}
+                        {% assign on_sale = false %}
+                        {% assign sale_text = 'products.product.sale' | t %}
+                        {% if product.compare_at_price > product.price %}
+                            {% assign on_sale = true %}
+                        {% endif %}
+
+                        {% if on_sale %}
+                            <span class="old-price">{{ product.compare_at_price | money }}</span>
+                        {% endif %}
+                        <span class="special-price"> {% if product.price_varies %}{{ 'products.general.from_html' | t: price: price }}{% else %}{{ price }}{% endif %}</span>
+                    </span>
+                </span>
+            </div>
+            {% assign desc=product.description|split:'|config|' %}
+            <div class="product-info">{{ desc[1] | strip_html | replace: '&nbsp;', ' ' | truncate: 100 }}
+            </div>
+        </div>
+    </div>
+{% endif %}

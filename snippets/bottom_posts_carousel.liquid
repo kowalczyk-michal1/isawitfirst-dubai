@@ -1,0 +1,31 @@
+<div class="block fullwidth bottom-posts-carousel-row">
+    <div class="row">
+        {% capture bpc_id %}{{ settings.bottom_posts_carousel_id }}{% endcapture %}
+        <div class="collapsed-content">
+            <div class="bottom-posts-carousel">
+                {% if bpc_id != blank %}
+                    {% for article in blogs[bpc_id].articles limit:settings.bottom_posts_carousel_limit %}
+                        <div class="blog-item">
+                            <div class="bottom-post-image">
+                                {% if article.image %}
+                                    {% assign image_alt = article.title | escape %}
+                                    <a href="{{ article.url }}" class="blog-item-photo"> <img class="product-image-photo" src=" {{ article | img_url: 'large'}}" alt="{{ image_alt }}"> </a>
+                                {% endif %}
+                            </div>
+                            <div class="blog-item-info">
+                                <a href="{{ article.url }}" class="blog-item-title"> {{ article.title }} </a>
+                                <div class="blog-item-teaser">
+                                    {{ article.excerpt  | strip_html | newline_to_br }}
+                                </div>
+                                <div class="blog-item-links"> <a href="{{ article.url }}" class="posts-view-now-button">{{ 'general.theme.view_now' | t }}</a> </span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                  <!--  <div class="blog-item">Theme editor -> Bottom Posts Carousel</div>-->
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

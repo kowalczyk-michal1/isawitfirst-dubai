@@ -1,0 +1,64 @@
+<div class="block fullwidth full-nopad">
+    <div class="container">
+        <div class="title center">
+            <h1 class="size-lg">{{ page.title }}</h1>
+        </div>
+        {% if settings.gallery_filters %}
+            <ul class="filters filters-gallery">
+                <li><a href="#" class="filter-label">All</a><span>/</span></li>
+                {% assign filter_tag = '' %}
+                {% for i in (1..20) %}
+                    {% capture item %}gallery_item_{{ i }}{% endcapture %}
+                    {% capture item_tags %}gallery_item_tag_{{ i }}{% endcapture %}
+                    {% if settings[item] %}
+                        {% assign filter_tag = filter_tag | append:',' | append:settings[item_tags] %}
+                    {% endif %}
+                {% endfor %}
+                {% assign filter_tag = filter_tag | replace:' ','' | split: ',' | uniq  | join: ',' %}
+
+                {% assign tags = filter_tag|split:',' %}
+                {% for tag_item in tags %}
+                    {% if tag_item.size > 1  %}
+                        <li><a href="#" class="filter-label" data-filter=".{{ tag_item }}">{{ tag_item }}</a><span>/</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="row">
+            <div class="gallery-wrapper">
+                <div class="gallery {{ settings.gallery_js }}">
+
+                    {% for i in (1..20) %}
+                        {% capture item %}gallery_item_{{ i }}{% endcapture %}
+                        {% capture item_link %}gallery_item_href_{{ i }}{% endcapture %}
+                        {% capture item_img %}gallery_item_img_{{ i }}.jpg{% endcapture %}
+                        {% capture item_desc %}gallery_item_desc_{{ i }}{% endcapture %}
+                        {% capture item_title %}gallery_item_title_{{ i }}{% endcapture %}
+                        {% capture item_blank %}gallery_item_href_target_{{ i }}{% endcapture %}
+                        {% capture item_tags %}gallery_item_tag_{{ i }}{% endcapture %}
+                        {% if settings[item] %}
+                            <div class="col-xs-6 gallery-item effect {{ settings[item_tags] | replace:' ','' | split: ',' | uniq  | join: ' ' }}">
+                                <div class="image"><img class="img-responsive" src="{{ item_img | asset_img_url: 'master' }}" alt=""></div>
+                                <div class="caption">
+                                    <div class="vert-wrapper">
+                                        <div class="vert">
+                                            <div class="title">{{ settings[item_title] }}</div>
+                                            <div class="text">
+                                                {{ settings[item_desc] }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="link">
+                                        <a href="{{ item_img | asset_img_url: 'master' }}" class="zoomimage"><i class="icon icon-plus"></i></a>
+                                        {% if settings[item_link]size > 0 %}<a href="{{ settings[item_link] }}" {% if settings[item_blank] %}target="_blank"{% endif %}><i class="icon icon-arrow-right"></i></a>{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

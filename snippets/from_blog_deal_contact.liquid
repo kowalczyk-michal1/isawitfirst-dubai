@@ -1,0 +1,47 @@
+{% assign collection_id=settings.deal_id %}
+<div class="block fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="collapsed-mobile">
+                    <div class="title">
+                        <h2>{{ settings.from_blog_title }}</h2>
+                        <div class="toggle-arrow"></div>
+                        <div class="carousel-arrows"></div>
+                    </div>
+                    {% if settings.from_blog_yes %}
+                    {% include 'from_the_blog' %}
+                    {% elsif settings.from_blog_html_yes %}
+                        {{ settings.from_blog_html }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Deal Carousel -->
+                <div class="title">
+                    <h2 class="custom-color">{{ settings.deal_title }}</h2>
+                    <div class="toggle-arrow"></div>
+                    <div class="carousel-arrows"></div>
+                </div>
+                <div class="collapsed-content">
+                    {% if settings.deal_yes %}
+                        {% if collection_id != blank %}
+                            <div class="deal-carousel-2 products-grid product-variant-5 " data-slick='{"responsive": [{ "breakpoint": 481, "settings": { "slidesToShow": {{ settings.collections_products_per_row_mobile }} } }]}'>
+                                {% for product in collections[collection_id].products limit:6 %}
+                                    {% include 'product-item-big' image_size:'large' %}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div>choose product in Theme -> Section from the blog,product's carousel -> choose Product</div>
+                            <div>&nbsp;</div>
+                        {% endif %}
+                        {% elsif settings.deal_html_yes %}
+                        {{ settings.deal_html }}
+                    {% endif %}
+                </div>
+                <!-- /Deal Carousel -->
+            </div>
+        </div>
+    </div>
+</div>

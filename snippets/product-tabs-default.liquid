@@ -1,0 +1,67 @@
+<div class="block">
+    <div class="tabaccordion">
+        <div class="container">
+            <!-- Nav tabs -->
+            <ul class="nav-tabs product-tab {{ settings.tabs_float }}-tabs" role="tablist">
+                {% for i in (1..5) %}
+                    {% capture tab_yes %}product_tab_{{ i }}{% endcapture %}
+                    {% capture tab_title %}product_tab_title_{{ i }}{% endcapture %}
+                    {% capture tab_content %}product_tab_content_{{ i }}{% endcapture %}
+                    {% if settings[tab_yes] %}<li {% if forloop.first  %}class="active"{% endif %}><a href="#Tab{{ tab_title }}" role="tab" data-toggle="tab">{{ settings[tab_title] }}</a></li>{% endif %}
+                {% endfor %}
+
+                {% if product.description contains '[custom_tab_title_1]' %}
+                    <li><a href="#TabCustomTabShortcode" role="tab" data-toggle="tab">{{ product.description  | split:"|config|" | first  | split:"[custom_tab_title_1]" | last | split:"[/custom_tab_title_1]" | first }}</a></li>
+                {% endif %}
+
+                {% if product.description contains '[custom_tab_title_2]' %}
+                    <li><a href="#TabCustomTabShortcode2" role="tab" data-toggle="tab">{{ product.description  | split:"|config|" | first  | split:"[custom_tab_title_2]" | last | split:"[/custom_tab_title_2]" | first }}</a></li>
+                {% endif %}
+
+
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                {% for i in (1..5) %}
+                    {% capture tab_yes %}product_tab_{{ i }}{% endcapture %}
+                    {% capture tab_title %}product_tab_title_{{ i }}{% endcapture %}
+                    {% capture tab_content %}product_tab_content_{{ i }}{% endcapture %}
+                    {% assign tab_content_val = settings[tab_content] %}
+                    {% if settings[tab_yes] %}
+                        <div role="tabpanel" class="tab-pane {% if forloop.first  %}active{% endif %}" id="Tab{{ tab_title }}">
+                            {{ pages[tab_content_val]content }}
+                            {% if i == 1 %}<!--description-->
+                                {% assign full_desc = product.description | split:'|[config]|' %}
+
+                                {% if product.description contains '|[config]|' %}
+                                    {{  full_desc[1] }}
+                                {% else %}
+                                    {{ product.description }}
+                                {% endif %}
+
+                                {% elsif i == 4 %}<!--Tags-->
+                                <ul class="tags">
+                                    {% for tag in product.tags %}
+                                        <li><a href="/collections/all/{{ tag | handle }}"><span class="value"><span>{{ tag }}</span></span></a></li>
+                                    {% endfor %}
+                                </ul>
+                                {% elsif i == 5 %}<!--Review-->
+                                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if product.description contains '[custom_tab_title_1]' %}
+                        <div role="tabpanel" class="tab-pane"  id="TabCustomTabShortcode">
+                            {{ product.description  | split:"|config|" | first  | split:"[custom_tab_content_1]" | last | split:"[/custom_tab_content_1]" | first }}
+                        </div>
+                    {% endif %}
+                    {% if product.description contains '[custom_tab_title_2]' %}
+                        <div role="tabpanel" class="tab-pane"  id="TabCustomTabShortcode2">
+                            {{ product.description  | split:"|config|" | first  | split:"[custom_tab_content_2]" | last | split:"[/custom_tab_content_2]" | first }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

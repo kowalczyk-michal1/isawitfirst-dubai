@@ -1,0 +1,27 @@
+{% if settings.header_search %}
+<!--<div class="header-link header-search header-search">
+    <div class="exp-search">
+        <form  action="/search">
+            <input name="q" class="exp-search-input " placeholder="{{ 'general.theme.search_here' | t }}" type="text" value="{{ search.terms | escape }}">
+            <input class="exp-search-submit" type="submit" value="">
+            <span class="exp-icon-search"><i class="icon icon-magnify"></i></span>
+            <span class="exp-search-close"><i class="icon icon-close"></i></span>
+        </form>
+    </div>
+</div>-->
+<div class="cust-header-search">
+    <div class="cust-search">
+        <form  action="/search">
+          <div class="new-search">
+          {{ "search_1.png" | asset_url | img_tag: "" }}
+            <input name="q" class="exp-search-input " placeholder="Search" type="text" value="{{ search.terms | escape }}">
+            <input class="exp-search-submit" type="submit" value="">
+          </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+
+
+ 

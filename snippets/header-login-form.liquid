@@ -1,0 +1,74 @@
+{% comment %}
+{% if settings.login_box %}
+    <!-- Header Account -->
+    <div class="header-link dropdown-link header-account" style="position:static;">
+        {% if customer %}
+            <a href="https://isawitfirst-dubai.myshopify.com/pages/sign-in">
+               
+              <!--<i class="icon icon-user"></i>-->
+              <span>Sign In</span>
+              <span {% if header == 7 %}class="link-text"{% endif %}>{{ 'customer.account.title' | t }}</span>
+      </a>
+           <!-- <div class="dropdown-container right">
+                <a href="/account/logout" class="btn">{{ 'layout.customer.log_out' | t }}</a>
+            </div>-->
+        {% else %}
+      
+       <a href="/account/logout">
+               
+              <!--<i class="icon icon-user"></i>-->
+              <span>Sign Out</span>
+              <span {% if header == 7 %}class="link-text"{% endif %}>{{ 'customer.account.title' | t }}</span>
+      </a>
+      
+      
+           <!-- <a href="https://isawitfirst-dubai.myshopify.com/pages/sign-in" ><span>Sign In</span>{% if header == 7 %}<span class="link-text">{{ 'general.theme.login' | t }}</span>{% endif %}</a>
+            <div class="dropdown-container right customSignInPopup">
+                {% form 'customer_login' %}
+              <div class="title">Sign In</div>
+               <!-- <div class="title">{{ 'customer.login.registered_customers' | t }}</div>
+                <div class="top-text">{{ 'customer.login.if_have_title' | t }}</div>
+               
+              <label>Email Address</label>
+                <input type="email" class="form-control" name="customer[email]" placeholder="{{ 'customer.login.email' | t }}*">
+              <label>Password</label>  
+              <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.login.password' | t }}*">
+                <!--<button type="submit" class="btn">{{ 'customer.login.sign_in' | t }}</button>-->
+              <button type="submit" class="btn">sign in</button>
+                <!-- /form -->
+                <!--<div class="title">{{ 'customer.login.or' | t }}</div>
+                <div class="bottom-text">{{ 'layout.customer.create_account' | t | customer_register_link }}</div>
+              <hr style="border-top: 1px solid #f1c9b4;">  
+              <div class="title"><p>New to the site? Join the #ISawItFirst Girl Gang! </p></div>
+              <div class="sub-title"><p>Welcome girl! It’s super quick and easy to set up an account</p></div>
+                <div class="bottom-text">create account</div>
+                {% endform %}
+            </div>-->
+        {% endif %}
+    </div>
+    <!-- /Header Account -->
+{% endif %}
+
+{% endcomment %}
+
+<!--------------------------------------------custom------------------------------------------------>
+
+{% if settings.login_box %}
+  <!-- Header Account -->
+  <div class="header-link dropdown-link header-account" style="position:static;">
+    {% if customer %}
+    <a href="/account/logout">
+
+      <span>Sign Out</span>
+      <!-- <span {% if header == 7 %}class="link-text"{% endif %}>{{ 'customer.account.title' | t }}</span>-->
+    </a>  
+
+    {% else %}
+
+    <a href="https://isawitfirst-dubai.myshopify.com/pages/sign-in" >Sign In</a>
+    <!-- <span {% if header == 7 %}class="link-text"{% endif %}>{{ 'customer.account.title' | t }}</span>-->
+
+  {% endif %}
+  </div>
+  <!-- /Header Account -->
+{% endif %}

@@ -1,0 +1,115 @@
+<div class="block product-block fullwidth full-nopad">
+    <div class="container">
+        <!-- Product Slider -->
+        <div class="product-slider-wrapper">
+            <div class="product-creative-slider">
+                {% for image in product.images %}
+                <div class="item">
+                    <img src="{{ image.src | img_url: '1024x1024' }}" alt="" class="inner-zoom" data-zoom-image="{{ image.src | img_url: '1024x1024' }}" >
+                </div>
+                {% endfor %}
+            </div>
+            <div class="product-creative-slider-control"></div>
+            <div class="dblclick-text"><span>Double click for enlarge</span></div>
+        </div>
+        <!-- /Product Slider -->
+    </div>
+</div>
+
+<div class="block product-block fullboxed creative-product-page">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                    <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+                    {% comment %}
+                    <h3 itemprop="brand">{{ product.vendor }}</h3>
+                    {% endcomment %}
+                    <div class="product-info-block creative">
+                        {% if product.description contains '[video]' %}<div class="video-link-wrapper"><a href="{{ product.description | split:'[video]' | last | split :'[/video]' | first }}" class="video-link"><i class="icon icon-film"></i></a></div>{% endif %}
+                    <h1 itemprop="name" class="product-name">{{ product.title }}</h1>
+                    <div class="product-meta">
+                        <span class="product-labels">
+                            {% if on_sale  and settings.show_label_sale %}<span class="product-label sale">{{ 'products.product.sale' | t }}</span>{% endif %}
+                            {% if product.description contains '[new]' %}<span class="product-label new">{{ 'general.theme.new' | t }}</span>{% endif %}
+                        </span>
+                        {% if settings.product_availability %}
+                            {% capture text_item %}{{ 'general.theme.item' | t }}{% endcapture %}
+                            {% capture text_items %}{{ 'general.theme.items' | t }}{% endcapture %}
+                           <b>{% if sold_out %}{{ 'products.product.sold_out' | t }}{% else %}In stock{% endif %} {% if settings.product_inventory_count %}{{ product.variants.first.inventory_quantity }} {{ product.variants.first.inventory_quantity  | pluralize: text_item, text_items }}{% endif %}</b>
+                        {% endif %}
+                        <span>{% include 'wishlist-product' %}</span>
+                        {% if settings.product_rating %}
+                        <span><span class="rating"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></span></span>
+                        {% endif %}
+                        {% if settings.product_sku and product.selected_or_first_available_variant.sku.size > 0 %}
+                            <div class="product-sku">{{ 'general.theme.sku' | t }}: <span>{{ product.selected_or_first_available_variant.sku }}</span></div>
+                        {% endif %}
+                        {% if settings.social_sharing_products %}
+                            <div class="social">
+                            <div class="share-button toLeft">
+                            <span class="toggle">{{ 'general.theme.share' | t }}</span>
+                            {% include 'social-sharing-product-item' product_url:product.url, product_title:product.title %}
+                            </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if settings.product_description %}
+                        {% if product.description contains '[short_description]' %}
+                        <div class="product-description">
+                            <p>{{ product.description  | split:"|config|" | first  | split:"[short_description]" | last | split:"[/short_description]" | first }}</p>
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                    <form action="/cart/add" method="post" enctype="multipart/form-data">
+                        {% include 'product-options-form' design:'creative' %}
+                        <div class="product-actions">
+                            {% if product.available %}
+                            {% if product.description contains '[countdown]' %}
+                                {% assign countdown=product.description|split:'[countdown]' %}
+                                {% assign countdown=countdown[1]|split:'[/countdown]' %}
+                                {% assign countdown=countdown[0] %}
+                                {% if on_sale %}
+                                <div class="countdown-circle">
+                                    <div class="countdown-wrapper">
+                                        <div class="countdown" data-countdown="{{ countdown }}"></div>
+                                            <div class="countdown-text">
+                                                {% assign percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by:product.compare_at_price | times: 100 | divided_by: 100 | floor  %}
+                                                <div class="text1">{{ 'general.theme.discount' | t :percent:percent }}</div>
+                                                <div class="text2">{{ 'general.theme.have_time_to_buy' | t }}</div>
+                                            </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            {% endif %}
+                            <div class="actions">
+                                <div class="price" itemprop="price" content="{{ product.price | money_without_currency }}">
+                                    {% capture price %}{{ product.price | money }}{% endcapture %}
+                                    {% if on_sale %}
+                                        <span class="old-price">{{ product.compare_at_price | money }}</span>
+                                    {% endif %}
+                                    <span class="special-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+                                </div>
+                                {% assign link_to = false %}
+                                {% if product.description contains '[link_to]' %}
+                                    {% assign link_to = true %}
+                                    {% assign link_to_href = product.description | split:'[link_to]' | last | split :'[/link_to]' | first %}
+                                {% endif %}
+                                {% if link_to %}
+                                    <a  class="btn btn-lg " href="{{ link_to_href }}" target="_blank"><i class="icon icon-cart"></i><span>{{ 'products.product.add_to_cart' | t }}</span></a>
+                                {% else %}
+                                    <button type="submit" class="btn btn-lg add_to_cart_product_page"><i class="icon icon-cart"></i><span>{{ 'products.product.add_to_cart' | t }}</span></button>
+                                {% endif %}
+                                <a href="{{ product.url }}" target="_parent" class="btn btn-lg product-details" title="More Info"><i class="icon icon-external-link"></i></a>
+                            </div>
+                            {% endif  %}
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+
+            {% include 'product-tabs' %}
+        </div>
+</div>

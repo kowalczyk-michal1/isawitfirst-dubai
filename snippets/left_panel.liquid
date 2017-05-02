@@ -1,0 +1,16 @@
+<!-- Sidebar -->
+<div class="sidebar-wrapper">
+    <div class="sidebar-top"><a href="#" class="slidepanel-toggle" title="Close Panel. Re-open in Tools Panel."><i class="icon icon-left-arrow-circular"></i></a></div>
+    <ul class="sidebar-nav">
+        {% for link in linklists[settings.left_panel_menu_handle]links %}
+            <li>{{ link.title | link_to: link.url }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="sidebar-bot">
+        {% if settings.social_sharing_blog %}
+            {% include 'social-sharing-full-page' position:'toTop' title:'' %}
+        {% endif %}
+    </div>
+</div>
+<!-- /Sidebar -->

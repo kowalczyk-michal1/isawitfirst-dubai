@@ -1,0 +1,28 @@
+{% assign home_page=settings.home_page %}
+
+
+
+{% capture section_2 %}home_{{ home_page }}_section_2{% endcapture %}
+{% if settings[section_2] != blank %}
+  {% include settings[section_2] %}
+{% endif %}
+
+{% capture section_3 %}home_{{ home_page }}_section_3{% endcapture %}
+{% if settings[section_3] != blank %}
+  {% include settings[section_3] %}
+{% endif %}
+
+{% capture section_4 %}home_{{ home_page }}_section_4{% endcapture %}
+{% if settings[section_4] != blank %}
+  {% include settings[section_4] %}
+{% endif %}
+
+{% capture section_5 %}home_{{ home_page }}_section_5{% endcapture %}
+{% if settings[section_5] != blank %}
+  {% include settings[section_5] %}
+{% endif %}
+
+{% capture section_6 %}home_{{ home_page }}_section_6{% endcapture %}
+{% if settings[section_6] != blank %}
+  {% include settings[section_6] %}
+{% endif %}

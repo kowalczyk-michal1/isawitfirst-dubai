@@ -1,0 +1,46 @@
+<div class="block">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="text-wrapper">
+          <h2>{{ 'general.theme.offices' | t }}</h2>
+          <div class="address-block">
+            {{ settings.address_1 }}
+          </div>
+          <div class="address-block last">
+            {{ settings.address_2 }}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="text-wrapper">
+          <h2>{{ 'general.theme.contact_information' | t }}</h2>
+          {% form 'contact', class:"contact-form white" %}
+          {% if form.posted_successfully? %}
+            <p class="note form-success">
+              <b>{{ 'contact.form.post_success' | t }}</b>
+            </p>
+          {% endif %}
+            {{ form.errors | default_errors }}
+
+            {% assign name_attr = 'contact.form.name' | t | handle %}
+            <input class="form-control input-lg" type="text" id="ContactFormName" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}"  value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+            <input class="form-control input-lg" type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}*"  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+            {% assign name_attr = 'contact.form.phone' | t | handle %}
+            <input class="form-control input-lg"  type="tel" id="ContactFormPhone" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+            <textarea  class="form-control input-lg" rows="10" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+            <div><button class="btn btn-lg" type="submit">{{ 'contact.form.send' | t }}</button></div>
+            <div class="required-text">* Required Fields</div>
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="block fullwidth">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+  {{ settings.google_map }}
+</div>

@@ -1,0 +1,34 @@
+.lotd-subcollection-placeholder {
+    height: 250px;
+}
+
+.col-md-6.collection-description {
+    padding-left: 0px;
+}
+
+.col-md-6.collection-description p {
+    padding: 28px 28px 28px 0;
+    text-align: justify;
+    margin: 0px;
+
+}
+
+ul.collection-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.collection-links li {
+	float: left;
+  	padding-right: 20px;
+}
+
+.collection-links li a {
+	font-weight: bold;
+  	color: black;
+}
+
+.collections-showhide {
+    margin-top: 15px;
+}

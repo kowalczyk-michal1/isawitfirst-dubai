@@ -1,0 +1,59 @@
+<header class="page-header {{ header_box }} variant-4 {{ settings.sticky }} {{ settings.sticky_color }} {{ settings.sticky_behavior }} {{ dark }} {{ settings.sticky_style }}">
+    <div class="navbar">
+        <!-- Header Top Row -->
+        <div class="header-top-row">
+            <div class="container">
+                <div class="header-top-left">
+                    <div class="header-custom-text">
+                        {% if settings.header_phone_1 != blank %}<span><i class="icon icon-phone"></i> {{ settings.header_phone_1 }}</span>{% endif %}
+                        {% if settings.header_phone_2 != blank %}<span><i class="icon icon-phone"></i> {{ settings.header_phone_2 }}</span>{% endif %}
+                    </div>
+                </div>
+                <div class="header-top-right">
+                    <div class="header-custom-text">{% if settings.header_address != blank %}<span>{{ settings.header_address }}</span>{% endif %}</div>
+                </div>
+            </div>
+        </div>
+        <!-- /Header Top Row -->
+        <div class="container">
+            <!-- Menu Toggle -->
+            <div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+            <!-- /Menu Toggle -->
+            <!-- Header Middle Row -->
+            <div class="header-middle-row">
+                <div class="header-middle-left">
+                    <div class="header-logo">
+                        {% include 'header-logo' %}
+                    </div>
+                </div>
+                <div class="header-middle-center">
+                    {% if settings.header_info != blank %}
+                    {{ settings.header_info }}
+                    {% endif %}
+                </div>
+                <div class="header-middle-right">
+                    <!-- Header Cart -->
+                    {% include 'header-cart' %}
+                    <!-- /Header Cart -->
+                    <!-- Header Links -->
+                    <div class="header-links">
+                        {% include 'header-languages' %}
+                        {% include 'currency-picker' %}
+                        {% include 'header-login-form' %}
+                    </div>
+                    <!-- /Header Links -->
+                </div>
+            </div>
+            <!-- /Header Middle Row -->
+            <!-- Header Search -->
+            {% include 'header-search' %}
+            <!-- /Header Search -->
+        </div>
+        <div class="menu-wrapper">
+            <div class="container">
+                {% include 'mobile-nav' %}
+                {% include 'megamenu-nav' %}
+            </div>
+        </div>
+    </div>
+</header>

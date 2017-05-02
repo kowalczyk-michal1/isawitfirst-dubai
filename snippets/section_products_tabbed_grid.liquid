@@ -1,0 +1,22 @@
+{% assign collection_id=settings.products_tabbed_grid_collection %}
+<div class="block">
+    <div class="container">
+        {% if settings.products_tabbed_grid_tags != blank %}
+        <ul class="filters filters-product style2">
+            <li><a href="#" class="filter-label">All<span class="count"></span></a></li>{% assign tabs_tags = settings.products_tabbed_grid_tags | split:',' %}{% for tab_tag in tabs_tags %}<li><a href="#" class="filter-label {% if tab_tag == 'new' %}active{% endif %}" data-filter=".tag-filter-{{ tab_tag | handle }}">{{ tab_tag | replace:' ','' }}<span class="count"></span></a></li>{% endfor %}
+        </ul>
+        {% endif %}
+        <div class="products-grid-wrapper isotope-wrapper">
+            <div class="products-grid four-in-row product-variant-5 isotope min-{{ settings.collections_products_per_row_mobile }}">
+                {% for product in collections[collection_id].products %}
+                    {% case slides_to_show %}
+                    {% when '3' %}
+                    {% include 'product-item-big' image_size:'grande', filter_tabs:1 %}
+                {% else %}
+                    {% include 'product-item-big' image_size:'large', filter_tabs:1 %}
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

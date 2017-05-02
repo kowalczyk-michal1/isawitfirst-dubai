@@ -1,0 +1,101 @@
+<div class="col-md-12 product-page-options-form">
+    <div class="product-page-options-form-content">
+        <div class="product-options {{ product_options }} {% if product.options.size > 2 %}more-options{% endif %}">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        {% unless product.options.size == 1 and product.options.first == 'Title' %}
+        {% assign index = 0 %}
+        {% for option in product.options %}
+            {% assign option_names = '' %}
+            {% assign option_title = option | downcase %}
+            {% assign index = forloop.index0 %}
+            {% assign selected_value = '' %}
+            {% assign color_images = '' %}
+            {% assign color_image = '' %}
+            {% for variant in product.variants %}
+                {% if variant.available %}
+                    {% if variant == product.selected_or_first_available_variant %}
+                        {% assign selected_value = variant.options[index] %}
+                    {% endif %}
+                    {% assign img_url = variant.image.src |  img_url: '1024x1024' %}
+                    {% assign option_names = option_names | append:variant.options[index] | append:'<>' %}
+                    {% assign color_images = color_images | append : img_url  | append:'<>' %}
+                    {% assign check_color_name = '!__!' | append:variant.options[index] | append:'!__!' %}
+                    {% unless color_image contains check_color_name %}
+                    {% assign color_image = color_image | append:'!__!' | append:variant.options[index] | append:'!__!:' | append:img_url  | append:'<>' %}
+                    {% endunless %}
+                {% endif %}
+            {% endfor %}
+            {% assign color_images = color_images | split:'<>' | uniq %}
+            {% assign option_names = option_names | split:'<>' | uniq %}
+            {% assign color_image = color_image | split:'<>' | uniq %}
+            <div class="product-size {{ product_options }} option-{{ option | handle }}">
+                <span class="option-label">{{ option }}:</span>
+                <div class="select-wrapper-sm">
+                    <select class="form-control input-sm size-variants">
+                        {% for name in option_names %}
+                            <option {% if selected_value == name %}selected="selected"{% endif %} value="{{ name | handle | downcase | escape }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% if settings.product_options == 'swatches' %}
+                    <ul class="{% if option_title contains 'color' %}color-list{% else %}size-list{% endif %}" data-index="{{ forloop.index0 }}">
+                        {% for name in color_image %}
+                            {% assign title = name | split:':' | first | replace:'!__!','' %}
+                            {% assign img_src = name | split:':' | last %}
+                            <li  {% if selected_value == title %}class="active"{% endif %}>
+                                {% if option_title contains 'color' %}<a href="#" data-tooltip="{{ title }}" data-placement="top" title="{{ title }}" data-value="{{ title | handle | escape }}" data-image="{{ img_src }}"><span class="value"><img src="{% if settings.product_previews_colors_variants %}{{ img_src }}{% else %}{{ title | handle | prepend:'color-' | append: '.png' | file_url | downcase }}{% endif %}" alt=""></span></a>{% else %}<a href="#" data-value='{{ title | handle | downcase | escape }}'><span class="value">{{ title | escape }}</span></a>{% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% endunless %}
+
+
+    <script>
+        var product_options = [];
+        {% assign options = product.selected_or_first_available_variant.title | split:' / ' %}
+        {% for option in options %}
+        {% assign option_index = forloop.index0 %}
+        {% for variant in product.variants %}
+        {% if variant.available %}
+        {% assign params = variant.title | split:' / ' %}
+        product_options{% for name in params %}{% if forloop.index0 > option_index  %}{% continue %}{% endif %}['{{ params[forloop.index0]|handle|strip|downcase}}']{% endfor %}=[];
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% for variant in product.variants %}
+        {% if variant.available %}
+        {% assign params = variant.title | split:' / ' %}
+        {% assign attributes = 'price,compare_at_price,id,image,inventory_quantity,inventory_management,inventory_policy,sku' | split:',' %}
+        {% for attribute in attributes %}
+        product_options{% for name in params %}['{{ name |handle|strip|downcase }}']{% endfor %}['{{ attribute|downcase }}']='{% if attribute == 'image'%}{% unless variant.image.src contains 'products' %}{{ product.featured_image |  img_url: '1024x1024' }}{% else %}{{ variant.image.src |  img_url: '1024x1024' }}{% endunless %}{% else %}{{ variant[attribute] }}{% endif %}';
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </script>
+
+    {% if design == 'default' %}</div>{% endif %}
+    {% if design == 'creative' %}</div>{% endif %}
+
+    </div>
+
+{% if product.available %}
+
+        {% if settings.show_quantity_product_page_yes %}
+        <div class="product-qty">
+            <span class="option-label">{{ 'products.product.quantity' | t }}:</span>
+            <div class="qty qty-changer">
+                <fieldset>
+                    <input type="button" value="&#x2212;" class="decrease">
+                    <input type="text" class="qty-input" name="quantity" value="1" data-min="1" {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity > 0 and product.variants.first.inventory_policy == 'deny' %}data-max="{{ product.variants.first.inventory_quantity }}"{% endif %}>
+                    <input type="button" value="+" class="increase"> <span class="{% unless product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity > 0 and product.variants.first.inventory_policy == 'deny'  %}hidden{% endunless %} stock-dynamic">{% if settings.product_inventory_count %}max <b>{% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity > 0 %}{{ product.variants.first.inventory_quantity }}{% endif %}</b> {{ 'general.theme.itemss' | t }}{% endif %}</span>
+                </fieldset>
+            </div>
+        </div>
+        {% endif %}
+
+{% endif %}
+
+</div>

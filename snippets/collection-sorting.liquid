@@ -1,0 +1,52 @@
+<!-- Filter Row -->
+<div class="filter-row">
+  <div class="row">
+    <div class="col-xs-8 col-sm-6 col-lg-5 col-right pull-right">
+      <div class="filter-button">
+        <a href="#" class="btn filter-col-toggle"><i class="icon icon-filter"></i><span>{{ 'collections.toolbar.filter' | t }}</span></a>
+      </div>
+      <div class="form-label">{{ 'collections.sorting.title' | t }}:</div>
+      <div class="select-wrapper-sm">
+        <select class="form-control input-sm SortBy"  name="sort_by" id="sort_by">
+          <option value="manual">{{ 'collections.sorting.featured' | t }}</option>
+          <option value="best-selling">{{ 'collections.sorting.best_selling' | t }}</option>
+          <option value="title-ascending">{{ 'collections.sorting.az' | t }}</option>
+          <option value="title-descending">{{ 'collections.sorting.za' | t }}</option>
+          <option value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</option>
+          <option value="price-descending">{{ 'collections.sorting.price_descending' | t }}</option>
+          <option value="created-descending">{{ 'collections.sorting.date_descending' | t }}</option>
+          <option value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</option>
+        </select>
+        
+      </div>
+
+    </div>
+     {% comment %}
+    <div class="col-sm-2 col-lg-2 hidden-xs">
+      <div class="view-mode">
+        {% unless settings.collections_listing_only_default %}
+        <a href="#" class="grid-view"><i class="icon icon-th"></i></a>
+        <a href="#" class="list-view"><i class="icon icon-th-list"></i></a>
+        {% endunless %}
+      </div>
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-lg-5 col-right">
+      <div class="form-label">{{ 'collections.toolbar.show' | t }}:</div>
+      <div class="select-wrapper-sm">
+        <form  method="get" id="show_pages">
+
+          <select class="form-control input-sm" name="view">
+            <option {% if page_limit == "9" %}selected{% endif %} value="9">9</option>
+            <option {% if page_limit == "18" %}selected{% endif %} value="18">18</option>
+            <option {% if page_limit == "36" %}selected{% endif %} value="36">36</option>
+            <option {% if page_limit == "50" %}selected{% endif %} value="all">{{ 'collections.toolbar.all' | t }}</option>
+          </select>
+        </form>
+      </div>
+    </div>
+      {% endcomment %}  
+  </div>
+  <div class="bg-striped"></div>
+</div>
+<!-- /Filter Row -->
