@@ -994,3 +994,10 @@ color:#000;
    
 }
 }
+
+
+/* Daniel edits */
+
+html .col-xs-6.collection-text {
+    padding: 40px !important;
+}

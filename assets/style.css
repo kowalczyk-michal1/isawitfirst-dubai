@@ -1017,15 +1017,12 @@ body.touch #wrapper {
   line-height: 30px;
   padding: 5px 5px;
   color: #333745;
-  text-decoration: none;
   cursor: pointer;
 }
 .header-link > a span {
   text-decoration: none;
 }
-.header-link > a:hover {
-  text-decoration: none;
-}
+
 .header-link > a:hover i.icon {
   color: #ccc;
 }
@@ -7837,9 +7834,9 @@ button.action:focus,
 .btn:active,
 .btn-primary:active,
 button.action:active {
-  background-color: #ccc;
-  color: #ffffff;
-  border-color: #ccc;
+  background-color: /*#ccc;
+  color:/*#ffffff;
+  border-color: #ccc;*/
 }
 .btn:hover,
 .btn-primary:hover,
@@ -14442,7 +14439,7 @@ ul.category-list li.active a.clear:hover {
   padding: 0;
   margin: 0;
   float: left;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 .color-list li {
   display: inline-block;
@@ -20226,7 +20223,7 @@ select#sel1 {
   border: none;
   outline: none;
   background-color: transparent;
-  width: 65%;
+  width: 35%;
   height: 40px;
   margin: 0;
   z-index: 10;
@@ -20412,7 +20409,11 @@ padding-left: 0px;
 }
 
 .header-link a,.header-link a span{
-  color:#000;
+  color: #191919;
+  font-size: 12px;
+}
+.header-link a:hover{
+  text-decoration:underline;
 }
 
 
@@ -20807,6 +20808,19 @@ i.icon.ct-size img {
   .customSignInPopup-wrap {
     background: #ccc!important;
   }
+  .header-links.wishlist div {
+    display: none;
+  }
+  .custom-form-wrap {
+    display: inline-block;
+    width: 100%;
+}
+  input.form-control.cust-text1 {
+    width: 90%!important;
+  }
+  .custom-receive-news form {
+    margin: 0;
+}
 
 }
 

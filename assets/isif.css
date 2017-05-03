@@ -286,7 +286,7 @@
 }
 
 .page-design-lotd .product-info-block .product-options ul  {
-    padding-top:5px;
+    padding-top:-5px;
 }
 
 .page-design-lotd .product-info-block .product-options ul.size-list {
@@ -300,7 +300,7 @@
 
 .wishlist_button {
     width: 100%;
-    background: #EFBFBF;
+    /*background: #EFBFBF;*/
     border: 1px solid #EFBFBF;
 	padding-top: 11px;
 	padding-bottom: 11px;
@@ -308,13 +308,13 @@
 }
 
 .wishlist_button:hover {
-    border-color: #000 !important;
-    color: #fff !important;
-    background: #000 !important;
+    border-color: #EFBFBF !important;
+    color: #000 !important;
+    background: #EFBFBF !important;
 }
 
 .wishlist_button:hover .wishlist_button_icon {
-    background: url(heart-white.png);
+    background: url(heart_bw.png);
     background-size: 100% 100%;
 }
 
@@ -1275,4 +1275,42 @@ header.is-sticky .section_below_menu {
 
 .product-variant-5 .product-item.large .color-swatch li img {
     border-radius: 0 !important;
+}
+
+
+
+
+
+/* Daniel Subcategory Edits */
+.lotd-collection-description {
+	width: 100%;
+  	height:300px;
+  	background: #F9ECE8;
+  	color: #000;
+}
+
+html .col-xs-6.collection-text {
+    padding: 50px;
+}
+
+.collections-showhide.collections-left-side {
+    margin-top: 40px;
+}
+
+.collection-text .list-group {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  	color: #000;
+  	margin-top: 20px;
+}
+
+.list-group li {
+    float: left;
+  padding-right: 15px;
+}
+
+.list-group li a {
+  color: black;
 }
