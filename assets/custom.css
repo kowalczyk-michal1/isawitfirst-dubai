@@ -998,6 +998,38 @@ color:#000;
 
 /* Daniel edits */
 
+
+
+.lotd-collection-description {
+	width: 100%;
+  	height:300px;
+  	background: #F9ECE8;
+  	color: #000;
+}
+
 html .col-xs-6.collection-text {
-    padding: 40px !important;
+    padding: 30px;
+    height: 300px;
+}
+
+.collections-showhide.collections-left-side {
+    margin-top: 40px;
+}
+
+.collection-text .list-group {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  	color: #000;
+  	margin-top: 20px;
+}
+
+.list-group li {
+    float: left;
+  padding-right: 15px;
+}
+
+.list-group li a {
+  color: black;
 }

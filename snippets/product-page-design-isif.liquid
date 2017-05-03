@@ -130,7 +130,7 @@
                             {% if product.available %}
                                 <div class="product-actions">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-9">
 
                                             <div class="actions">
                                                 {% assign link_to = false %}
@@ -148,6 +148,7 @@
                                             
 
                                         </div>
+                                        <!--
                                         <div class="col-md-6">
 
                                             <div class="product-meta">
@@ -155,9 +156,12 @@
                                             </div>
 
                                         </div>
+                                        -->
                                     </div>
                                 </div>
                             {% endif  %}
+
+
                         </form>
 
                         <div class="buy-related-products">
@@ -183,6 +187,11 @@
         arrows: true,
         vertical: true,
         adaptiveHeight: true
+    });
+
+    $(function() {
+        $(".option-color").after($(".option-size"));
+
     });
 </script>
 

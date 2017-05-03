@@ -7138,7 +7138,6 @@ span.special-price {
 }
 .product-variant-5 .product-item.large .color-swatch li.active,
 .product-variant-5 .product-item.large .color-swatch li:hover {
-  width: 26px;
   border-radius: 0;
   border: 0;
   margin: 0 1px;
@@ -20828,5 +20827,16 @@ i.icon.ct-size img {
 .col-xs-4 {
     width: 100%;
 }
+  
+}
+
+@media screen and (min-width: 990px) {
+
+  .customSignInPopup-wrap {
+    height: 760px;
+  }
+  .customSignInPopup{
+    height: 645px;
+  }
   
 }

@@ -173,7 +173,7 @@
 
 .page-design-lotd .product-description {
     font-family: HelveticaNeueLTStd-Th;
-    font-size: 15px;
+    font-size: 17px;
     margin-top: 25px;
     margin-bottom: 35px;
     color: #3c3c3c;
@@ -1250,7 +1250,10 @@ header.is-sticky .section_below_menu {
     display: none !important;
 }
 
-.related-products-lotd .slick-prev, .related-products-lotd .slick-prev:not(.slick-disabled):hover {
+.related-products-lotd .slick-prev,
+.related-products-lotd .slick-prev:not(.slick-disabled):hover,
+#home_default_section_2 .slick-prev,
+#home_default_section_2 .slick-prev:not(.slick-disabled):hover  {
     content: " ";
     background: url(lotd-left-arrow.png);
     background-size: 100% 100%;
@@ -1261,7 +1264,10 @@ header.is-sticky .section_below_menu {
 .slick-prev:not(.slick-disabled):hover {
 }
 
-.related-products-lotd .slick-next, .related-products-lotd .slick-next:not(.slick-disabled):hover {
+.related-products-lotd .slick-next,
+.related-products-lotd .slick-next:not(.slick-disabled):hover,
+#home_default_section_2 .slick-next,
+#home_default_section_2 .slick-next:not(.slick-disabled):hover {
     content: " ";
     background: url(lotd-right-arrow.png);
     background-size: 100% 100%;
@@ -1284,13 +1290,18 @@ header.is-sticky .section_below_menu {
 /* Daniel Subcategory Edits */
 .lotd-collection-description {
 	width: 100%;
-  	height:300px;
+  	min-height: 300px;
+    height: auto;
   	background: #F9ECE8;
   	color: #000;
+    display: table;
 }
 
 html .col-xs-6.collection-text {
-    padding: 50px;
+    padding: 30px;
+    height: 260px;
+    overflow: auto;
+  	margin: 10px 0;
 }
 
 .collections-showhide.collections-left-side {
@@ -1313,4 +1324,51 @@ html .col-xs-6.collection-text {
 
 .list-group li a {
   color: black;
+}
+
+
+
+/* COLLECTION PAGE HEADER RESPONSIVE */
+
+@media screen and (max-width: 1580px) {
+    .lotd-collection-description .col-xs-6 {
+        display: block;
+        width: 100%;
+    }
+
+    .lotd-collection-description .col-xs-6 img {
+        width: 100%;
+
+        margin-bottom: 15px;
+    }
+}
+
+
+/* HOME PAGE */
+
+#home_default_section_2 .container {
+    width: 95%;
+    margin: 5px auto;
+}
+
+#home_default_section_2 .container .slick-prev {
+    top: 165px;
+    left: -40px;
+}
+
+#home_default_section_2 .container .slick-next {
+    top: 165px;
+    right: -40px;
+}
+
+.isif-size-guide {
+    position: absolute;
+    right:10px;
+}
+
+
+
+.lotd-collection-title span {
+    font-size: 19px;
+    font-weight: normal;
 }
