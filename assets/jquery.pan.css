@@ -1,0 +1,10 @@
+/* */
+.panWrapper {position:fixed; width:100%; height:100%;  background-color:rgba(255,255,255,0.9); z-index:9999999; left:0; top:0; display:none; cursor:move;}
+.panWrapper * {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;-o-user-select: none;user-select: none;}
+
+.panWrapper a.controls {background-size:100%; width:32px; height:32px; display:block; position:absolute; left:50%; z-index:2; bottom:30px; cursor:pointer;}
+.panWrapper a.controls.in{background-image:url('zoomIn.png'); margin-left:-30px;opacity:0.8;}
+.panWrapper a.controls.out{background-image:url('zoomOut.png'); margin-left:30px;opacity:0.8;}
+.panWrapper a.controls.close{background-image:url('close.png'); left:auto; right:30px; top:30px;opacity:0.8;}
+.panWrapper a.controls.close:hover, .panWrapper a.controls.out:hover, .panWrapper a.controls.in:hover { opacity: 1; }
+.panWrapper .loading{z-index:3; position:absolute; left:50%; top:50%; margin:-50px 0 0 -50px; width:100px; height:100px; background-image:url(loading.gif); background-repeat:no-repeat; background-size:100%; display:block;}

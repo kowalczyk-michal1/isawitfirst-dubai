@@ -13,7 +13,7 @@
         </div>
     <label for="address_zip">Zip/Postal Code</label>
     <input class="form-control" type="text" id="address_zip" name="address[zip]"{% if shop.customer_accounts_enabled and customer %} value="{{ customer.default_address.zip }}"{% endif %} />
-    <div><input type="button" class="get-rates btn btn-alt" value="{{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' }}" /></div>
+    <div><input type="button" class="get-rates btn btn-alt" value="{{ settings.shipping_calculator_submit_button_label | default: 'CALCULATE SHIPPING' }}" /></div>
     <div id="wrapper-response"></div>
 </div>
 
@@ -50,7 +50,7 @@
 <script>
 
     Shopify.Cart.ShippingCalculator.show( {
-        submitButton: {{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' | json }},
+        submitButton: {{ settings.shipping_calculator_submit_button_label | default: 'CALCULATE SHIPPING' | json }},
         submitButtonDisabled: {{ settings.shipping_calculator_submit_button_label_disabled | default: 'Calculating...' | json }}{% if customer %},
         customerIsLoggedIn: true{% endif %},
         moneyFormat: {{ shop.money_with_currency_format | json }}

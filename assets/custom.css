@@ -75,7 +75,7 @@ body{
 .section_below_menu {
     width: 100%;
     display: table;
-  	margin-bottom:3px;
+  	margin-bottom:0px;
     /*background: #d1d3d4;*/
 }
 .section_below_menu a {
@@ -998,14 +998,36 @@ color:#000;
 
 /* Daniel edits */
 
+/*html  
+}*/
+
+.customSignInPopup-wrap .form-card h3 {
+   font-family: arial;
+   text-align: center;
+   font-weight: bold;
+   font-size: 22px;
+   color: #000;
+}
 
 
 .lotd-collection-description {
 	width: 100%;
   	height:300px;
-  	background: #F9ECE8;
+  	background: c;
   	color: #000;
 }
+
+.btn span, .btn-primary span, button.action span {
+    position: relative;
+    top: 0;
+    left: 0;
+  	text-transform: lowercase;
+}
+
+.page-design-lotd .main-image {
+  
+}
+
 
 html .col-xs-6.collection-text {
     padding: 30px;
@@ -1032,4 +1054,46 @@ html .col-xs-6.collection-text {
 
 .list-group li a {
   color: black;
+}
+
+.primary a span {
+    color: #191919;
+    font-size: 12px;
+}
+.secondary a span {
+    color: #fff;
+    font-size: 12px;
+}
+
+.secondary .btn i.icon, .btn-primary i.icon, button.action i.icon {
+  color: white; 
+}
+
+.btn-alt, .btn-alt.focus, .btn-alt:focus, .btn-alt:active {
+    background-color: black;
+    border-color: black;
+}
+
+.search-results a {
+    color: #000;
+}
+
+.search-results li {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #fff;
+  overflow: hidden;
+}
+
+body #home_default_section_2 .container .slick-prev {
+    top: 9.85vw;
+    left: -40px;
+}
+
+body #home_default_section_2 .container .slick-next {
+    top: 9.85vw;
+    right: -40px;
 }

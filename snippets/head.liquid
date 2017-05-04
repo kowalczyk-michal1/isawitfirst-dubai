@@ -533,22 +533,9 @@
 
                     zoompos = $('body').is('.rtl') ? 11 : 1;
             if(!$('body').is('.touch')){
-                $this.ezPlus({
-                    zIndex: 1002,
-                    zoomWindowPosition: zoompos,
-                    zoomContainerAppendTo: '.page-main',
-                    gallery: 'vertical-carousel',
-                    galleryActiveClass: 'active',
-                });
-				
-				$this.ezPlus({
-                    zoomType: 'lens',
-                    zIndex: 1002,
-                    zoomContainerAppendTo: '.main-image',
-                    gallery: 'vertical-carousel',
-                    galleryActiveClass: 'active',
 
-                });
+				
+
             } else {
                 $this.ezPlus({
                     zoomType: 'lens',

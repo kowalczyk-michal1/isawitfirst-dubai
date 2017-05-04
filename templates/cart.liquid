@@ -2,7 +2,7 @@
 <div class="block">
   <div class="container">
     <div class="title center">
-      <h1>Shopping cart</h1>
+      <h1 style="text-transform: none;">Shopping Bag</h1>
     </div>
     <form action="/cart" method="post" novalidate class="cart white">
     <div class="cart-table">
@@ -13,7 +13,7 @@
         <div class="name">
           {{ 'cart.label.cart_product_name' | t}}
         </div>
-        <div class="price">
+        <div class="price tt">
           {{ 'cart.label.price' | t}}
         </div>
         <div class="qty">
@@ -100,9 +100,14 @@
       </div>
       {% endfor %}
       <div class="table-footer">
-        <a class="btn btn-alt" href="{{ shop.url }}">{{ 'cart.general.continue' | t }}</a>
-        <a class="btn btn-alt pull-right" href="/cart/clear"><i class="icon icon-bin"></i><span>{{ 'cart.general.clear' | t }}</span></a>
-        <button class="btn btn-alt pull-right" type="submit" name="update"><i class="icon icon-sync"></i><span>{{ 'cart.general.update' | t }}</span></button>
+        <!--<a class="btn btn-alt" href="{{ shop.url }}">{{ 'cart.general.continue' | t }}</a>-->
+        <a class="btn btn-alt" href="{{ shop.url }}">BUY ME NOW</a>
+ <!--<a class="btn btn-alt pull-right" href="/cart/clear"><i class="icon icon-bin"></i><span>{{ 'cart.general.clear' | t }}</span></a>-->
+ <a class="btn btn-alt pull-right" href="/cart/clear"><i class="icon icon-bin"></i><span> CLEAR SHOPPING BAG</span></a>
+     
+        
+        <!-- <button class="btn btn-alt pull-right" type="submit" name="update"><i class="icon icon-sync"></i><span>{{ 'cart.general.update' | t }}</span></button>-->
+     <button class="btn btn-alt pull-right" type="submit" name="update"><i class="fa fa-spinner" aria-hidden="true"></i><span> RELOAD SHOPPPING BAG</span></button>
       </div>
     </div>
     <div class="row">
@@ -121,9 +126,9 @@
         </table>
         <div class="cart-action">
           <div><button class="btn" type="submit" name="checkout">{{ 'cart.general.checkout_procees' | t }}</button></div>
-          {% if additional_checkout_buttons %}
+       {% comment %}   {% if additional_checkout_buttons %}
             <div class="cart__additional_checkout">{{ content_for_additional_checkout_buttons }}</div>
-          {% endif %}
+         {% endif %} {% endcomment %}
         </div>
       </div>
       <div class="col-sm-6 col-md-5">
@@ -134,7 +139,7 @@
       <div class="col-sm-6 col-md-4">
         <h2>{{ 'cart.general.note' | t }}</h2>
           <label>{{ 'cart.general.note_desc' | t }}</label>
-          <textarea class="form-control dashed"  name="note"  id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          <textarea placeholder="Here.." class="form-control dashed"  name="note"  id="CartSpecialInstructions">{{ cart.note }}</textarea>
       </div>
       {% endif %}
     </div>

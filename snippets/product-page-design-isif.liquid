@@ -35,6 +35,9 @@
 {% assign column_3 = 'col-md-4 hidden-quickview' %}
 
 
+{{ 'jquery.pan.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.pan.js' | asset_url | script_tag }}
+
 <div class="block product-block page-design-lotd">
     <div class="container">
         <div class="row">
@@ -44,10 +47,9 @@
                     <div class="col-md-9">
                         <div class="main-image">
                             {% assign featured_image = product.featured_image %}
-                            <img src="{{ featured_image | img_url: 'master' }}" alt="{{ featured_image.alt | escape }}"  class="zoom" data-zoom-image="{{ featured_image | img_url: 'master' }}">
+                            <img src="{{ featured_image | img_url: 'master' }}" alt="{{ featured_image.alt | escape }}" id="main-image" class="zoom pan" data-big="{{ featured_image | img_url: 'master' }}" data-zoom-image="{{ featured_image | img_url: 'master' }}">
                             <div class="dblclick-text"><span>Double click for enlarge</span></div>
                             {% if product.description contains '[video]' %} <a href="{{ product.description | split:'[video]' | last | split :'[/video]' | first }}" class="video-link"><i class="icon icon-film"></i></a>{% endif %}
-                            <a href="{{ featured_image | img_url: 'master' }}" class="zoom-link{% if product.images.size < 2 %} disable-gallery{% endif %}"><i class="icon icon-zoomin"></i></a>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -148,15 +150,15 @@
                                             
 
                                         </div>
-                                        <!--
-                                        <div class="col-md-6">
+
+                                        <div class="col-md-3">
 
                                             <div class="product-meta">
                                                 <span>{% include 'wishlist-product' %}</span>
                                             </div>
 
                                         </div>
-                                        -->
+                                        
                                     </div>
                                 </div>
                             {% endif  %}
@@ -192,6 +194,16 @@
     $(function() {
         $(".option-color").after($(".option-size"));
 
+        $(".pan").pan();
+
+        $("#vertical-carousel a").on( "click", function() {
+            var img_url = $(this).data('image');
+
+            $("#main-image").attr('data-big', img_url);
+            $("#main-image").attr('src', img_url);
+
+            return false;
+        });
     });
 </script>
 

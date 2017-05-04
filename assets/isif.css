@@ -1372,3 +1372,7 @@ html .col-xs-6.collection-text {
     font-size: 19px;
     font-weight: normal;
 }
+
+.main-image img {
+    cursor: zoom-in;
+}

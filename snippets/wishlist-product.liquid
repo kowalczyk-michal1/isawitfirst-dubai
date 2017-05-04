@@ -15,7 +15,7 @@
     {% if type_view == 'button' %}
       <a {% if display %}href="#"{% else %}href="/pages/my-wishlist"{% endif %}  {% if display %}title="Add to Wishlist"{% else %}title="{{ 'general.theme.go_to_wishlist' | t }}"{% endif %} data-email="{{ customer.email }}" data-tags="{{ value }}" class="btn btn-sm btn-invert {% if display %}add_to_wishlist{% else %}wishlist active{% endif %}" data-name="{{ product.title }}"> <i class="wishlist_button_icon_content"><i class="wishlist_button_icon"></i></i><div class="bg-striped"></div></a>
     {% else %}
-      <a {% if display %}href="#"{% else %}href="/pages/my-wishlist"{% endif %}  {% if display %}title="Add to Wishlist"{% else %}title="{{ 'general.theme.go_to_wishlist' | t }}"{% endif %} data-email="{{ customer.email }}" data-tags="{{ value }}" class="add_to_wishlist btn btn-lg wishlist_button {% if display %}add_to_wishlist{% else %}wishlist active{% endif %}" data-name="{{ product.title }}"> <i class="wishlist_button_icon_content"><i class="wishlist_button_icon"></i></i><span>{{ 'general.theme.add_to_wishlist' | t }}</span> <div class="bg-striped"></div></a>
+      <a {% if display %}href="#"{% else %}href="/pages/my-wishlist"{% endif %}  {% if display %}title="Add to Wishlist"{% else %}title="{{ 'general.theme.go_to_wishlist' | t }}"{% endif %} data-email="{{ customer.email }}" data-tags="{{ value }}" class="add_to_wishlist btn btn-lg wishlist_button {% if display %}add_to_wishlist{% else %}wishlist active{% endif %}" data-name="{{ product.title }}"> <i class="wishlist_button_icon_content"><i class="wishlist_button_icon"></i></i> <div class="bg-striped"></div></a>
     {% endif %}
 
   {% else %}
@@ -23,6 +23,6 @@
     {% if type_view == 'button' %}
       <a href="#" class="btn btn-sm btn-invert no_wishlist"><i class="icon icon-heart-1"></i></a>
     {% else %}
-      <a href="#" title="{{ 'general.theme.add_to_wishlist' | t }}" class="no_wishlist btn btn-lg wishlist_button"> <i class="wishlist_button_icon_content"><i class="wishlist_button_icon"></i></i><span>{{ 'general.theme.add_to_wishlist' | t }}</span> </a>
+      <a href="#" title="{{ 'general.theme.add_to_wishlist' | t }}" class="no_wishlist btn btn-lg wishlist_button"> <i class="wishlist_button_icon_content"><i class="wishlist_button_icon"></i></i> </a>
     {% endif %}
 {% endif %}

@@ -665,7 +665,7 @@
     "shipping_calculator": "Enabled",
     "shipping_calculator_heading": "Get shipping estimates",
     "shipping_calculator_default_country": "United States",
-    "shipping_calculator_submit_button_label": "Calculate shipping",
+    "shipping_calculator_submit_button_label": "CALCULATE SHIPPING",
     "shipping_calculator_submit_button_label_disabled": "Calculating...",
     "social_sharing_products": true,
     "social_sharing_blog": true,

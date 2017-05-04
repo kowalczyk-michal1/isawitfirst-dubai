@@ -1,30 +1,6 @@
 <div class="customSignInPopup-wrap">
-<div class="dropdown-container right customSignInPopup">
-                {% form 'customer_login' %}
-              <div class="title">Sign In</div>
-               <!-- <div class="title">{{ 'customer.login.registered_customers' | t }}</div>
-                <div class="top-text">{{ 'customer.login.if_have_title' | t }}</div>-->
-                <!-- form -->
-              <label>Email Address</label>
-                <input type="email" class="form-control" name="customer[email]" placeholder="{{ 'customer.login.email' | t }}*">
-              <label>Password</label>  
-              <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.login.password' | t }}*">
-                <!--<button type="submit" class="btn">{{ 'customer.login.sign_in' | t }}</button>-->
-              <button type="submit" class="btn cust-sign">sign in</button>
-                <!-- /form -->
-                <!--<div class="title">{{ 'customer.login.or' | t }}</div>
-                <div class="bottom-text">{{ 'layout.customer.create_account' | t | customer_register_link }}</div>-->
-              <hr style="border-top: 1px solid #e7bfbf;">  
-              <div class="title"><p>New to the site? Join the #ISawItFirst Girl Gang! </p></div>
-              <div class="sub-title"><p>Welcome girl! It’s super quick and easy to set up an account</p></div>
-               <!-- <div class="bottom-text">{{ 'layout.customer.create_account' | t | customer_register_link }}</div>
-               -->
-  <div class="bottom-text"><a id="customer_register_link">create account</a></div>
-              
-  {% endform %}
-</div>
   
-<div class="dropdown-container right customRegisterPopup">
+<div class="dropdown-container right customRegisterPopup1">
     <div class="form-card">
       <h3>{{ 'customer.register.title' | t }}</h3>
       {% form 'create_customer', class:"account-create" %}
