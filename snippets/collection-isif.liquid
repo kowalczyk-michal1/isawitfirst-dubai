@@ -47,7 +47,7 @@
                 {% endif %}
             </div>
           	
-          	<div class="collections-showhide collections-left-side">
+          	<div class="collections-showhide collections-left-side{% if collection.description == blank %} show-hide-button-below{% endif %}">
           		<a href="javascript:collectionHideFilters();" class="show-hide-button"></a>
          	</div>
 

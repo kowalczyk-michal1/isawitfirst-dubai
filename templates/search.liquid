@@ -34,7 +34,7 @@
             <div class="products-grid five-in-row product-variant-5">
               {% for item in search.results %}
                {% if item.object_type == 'product' %}
-               {% include 'product-item-big' product:item, image_size:'large'%}
+               {% include 'product-item-big-isif' product:item, image_size:'large'%}
                {% else %}
                {% include 'post-item-in-search' product:item, image_size:'large'%}
                {% endif %}

@@ -12097,7 +12097,7 @@ body.layout-advanced .box-left-icon-bg {
 .productStack .toggleStack .icon {
   font-size: 30px;
   vertical-align: sub;
-  padding: 0 10px 0 0;
+  padding: 0;
 }
 .productStack .toggleStack:after {
   content: '';
@@ -20860,8 +20860,7 @@ i.icon.ct-size img {
   .customSignInPopup-wrap {
     height: 755px;
   }
- 
-  
+   
 }
 
 .customRegisterPopup .custom-crt-btn .btn:hover {
@@ -20876,8 +20875,8 @@ i.icon.ct-size img {
    display: block;
    width: 100%;
    margin-bottom: 8px;
-   background: #fff;
-   border: 1px solid #e7bfbf; }
+   background: #e7bfbf;
+   border: 1px solid #e7bfbf;color:#000 }
 
 .productStack .action-cart .btn:hover {
   display: block;
@@ -20923,10 +20922,12 @@ body.page-cart input.get-rates.btn.btn-alt:hover {
     color: #000;
 }
 body.page-cart .btn {
-    color: #fff;
-    text-transform: none;
-    background: #000;
-    border: 1px solid #000;
+  color: #fff;
+  text-transform: none;
+  background: #000;
+  border: 1px solid #000;
+  min-height: 43px;
+  line-height: 42px;
 }
 body.page-cart h1 {
   color:#000;
@@ -20936,4 +20937,28 @@ body.page-cart .price,body.page-cart .qty-input,body.page-cart .subtotal {
 }
 body.page-cart .price span,body.page-cart .qty-input span,body.page-cart .subtotal span{
     font-weight: normal!important;
+}
+
+/*4 May By Manish */
+.margin_bottom_10px{margin-bottom:5px; display:inline-block; width:100%; font-family:Arial, Helvetica, sans-serif;}
+.alphabet_txt{float:left; width:4%; font-weight:bold; margin-right:5px; color: #000;}
+.mesurment_deskription{width:94%; float:left; font-size:14px; color: #000;}
+.size_guide_accordian{width:100%; border-top:1px solid #999; color: #000; padding:10px 0; text-transform:uppercase; font-size:11px; font-weight:bold; background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat; cursor:pointer;}
+.size_guide_accordian_up_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/up_arr.png?10114004713734943297)98% 12px no-repeat;}
+.size_guide_accordian_down_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat;}
+tbody > tr > td{font-size:12px !important; color:#000; font-weight:bold; border:1px solid #000 !important; padding: 5px 5px !important;}
+.left_right_border_none{border-left:1px solid #fff !important; border-right:1px solid #fff !important; height:20px;}
+#accordian_two{display:none;}
+#accordian_three{display:none;}
+#accordian_four{display:none;}
+.accordian_four{border-bottom:1px solid #999;}
+.table-bordered>thead>tr>th{border:1px solid #000 !important;}
+.black_color{color:#000;}
+.boxshadow .main .field__input{
+	border-radius: 0 !important;
+    border: 2px solid #e7cfcf !important;
+}
+.size_guide_model_popup{background:#fff !important;}
+img.size-guide-img {
+    float: right !important;
 }

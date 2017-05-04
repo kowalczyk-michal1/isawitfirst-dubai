@@ -200,7 +200,7 @@ li.hovered .sub-menu {
 }
 @supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
   .sub-menu .category-links a:only-child:before {
-    top: 5px;
+    top: 7px;
   }
 }
 .sub-menu .category-links:last-child {
@@ -762,4 +762,9 @@ ul.category-links.menu-hj5 li {
     display: inline-block;
     margin: 0 -4px 20px 0;
     vertical-align: top;
+}
+
+.megamenu ul li a:hover, .megamenu ul li.active a {
+  font-weight: bold !important;
+  color: #000 !important;
 }

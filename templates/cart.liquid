@@ -72,7 +72,7 @@
           {% endif %}
         </div>
         <div class="price">
-          {{ item.price | money }}
+          <span>{{ item.price | money }}</span>
         </div>
         <div class="qty qty-changer">
           <fieldset>
@@ -85,7 +85,7 @@
             {% if item.original_line_price != item.line_price %}
               <small class="cart-item__original-price"><s>{{ item.original_line_price | money }}</s></small>
             {% endif %}
-            {{ item.line_price | money }}
+          <span> {{ item.line_price | money }} </span>
           {% if item.original_line_price != item.line_price %}
             {% for discount in item.discounts %}
               <small class="cart-item__discount">

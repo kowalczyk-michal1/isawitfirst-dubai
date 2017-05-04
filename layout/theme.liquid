@@ -50,5 +50,62 @@ $('.customSignInPopup').hide();
 });
   </script>
   
+<!-- Custom Script -->
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".accordian_one").click(function(){
+		if($(this).hasClass('size_guide_accordian_up_arrow')){
+			$(this).removeClass('size_guide_accordian_up_arrow');
+			$(this).addClass('size_guide_accordian_down_arrow');
+			$("#accordian_one").hide(300);
+		}
+		else{
+			$(this).removeClass('size_guide_accordian_down_arrow');
+			$(this).addClass('size_guide_accordian_up_arrow');
+			$("#accordian_one").show(300);
+		}
+	});
+	
+	$(".accordian_two").click(function(){
+		if($(this).hasClass('show_active')){
+			$(this).removeClass('show_active');
+			$(this).addClass('size_guide_accordian_up_arrow');
+			$("#accordian_two").show(300);
+		}
+		else{
+			$(this).removeClass('size_guide_accordian_up_arrow');
+			$(this).addClass('show_active');
+			$("#accordian_two").hide(300);
+		}
+	});
+	
+	$(".accordian_three").click(function(){
+		if($(this).hasClass('show_active')){
+			$(this).removeClass('show_active');
+			$(this).addClass('size_guide_accordian_up_arrow');
+			$("#accordian_three").show(300);
+		}
+		else{
+			$(this).removeClass('size_guide_accordian_up_arrow');
+			$(this).addClass('show_active');
+			$("#accordian_three").hide(300);
+		}
+	});
+	
+	$(".accordian_four").click(function(){
+		if($(this).hasClass('show_active')){
+			$(this).removeClass('show_active');
+			$(this).addClass('size_guide_accordian_up_arrow');
+			$("#accordian_four").show(300);
+		}
+		else{
+			$(this).removeClass('size_guide_accordian_up_arrow');
+			$(this).addClass('show_active');
+			$("#accordian_four").hide(300);
+		}
+	});
+});
+</script>
+  
 </body>
 </html>

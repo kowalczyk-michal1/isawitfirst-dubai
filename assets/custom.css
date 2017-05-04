@@ -998,8 +998,15 @@ color:#000;
 
 /* Daniel edits */
 
-/*html  
-}*/
+.size-guide-img {
+    float: right;
+}
+
+@media (min-width: 768px)
+.description-size-guide {
+    width: 45%;
+}
+
 
 .customSignInPopup-wrap .form-card h3 {
    font-family: arial;

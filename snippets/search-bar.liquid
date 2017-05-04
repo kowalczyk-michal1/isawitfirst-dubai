@@ -1,14 +1,15 @@
 <form class="search-form white" action="/search" method="get">
   <div class="row">
     <div class="col-xs-12">
-      <div class="input-group input-group-lg">
-        <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="form-control" aria-label="{{ 'general.search.placeholder' | t }}">
-
-        <div class="input-group-btn">
-          <button type="submit" class="btn">{{ 'general.search.submit' | t }}</button>
+      <div class="cust-header-search search-page-bar">
+        <div class="cust-search">
+            <div class="new-search">
+              <img src="//cdn.shopify.com/s/files/1/1854/4327/t/3/assets/search_1.png?15594315739144478766" alt="" />
+              <input name="q" class="exp-search-input " placeholder="Search" type="text"  value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}">
+              <input class="exp-search-submit" type="submit" value="">
+            </div>
         </div>
       </div>
     </div>
   </div>
 </form>
-

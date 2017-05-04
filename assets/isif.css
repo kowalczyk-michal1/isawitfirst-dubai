@@ -345,7 +345,7 @@
 .related-products-lotd .title h2 {
     text-transform: none;
     font-family: HelveticaNeueLTStd-Th;
-    font-size: 35px;
+    font-size: 34px;
     border-bottom: none;
 }
 
@@ -687,7 +687,7 @@ footer.variant4 .footer-middle .footer-block ul.marker-list li a {
     }
 }
 
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 992px) {
     #vertical-carousel {
         display: none;
     }
@@ -1366,6 +1366,11 @@ html .col-xs-6.collection-text {
     right:10px;
 }
 
+.isif-delivery {
+    position: absolute;
+    left: 10px;
+}
+
 
 
 .lotd-collection-title span {
@@ -1375,4 +1380,95 @@ html .col-xs-6.collection-text {
 
 .main-image img {
     cursor: zoom-in;
+}
+
+@media screen and (max-width: 991px) {
+    #home_default_section_2 .container .slick-next, #home_default_section_2 .container .slick-prev {
+        top: 90px !important;
+        width: 23px;
+        height: 23px;
+    }
+}
+
+ul.marker-list li a,
+ul.marker-list li a:hover {
+    color: #000;
+}
+
+ul.marker-list li a:hover {
+    text-decoration: underline;
+    text-decoration-color: #333745;
+    -moz-text-decoration-color: #333745;
+}
+
+form.search-form {
+    border-bottom: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+form.search-form input.exp-search-input {
+    width: 100%;
+}
+
+.sub-menu .category-links a:hover {
+    color: #333745;
+}
+
+.show-hide-button-below {
+    position: absolute;
+    margin-top: 75px !important;
+    margin-left: 5px;
+}
+
+.main-image img.zoom {
+    height: 810px;
+}
+
+#vertical-carousel img {
+    height: 200px !important;
+}
+
+#vertical-carousel.slick-vertical .slick-next {
+    margin-bottom: -50px !important;
+}
+
+#vertical-carousel {
+    width: 140px;
+    float: right;
+    margin-right: 10px;
+}
+
+.page-design-lotd .wishlist_button .wishlist_button_icon_content .wishlist_button_icon {
+    background: url(lotd-pink-heart.png) !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-size: 100% 100% !important;
+    opacity: 1 !important;
+}
+
+.page-design-lotd .wishlist_button, .page-design-lotd .wishlist_button .wishlist_button_icon_content {
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.page-design-lotd .wishlist_button:hover {
+    background: transparent !important;
+}
+
+.page-design-lotd .wishlist_button {
+    margin-top: 27px !important;
+    margin-left: 50px !important;
+}
+
+.page-design-lotd .wishlist_button:hover .wishlist_button_icon_content .wishlist_button_icon {
+    background: url(lotd-black-heart.png) !important;
+    background-size: 100% 100% !important;
+}
+
+.size-list li.active span.value, .size-list li:hover span.value {
+    background: #efbfbf !important;
 }
