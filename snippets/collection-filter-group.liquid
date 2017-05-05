@@ -27,7 +27,7 @@
 
     {% if empty_flag == '0' %}
 
-        <div class="sidebar-block collapsed {% if collection_filter_fixed == 1 and  style == 'color-list' %}open{% endif %} {% unless collection_filter_fixed == 1 %}{{ open }}{% endunless %} filter-group-{{ title | strip_html | downcase | handle }}">
+        <div class="sidebar-block collapsed open {% if collection_filter_fixed == 1 and  style == 'color-list' %}open{% endif %} {% unless collection_filter_fixed == 1 %}{{ open }}{% endunless %} filter-group-{{ title | strip_html | downcase | handle }}">
             <div class="block-title">
                 <span>{{ title }}</span>
                 <div class="toggle-arrows fa fa-angle-right "></div>

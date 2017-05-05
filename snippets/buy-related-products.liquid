@@ -44,7 +44,7 @@
             var list = jQuery('ul.related-products');
             for (var i=0; i<recommendations.length; i++) {
                 jQuery.getJSON(recommendations[i] + '.js', function(product) {
-                    $("#shop-the-look-header").text("{{ heading }}");
+                    $("#shop-the-look-header").html("<span>/</span> {{ heading }} <span>/</span>");
                     list.append('<li><div class="image"><a href="' + product.url +'"><img src="' + product.images[0].replace(/(\.jpg|\.png|\.jpeg|\.gif)/, '_large$1') + '" /></a></div><div class="buy-related-products-title"><a href="' + product.url + '">' + product.title + '</a></div><span class="money">' + Shopify.formatMoney(product.price, "{{ shop.money_format }}") + '</span></li>');
                 });
             }

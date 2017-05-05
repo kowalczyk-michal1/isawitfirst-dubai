@@ -94,11 +94,7 @@
                                 {% endif %}
                                 <span class="special-price"> {{ product.selected_or_first_available_variant.price | money }}</span>
                             </div>
-                            {% if product.description %}
-                                <div class="product-description">
-                                    {{ product.description | replace: '[i]', '<div class="product-info-icon"><span class="product-info-icon"></span></div>' }}
-                                </div>
-                            {% endif %}
+
                             <div class="product-labels">
                                 {% if on_sale  and settings.show_label_sale %}<span class="product-label sale">{{ 'products.product.sale' | t }}</span>{% endif %}
                                 {% assign new = 0 %}
@@ -155,9 +151,6 @@
 
                                         <div class="col-md-3">
 
-                                            <div class="product-meta">
-                                                <span>{% include 'wishlist-product' %}</span>
-                                            </div>
 
                                         </div>
                                         
@@ -167,6 +160,11 @@
                                 </div>
                             {% endif  %}
 
+                            {% if product.description %}
+                                <div class="product-description">
+                                    {{ product.description | replace: '[i]', '<div class="product-info-icon"><span class="product-info-icon"></span></div>' }}
+                                </div>
+                            {% endif %}
 
                         </form>
 

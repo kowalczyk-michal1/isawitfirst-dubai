@@ -733,7 +733,7 @@ input.form-control.cust-text1 {
 /*New Updated 18 April*/
 
 .padding0 {
-	padding: 0 !important;
+	padding: 0 14px !important;
 }
 .margin_0_auto {
 	margin: 0 auto;
@@ -831,7 +831,7 @@ select#sort_by option:hover {
   	color:#000;
 }
 li.mega-dropdown:last-child a {
-    color: #814f4e !important;
+    /*color: #814f4e !important;*/
 }
 .navbar{min-height:35px !important;}
 footer.variant2 .footer-middle, footer.variant4 .footer-middle {
@@ -1078,6 +1078,11 @@ html .col-xs-6.collection-text {
 .secondary a span {
     color: #fff;
     font-size: 12px;
+}
+
+.btn-alt:hover, .btn-alt .icon i:hover {
+    background-color: white;
+  	color: #000;
 }
 
 .secondary .btn i.icon, .btn-primary i.icon, button.action i.icon {
