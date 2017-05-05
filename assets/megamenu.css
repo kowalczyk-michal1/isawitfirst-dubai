@@ -765,6 +765,6 @@ ul.category-links.menu-hj5 li {
 }
 
 .megamenu ul li a:hover, .megamenu ul li.active a {
-  font-weight: bold !important;
+  font-weight: normal !important;
   color: #000 !important;
 }

@@ -12083,8 +12083,8 @@ body.layout-advanced .box-left-icon-bg {
   z-index: 1;
   display: block;
   float: right;
-  background: #ccc;
-  color: #ffffff;
+  background: #e7bfbf;
+  color: #242424;
   width: auto;
   height: 50px;
   font-size: 20px;
@@ -20372,7 +20372,7 @@ img.mt-4 {
     -webkit-transition: all 300ms linear 0s;
     -moz-transition: all 300ms linear 0s;
     -o-transition: all 300ms linear 0s;
-    margin-top: 55px;
+    margin-top: 62px;
   }
   .mainSlider .swiper-container .swiper-slide img:hover{
     -moz-transform: scale(1.008);
@@ -20521,7 +20521,7 @@ padding-left: 0px;
   width: 100%;
   margin: 0 auto;
   display: inherit;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 .customRegisterPopup .title p,.customRegisterPopup1 .title p,
 .customSignInPopup .title p {
@@ -20551,6 +20551,7 @@ padding-left: 0px;
   text-align: center;
   font-weight: bold;
   display: inline-block;
+  text-transform: uppercase;
 }
 .customRegisterPopup .bottom-text a:hover,.customRegisterPopup1 .bottom-text a:hover,
 .customSignInPopup .bottom-text a:hover{

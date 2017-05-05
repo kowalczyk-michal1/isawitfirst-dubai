@@ -1,4 +1,4 @@
-<div class="block boxed">
+{% comment %}<div class="block boxed">
   <div class="container">
     <div class="note form-success" id="ResetSuccess" style="display:none;">
       {{ 'customer.recover_password.success' | t }}<br /><br />
@@ -105,3 +105,62 @@
     document.getElementById('ResetSuccess').style.display = 'block';
   {% endif %}
 </script>
+{% endcomment %}
+
+<div class="customSignInPopup-wrap">
+<div class="dropdown-container right customSignInPopup">
+                {% form 'customer_login' %}
+              <div class="title">Sign In</div>
+               <!-- <div class="title">{{ 'customer.login.registered_customers' | t }}</div>
+                <div class="top-text">{{ 'customer.login.if_have_title' | t }}</div>-->
+                <!-- form -->
+              <label>Email Address</label>
+                <input type="email" class="form-control" name="customer[email]" placeholder="{{ 'customer.login.email' | t }}*">
+              <label>Password</label>  
+              <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.login.password' | t }}*">
+                <!--<button type="submit" class="btn">{{ 'customer.login.sign_in' | t }}</button>-->
+              <button type="submit" class="btn cust-sign">sign in</button>
+                <!-- /form -->
+                <!--<div class="title">{{ 'customer.login.or' | t }}</div>
+                <div class="bottom-text">{{ 'layout.customer.create_account' | t | customer_register_link }}</div>-->
+              <hr style="border-top: 1px solid #e7bfbf;">  
+              <div class="title"><p>New to the site? Join the #ISawItFirst Girl Gang! </p></div>
+              <div class="sub-title"><p>Welcome girl! It’s super quick and easy to set up an account</p></div>
+               <!-- <div class="bottom-text">{{ 'layout.customer.create_account' | t | customer_register_link }}</div>
+               -->
+  <div class="bottom-text"><a id="customer_register_link">create account</a></div>
+              
+  {% endform %}
+</div>
+  
+<div class="dropdown-container right customRegisterPopup">
+    <div class="form-card">
+      <h3>{{ 'customer.register.title' | t }}</h3>
+      {% form 'create_customer', class:"account-create" %}
+      {{ form.errors | default_errors }}
+        <label>{{  'customer.register.first_name' | t }}<span class="required">*</span></label>
+        <input type="text" class="form-control input-lg" name="customer[first_name]" id="FirstName" placeholder="{{ 'customer.register.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+        <label>{{ 'customer.register.last_name' | t }}<span class="required">*</span></label>
+        <input class="form-control input-lg" type="text" name="customer[last_name]" id="LastName" placeholder="{{ 'customer.register.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+        <label>{{ 'customer.register.email' | t }}<span class="required">*</span></label>
+        <input class="form-control input-lg" type="email" name="customer[email]" id="Email" placeholder="{{ 'customer.register.email' | t }}" {% if form.errors contains "email" %} class="error"{% elsif form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+        <label>{{ 'customer.register.password' | t }}<span class="required">*</span></label>
+        <input class="form-control input-lg" type="password" name="customer[password]" id="CreatePassword" placeholder="{{ 'customer.register.password' | t }}" {% if form.errors contains "password" %} class="error"{% endif %}>
+        
+       <div class="custom-bottom-text">
+        <p>Would you like to get exclusive I Saw It First email updates?</p>
+        <div class="custom-check-box"> <span><input class="regular-checkbox" type="checkbox" name="" value=""></span>
+          <h5>yes, sign me up for I Saw It First email news, offers, and other promotional communications. I am able to unsubscribe at any time.</h5>
+        </div>
+      </div>
+      <div class="custom-crt-btn"><button class="btn">{{ 'customer.register.submit' | t }}</button><!--<span class="required-text">* Required Fields</span>--></div>
+      <div class="back">or <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }} <!--<i class="icon icon-undo"></i>--></a></div>
+     
+      {% endform %}
+    </div>
+</div>
+  
+  
+</div>
+
+

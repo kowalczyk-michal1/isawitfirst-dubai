@@ -911,7 +911,7 @@ footer.variant2 .footer-middle, footer.variant4 .footer-middle {
 
 .modal-content {
     background: url(https://cdn.shopify.com/s/files/1/1854/4327/files/news-back.jpg?182421778147209694050) no-repeat center /cover;
-    border: 4px solid #fff;
+    border: 25px solid #fff;
 }
 .news-heading {
     padding: 0;
@@ -1002,11 +1002,19 @@ color:#000;
     float: right;
 }
 
-@media (min-width: 768px)
-.description-size-guide {
-    width: 45%;
+.col-sm-6.size-guide-table {
+    width: 30%;
 }
 
+.col-sm-8.description-size-guide {
+    width: 50%;
+  	float: right;
+}
+
+.col-sm-5.left-side-size-guide {
+    margin-left: 9vw;
+  	padding:6vw 2vw;
+}
 
 .customSignInPopup-wrap .form-card h3 {
    font-family: arial;
@@ -1028,7 +1036,7 @@ color:#000;
     position: relative;
     top: 0;
     left: 0;
-  	text-transform: lowercase;
+  	text-transform: uppercase;
 }
 
 .page-design-lotd .main-image {
@@ -1104,3 +1112,4 @@ body #home_default_section_2 .container .slick-next {
     top: 9.85vw;
     right: -40px;
 }
+
