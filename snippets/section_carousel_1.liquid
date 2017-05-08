@@ -30,7 +30,7 @@
             <div class="custom-hjcarousel products-grid products-carousel {% unless template contains 'rtl' %}{% if settings.products_carousel_negative_1 %}carousel-negative{% endif %}{% endunless %} product-variant-{{ view }} carousel_1" data-slick='{"responsive": [{ "breakpoint": 481, "settings": { "slidesToShow": {{ settings.collections_products_per_row_mobile }} } }]}'>
                 {% for product in collections[collection_id].products %}
                     {% if view contains 5 %}
-                    {% include 'product-item-big' image_size:'large', carousel:'yes' %}
+                    {% include 'product-item-big-isif' image_size:'large', carousel:'yes' %}
                     {% else %}
                     {% include 'product-item' image_size:'large', view:view, carousel:'yes' %}
                     {% endif %}

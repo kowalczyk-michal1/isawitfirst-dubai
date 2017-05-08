@@ -20562,7 +20562,7 @@ padding-left: 0px;
 }
 
 .customSignInPopup-wrap {
-  background: url(https://cdn.shopify.com/s/files/1/1854/4327/files/signin-bg.jpg?12820241352005120521) no-repeat center /cover;
+  background: url(https://cdn.shopify.com/s/files/1/1854/4327/files/signin.jpg?6890906361975951516) no-repeat center /cover;
   padding: 4% 15px;
 }
 
@@ -20859,7 +20859,7 @@ i.icon.ct-size img {
 @media screen and (min-width: 990px) {
 
   .customSignInPopup-wrap {
-    height: 755px;
+    min-height: 840px;
   }
    
 }

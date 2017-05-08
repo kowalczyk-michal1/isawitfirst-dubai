@@ -44,7 +44,7 @@
             <div class="{{ column_1 }}">
                 <!-- Product Gallery -->
                 <div class="col-md-12 lotd-product-images">
-                    <div class="col-md-3">
+                    <div class="col-md-3 vertical-carousel-content">
                         <div id="vertical-carousel">
                             {% for image in product.images %}
                                 <a href="#" data-image="{{ image.src | img_url: 'master' }}" data-zoom-image="{{ image.src | img_url: 'master' }}"><img src="{{ image.src | img_url: 'medium' }}" alt="" /></a>
@@ -471,15 +471,13 @@
 <!-- Size Guide Model Popup End -->
 
 <script type="text/javascript">
-    $("#vertical-carousel").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: true,
-        vertical: true,
-        adaptiveHeight: true
-    });
-
     $(function() {
+        loadVerticalCarousel();
+
+        $( window ).resize(function() {
+            loadVerticalCarousel(false);
+        });
+
         $(".option-color").after($(".option-size"));
 
         $(".pan").pan();

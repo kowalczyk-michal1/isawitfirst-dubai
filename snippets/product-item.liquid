@@ -26,7 +26,7 @@
             <span class="vert-wrapper"><span class="vert"><span class="text">{{ 'products.product.sold_out' | t }}</span></span></span>
         </a>
     {% endif %}
-    <div class="product-item-inside">
+    <div class="product-item-inside mini-item">
         {% if on_sale and settings.show_label_sale %}
             <div class="product-item-label label-sale">
                 <span>-{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by:product.compare_at_price | times: 100 | divided_by: 100 | floor }}%</span>
@@ -68,35 +68,7 @@
                     {% endif %}
                 {% endif %}
 
-                <div class="product-item-actions">
-                    <div class="actions-primary">
-                        {% if link_to %}
-                            <a class="btn btn-sm btn-invert"  href="{{ link_to_href }}" target="_blank"  title="{{ 'general.theme.add_to_cart' | t }}"><i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </a>
-                        {% else %}
 
-                            {% if product.options.size >= 1 %}
-                                {% if product.options[0] contains 'Title' %}
-                                    <form method="post" action="/cart/add">
-                                        <button class="btn btn-sm btn-invert add_to_cart" data-variant-id="{{ product.selected_or_first_available_variant.id }}" > <i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </button>
-                                    </form>
-                                {% else %}
-                                    <a class="btn btn-sm btn-invert"  href="{{ product.url | within: collection }}"> <i class="icon icon-cart"></i><span>{{ 'general.theme.select_options' | t }}</span> </a>
-                                {% endif %}
-                            {% else %}
-                                <form method="post" action="/cart/add">
-                                    <button class="btn btn-sm btn-invert add_to_cart" data-variant-id="{{ product.selected_or_first_available_variant.id }}" > <i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </button>
-                                </form>
-                            {% endif %}
-
-                        {% endif %}
-                    </div>
-                    <div class="actions-secondary"> {% if settings.social_sharing_products %}<a href="#" title="Link" class="sharing"> <i class="icon icon-share"></i> </a>{% endif %}{% if settings.ajax_cart and settings.show_quick_view %}<a href="{{ product.url }}" class="quick-view-link"  title="Qiuck View"> <i class="icon icon-eye"></i> </a>{% endif %}
-                        {% include 'wishlist-product' %}
-                    </div>
-                    {% if settings.social_sharing_products %}
-                        {% include 'social-sharing-product-item' product_url:product.url, product_title:product.title %}
-                    {% endif %}
-                </div>
 
             </div>
             <!-- /Product Photo -->
@@ -127,25 +99,7 @@
                 <!-- Product Actions -->
                 <div class="product-item-actions">
                     <div class="actions-primary">
-                        {% if link_to %}
-                            <a class="btn btn-sm btn-invert"  href="{{ link_to_href }}" target="_blank"  title="{{ 'general.theme.add_to_cart' | t }}"> <i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </a>
-                        {% else %}
-                            {% if product.options.size >= 1 %}
-                                {% if product.options[0] contains 'Title' %}
-                                    <form method="post" action="/cart/add">
-                                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
-                                        <button class="btn btn-sm btn-invert add_to_cart" data-variant-id="{{ product.selected_or_first_available_variant.id }}"  title="{{ 'general.theme.add_to_cart' | t }}"> <i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </button>
-                                    </form>
-                                {% else %}
-                                    <a class="btn btn-sm btn-invert quick-view-link"  href="{{ product.url | within: collection }}"> <i class="icon icon-cart"></i><span>{{ 'general.theme.select_options' | t }}</span> </a>
-                                {% endif %}
-                            {% else %}
-                                <form method="post" action="/cart/add">
-                                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
-                                    <button class="btn btn-sm btn-invert add_to_cart" data-variant-id="{{ product.selected_or_first_available_variant.id }}"  title="{{ 'general.theme.add_to_cart' | t }}"> <i class="icon icon-cart"></i><span>{{ 'general.theme.add_to_cart' | t }}</span> </button>
-                                </form>
-                            {% endif %}
-                        {% endif %}
+                            <a class="btn btn-sm btn-invert"  href="{{ product.url | within: collection }}"  title="{{ 'cart.general.buy_now' | t }}"> <i class="icon icon-cart"></i><span>{{ 'cart.general.buy_now' | t }}</span> </a>
                     </div>
                 </div>
                 <!-- /Product Actions -->

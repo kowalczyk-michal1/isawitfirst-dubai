@@ -163,7 +163,8 @@
       "clear": "Clear Shopping Cart",
       "continue": "CONTINUE SHOPPING",
       "note_desc": "Write a comment here if You have",
-      "checkout_procees": "Proceed to checkout"
+      "checkout_procees": "Proceed to checkout",
+      "buy_now": "Buy Now"
     },
     "label": {
       "price": "Unit Price",

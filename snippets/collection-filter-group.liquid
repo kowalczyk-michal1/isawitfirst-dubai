@@ -82,8 +82,8 @@
                             <li {% if current_tags_str contains tag_only_dawncase %}class="active"{% endif %} data-id="{{ tag }}">
 
                                 {% if style == 'category-list' %}
-                                    {{ tag  | link_to_add_tag: tag | replace:sub_a,sub_b | replace:'/+','/' | replace:'++','+' }}
-                                    {{ '' | link_to_remove_tag: tag  | replace:tags_from_href_old,tags_from_href_new | replace:"<a","<a class='clear' " }}
+                                    {{ tag | downcase | link_to_add_tag: tag | replace:sub_a,sub_b | replace:'/+','/' | replace:'++','+' }}
+                                    {{ '' | downcase | link_to_remove_tag: tag  | replace:tags_from_href_old,tags_from_href_new | replace:"<a","<a class='clear' " }}
                                     {% elsif  style == 'size-list' %}
                                     {% if current_tags_str contains tag_only_dawncase %}
                                         {{ tag | upcase  | link_to_remove_tag: tag | replace:tags_from_href_old,tags_from_href_new | replace:'">','"><span class="clear"></span><span class="value">' | replace:'</a>','</span></a>' }}

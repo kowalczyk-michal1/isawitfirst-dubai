@@ -71,3 +71,29 @@ function collectionHideFilters() {
         $('#collection-page-content').addClass('col-md-10');
     }
 }
+
+function loadVerticalCarousel(init = true) {
+    var getMainImageHeight = $(".main-image").height();
+
+    $(".vertical-carousel-content").height(getMainImageHeight);
+
+    var verticalImgHeight = getMainImageHeight / 4;
+
+    $(".vertical-carousel-content #vertical-carousel img").each(function() {
+        $(this).height(verticalImgHeight);
+    });
+
+    if (init) {
+        $("#vertical-carousel").slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: true,
+            vertical: true,
+            adaptiveHeight: true
+        });
+    }
+
+    var verticalNextArrow = getMainImageHeight + 35;
+
+    $("#vertical-carousel .slick-next").css("top", ""+verticalNextArrow+"px");
+}
