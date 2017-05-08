@@ -2066,8 +2066,7 @@ $(function(){
 		var title;
 		$('[data-tooltip]').darkTooltip({
 			size: 'small',
-			animation: 'fade',
-			gravity: 'north'
+			animation: 'fade'
 		}).hover(function () {
 			title = $(this).attr('title');
 			$(this).attr('title','');

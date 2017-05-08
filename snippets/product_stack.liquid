@@ -2,7 +2,7 @@
 {% if settings.product_stack %}
 <!-- ProductStack -->
 <div class="productStack {% if cart.items.size == 0  %}disable{% endif %} {% if settings.product_stack_hide %}hide_on_scroll{% endif %} {{ settings.product_stack_float }}-toggle">
-    <a href="#" class="toggleStack"><i class="icon ct-size"><img class="" src="https://cdn.shopify.com/s/files/1/1854/4327/files/bag-white.png?13676808666419019914"></i> (<span class="stack_count">{{ cart.item_count }}</span>) {{ cart.item_count | pluralize: 'Item', 'Items' }}</a>
+    <a href="#" class="toggleStack"><i class="icon ct-size"><img class="" src="//cdn.shopify.com/s/files/1/1854/4327/files/women-bag_1.png"></i> <span class="stack_count">{{ cart.item_count }}</span> <!--{{ cart.item_count | pluralize: 'Item', 'Items' }}--></a>
     <div class="productstack-content">
         <div class="products-list-wrapper">
             <ul class="products-list">

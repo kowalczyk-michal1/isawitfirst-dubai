@@ -1288,7 +1288,7 @@ header.is-sticky .section_below_menu {
 /* Daniel Subcategory Edits */
 .lotd-collection-description {
 	width: 100%;
-  	min-height: 300px;
+  	min-height: 50px;
     height: auto;
   	background: #F9ECE8;
   	color: #000;
@@ -1297,7 +1297,8 @@ header.is-sticky .section_below_menu {
 
 html .col-xs-6.collection-text {
     padding: 30px;
-    height: 260px;
+    min-height: 50px;
+  height: auto !important;
     overflow: auto;
   	margin: 10px 0;
 }
@@ -1327,6 +1328,15 @@ html .col-xs-6.collection-text {
 
 
 /* COLLECTION PAGE HEADER RESPONSIVE */
+@media screen and (min-width: 1581px) {
+    .lotd-collection-description .col-xs-6 {
+        padding-right: 0;
+    }
+
+    .lotd-collection-description .col-xs-6 img {
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 1580px) {
     .lotd-collection-description .col-xs-6 {
