@@ -172,6 +172,7 @@
                 if (!$sidebar.is('.is-fixed')) {
                     if (scrollY > $ymin.offset().top) {
                         if ($fend.offset().top < $ymax.offset().top - delta) {
+
                             $sidebar.addClass('is-fixed');
                             if ($fend.offset().top > $ymax.offset().top) {
                                 $sidebar.addClass('is-fixed-bottom');
@@ -207,8 +208,9 @@
                         windowHeight = $(window).height();
                 if (windowWidth > 991) {
                     $sidebarscroll.css({
-                        'max-height': windowHeight + 'px'
+                        'height': windowHeight + 'px'
                     });
+
                     $container.css({
                         'left': $container.offset().left + 'px',
                         'width': $container.width() + 'px'

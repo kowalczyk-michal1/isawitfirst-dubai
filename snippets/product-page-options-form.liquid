@@ -43,12 +43,12 @@
                     </select>
                 </div>
                 {% if settings.product_options == 'swatches' %}
-                    <ul class="{% if option_title contains 'color' %}color-list{% else %}size-list{% endif %}" data-index="{{ forloop.index0 }}">
+                    <ul class="{% if option_title contains 'color' or option_title contains 'colour' %}color-list{% else %}size-list{% endif %}" data-index="{{ forloop.index0 }}">
                         {% for name in color_image %}
                             {% assign title = name | split:':' | first | replace:'!__!','' %}
                             {% assign img_src = name | split:':' | last %}
                             <li  {% if selected_value == title %}class="active"{% endif %}>
-                                {% if option_title contains 'color' %}<a href="#" data-tooltip="{{ title }}" data-placement="top" title="{{ title }}" data-value="{{ title | handle | escape }}" data-image="{{ img_src }}"><span class="value"><img src="{% if settings.product_previews_colors_variants %}{{ img_src }}{% else %}{{ title | handle | prepend:'color-' | append: '.png' | file_url | downcase }}{% endif %}" alt=""></span></a>{% else %}<a href="#" data-value='{{ title | handle | downcase | escape }}'><span class="value">{{ title | escape }}</span></a>{% endif %}
+                                {% if option_title contains 'color' or option_title contains 'colour' %}<a href="#" data-tooltip="{{ title }}" data-placement="top" title="{{ title }}" data-value="{{ title | handle | escape }}" data-image="{{ img_src }}"><span class="value"><img src="{% if settings.product_previews_colors_variants %}{{ img_src }}{% else %}{{ title | handle | prepend:'color-' | append: '.png' | file_url | downcase }}{% endif %}" alt=""></span></a>{% else %}<a href="#" data-value='{{ title | handle | downcase | escape }}'><span class="value">{{ title | escape }}</span></a>{% endif %}
                             </li>
                         {% endfor %}
                     </ul>

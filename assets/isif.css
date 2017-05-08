@@ -1304,6 +1304,7 @@ html .col-xs-6.collection-text {
   height: auto !important;
     overflow: auto;
   	margin: 10px 0;
+    font-size: 16px;
 }
 
 .collections-showhide.collections-left-side {
@@ -1518,4 +1519,9 @@ form.search-form input.exp-search-input {
 #vertical-carousel a {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.fixed-scroll .scroll-bar {
+    z-index: 999999 !important;
+    margin-right: 5px !important;
 }

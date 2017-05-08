@@ -80,7 +80,7 @@
                             <div class="title">{{ 'general.theme.filters' | t }}</div>
                             <a href="#" class="filter-col-toggle"></a>
                         </div>
-                        <div class="filter-col-content">
+                        <div class="filter-col-content default-skin">
 
                             {% include 'collection-filter-current' %}
                             {% include 'collection-filter-categories' %}
@@ -258,7 +258,7 @@
     $(function(){
         Shopify.queryParams = {};
         updateQueryParams();
-        if(typeof Shopify.queryParams.sort_by == 'undefined')Shopify.queryParams.sort_by = 'title-ascending';
+        if(typeof Shopify.queryParams.sort_by == 'undefined')Shopify.queryParams.sort_by = 'manual';
         setSortBy(Shopify.queryParams.sort_by);
 
         {% if collection_filter_ajax == 1 %}
@@ -304,7 +304,16 @@
                     $('.filter-row').addClass('block-loading');
                     postAjaxJsInit(url,name,val);
                     e.preventDefault();
-                })
+                });
+
+                $(document).on('change','.sort-by-lotd select',function(e){
+                    name=$(this).attr('name');
+                    val=$(this).val();
+                    url=updateURLParameter(window.location.href.replace('#',''), name, val);
+                    $('.sort-by-lotd').addClass('block-loading');
+                    postAjaxJsInit(url,name,val);
+                    e.preventDefault();
+                });
             }
 
         {% else %}
@@ -427,8 +436,9 @@
 {% endif %}
 
 
+
 <script type="text/javascript">
     $(document).ready(function() {
-      //  $(".filter-col.is-fixed .fixed-scroll").customScrollbar();
+       // $(".fixed-scroll").customScrollbar();
     });
 </script>

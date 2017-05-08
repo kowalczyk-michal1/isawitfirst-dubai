@@ -95,7 +95,7 @@
                         {% assign index_color = 0 %}
                         {% for option in product.options %}
                             {% capture downcased_option %}{{ option | downcase }}{% endcapture %}
-                            {% if downcased_option contains 'color' %}
+                            {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
                                 {% assign has_color = true %}
                                 {% assign index_color = forloop.index0 %}
                             {% endif %}
