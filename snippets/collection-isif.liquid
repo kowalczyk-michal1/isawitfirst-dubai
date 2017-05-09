@@ -30,11 +30,15 @@
 
         <div class="col-sm-12 view-showhide-icons">
             <div class="collections-showhide">
-                <div class="lotd-collection-title">{{ collection.title }} <span>({{ collection.all_products_count }})</span></div>
+                {% if collection.description == blank %}
+                      <div class="lotd-collection-title">{{ collection.title }} <span>({{ collection.all_products_count }})</span></div>
+                {% endif %}
                 {% if collection.description != blank %}
                     <div class="lotd-collection-description">
 
                         <div class="{% if collection.image.src != blank %}col-xs-6{% else %}col-xs-12{% endif %} collection-text">
+                            <div class="lotd-collection-title">{{ collection.title }} <span>({{ collection.all_products_count }})</span></div>
+
                             {{ collection.description }}
                         </div>
 
@@ -80,7 +84,7 @@
                             <div class="title">{{ 'general.theme.filters' | t }}</div>
                             <a href="#" class="filter-col-toggle"></a>
                         </div>
-                        <div class="filter-col-content default-skin">
+                        <div class="filter-col-content mCustomScrollbar" data-mcs-theme="minimal-dark">
 
                             {% include 'collection-filter-current' %}
                             {% include 'collection-filter-categories' %}
@@ -225,7 +229,7 @@
             }
             listing=$('.product-listing', data).html().split('<div class="product-item ').join('<div style="opacity:0" class="product-item ');
             {% if collection_left_sidebar == 1 %}
-            filters=$('.filter-col-content', data).html().split('open').join('').split('style="display: block;"').join('').split('filter-group-'+group).join('filter-group-'+group+' open');
+            filters=$('.filter-col-content', data).html()).join('').split('style="display: block;"').join('').split('filter-group-'+group).join('filter-group-'+group+' open');
             {% endif %}
             $(".product-listing").html(listing);
             {% if collection_left_sidebar == 1 %}
@@ -441,4 +445,14 @@
     $(document).ready(function() {
        // $(".fixed-scroll").customScrollbar();
     });
+</script>
+
+<script>
+    (function($){
+        $(window).on("load",function(){
+//            $(".filter-col-content").mCustomScrollbar({
+//                axis: "y"
+//            });
+        });
+    })(jQuery);
 </script>

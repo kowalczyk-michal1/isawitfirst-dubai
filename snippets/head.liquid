@@ -34,7 +34,7 @@
 {{ 'custom_fonts.css' | asset_url | stylesheet_tag }}
 {{ 'custom.css' | asset_url | stylesheet_tag }}
 {{ 'isif.css' | asset_url | stylesheet_tag }}
-{{ 'jquery.custom-scrollbar.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.mCustomScrollbar.css' | asset_url | stylesheet_tag }}
 <!-- Icon Font -->
 {% include 'google-fonts' %}
 {{ 'font-icomoon.css' | asset_url | stylesheet_tag }}
@@ -59,7 +59,7 @@
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
 {{ 'cart.min.js' | asset_url | script_tag }}
 {{ 'custom.js' | asset_url | script_tag }}
-{{ 'jquery.custom-scrollbar.min.js' | asset_url | script_tag }}
+{{ 'jquery.mCustomScrollbar.concat.min.js' | asset_url | script_tag }}
 {% if template contains 'customers' %}
     {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
 {% endif %}
@@ -208,7 +208,16 @@
                         windowHeight = $(window).height();
                 if (windowWidth > 991) {
                     $sidebarscroll.css({
+                        'max-height': windowHeight + 'px'
+                    });
+
+
+                    $(".filter-col-content").css({
                         'height': windowHeight + 'px'
+                    });
+
+                    $(".filter-col-content").mCustomScrollbar({
+                        axis: "y"
                     });
 
                     $container.css({

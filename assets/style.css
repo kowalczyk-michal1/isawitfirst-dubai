@@ -21220,3 +21220,98 @@ a.tablinks.active {
 .shipping .img-wrap{
 	margin:10px 0;
 }
+
+.job .head, .pay-order .head, .return-content .head, .inter .head, .pay-opt .head, .shipping .head {
+    font-size: 15.5px;
+    margin-bottom: 5px;
+}
+.pay-opt, 
+.Ordering, 
+.shipping,
+.return-content,
+.story p,
+.job,
+.job p,
+.aff,
+.pay-order,
+.cost,
+.inter {
+    margin: 15px 0;
+}
+
+.order-status-form .title {
+    position: relative;
+    padding: 5px 0;
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 0px;
+    font-weight: bold;
+  text-align:center;
+}
+.order-status-form form .p {
+  font-weight:bold;
+  font-size:15px;
+  text-align:center!important;
+}
+.container.custom-space {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.container.custom-space-contact {
+    padding:0 5%;
+}
+.bust_bg_color1,.size_bg_color1,.size_bg_color_2_21,.size_bg_color21,.size_bg_color_2_31,.size_bg_color21,.size_bg_color_2_31,.size_bg_color21,.size_bg_color_2_31,.size_bg_color1{
+  color:#666;padding: 4px 0;
+  }
+
+.ship-wrap .table-bordered>thead>tr>th {
+    border: 1px solid #999!important;
+}
+.ship-wrap tbody > tr > td {
+    border: 1px solid #999!important;
+}
+p.sub-head {
+    text-align: center;
+}
+
+.order-status-form input{
+
+border: 1px solid #e7bfbf;
+    padding: 5px 15px;
+    height: auto!important;
+    background: #fff;
+}
+
+.order-status-form label{
+font-size: 12px;
+    font-weight: bold;
+    opacity: 1;
+    color: #000;
+}
+
+.order-status-form .cust-order:hover{
+
+background-color: transparent;
+    color: #000;
+    border-color: #ccc;
+}
+
+.order-status-form .cust-order{
+background-color: #000;
+    color: #ffffff;
+    border-color: #ccc;
+    width: 100%;
+    margin: 0 auto;
+    display: inherit;
+    text-transform: lowercase;
+}
+
+.order-status-form {
+    border: 8px solid #e7bfbf;
+    padding: 3% 8% 5%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.main-wrap {
+    padding-top: 3%;
+}

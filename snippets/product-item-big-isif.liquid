@@ -151,6 +151,12 @@
                         {% endif %}
                         {% endunless %}
                     </div>
+                    
+                    <div class="product-item-actions product-buy-now-button">
+                        <div class="actions-primary">
+                            <a class="btn btn-sm btn-invert"  href="{{ product.url | within: collection }}"  title="{{ 'cart.general.buy_now' | t }}"> <i class="icon icon-cart"></i><span>{{ 'cart.general.buy_now' | t }}</span> </a>
+                        </div>
+                    </div>
 
 					<div class="product-item-color-choose">
 						{% if has_color %}
@@ -172,6 +178,7 @@
                             <!-- /Color Swatch -->
                         {% endif %}
 					</div>
+
                 </div>
                 <!-- /Product Details -->
             </div>
