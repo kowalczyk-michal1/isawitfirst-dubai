@@ -1,261 +1,3 @@
-<style>
-p{color:#000;}
-.padding0 {
-	padding: 0 !important;
-}
-.margin_0_auto {
-	margin: 0 auto;
-	padding: 0 !important;
-	width: 100%;
-}
-.product_img {
-	width: 100%;
-}
-.product_img:hover img {
-	opacity:0.5;
-}
-
-
-.item_prd {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.item_prd img {
-  max-width: 100%;
-  -moz-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.item_prd:hover img {
-  -moz-transform: scale(1.02);
-  -webkit-transform: scale(1.02);
-  transform: scale(1.02);
-}
-
-
-.item_prd_full_width {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.item_prd_full_width img {
-  max-width: 100%;
-  -moz-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.item_prd_full_width:hover img {
-  -moz-transform: scale(1.01);
-  -webkit-transform: scale(1.01);
-  transform: scale(1.01);
-}
-
-
-
-.shop_btn {
-	position: absolute;
-	top: 35%;
-	text-align: center;
-	display: inline-block;
-	padding: 10px 15px;
-	background: rgba(255, 255, 255, 0.9);
-	text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
-	letter-spacing: 1.7px;
-	color: #000;
-	left: 0%;
-	font-size: 13.7px;
-	width:70%;
-	text-align: center;
-    margin: 15%;
-    box-sizing: border-box;
-}
-.shop_btn:hover {
-	color: #fff;
-	background: #111;
-	text-decoration: none;
-}
-
-
-
-.col_2_product_margin {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-.padding_left0{padding-left:0 !important;}
-.padding_right0{padding-right:0 !important;}
-.left_arrow{background-image: none !important; width:auto !important; top:39% !important;}
-.right_arrow{background-image: none !important; width:auto !important; top:39% !important; right:21px !important;}
-
-/*4 May By Manish */
-.margin_bottom_10px{margin-bottom:5px; display:inline-block; width:100%; font-family:Arial, Helvetica, sans-serif;}
-.alphabet_txt{float:left; width:4%; font-weight:bold; margin-right:5px;}
-.mesurment_deskription{width:94%; float:left; font-size:14px;}
-.size_guide_accordian{width:100%; border-top:1px solid #999;  padding:10px 0; text-transform:uppercase; font-size:11px; font-weight:bold; background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat; cursor:pointer;}
-.size_guide_accordian_up_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/up_arr.png?10114004713734943297)98% 12px no-repeat;}
-.size_guide_accordian_down_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat;}
-tbody > tr > td{font-size:12px !important; font-weight:bold; border:1px solid #000 !important; padding: 5px 5px !important;}
-.left_right_border_none{border-left:1px solid #fff !important; border-right:1px solid #fff !important; height:20px;}
-#accordian_two{display:none;}
-#accordian_three{display:none;}
-#accordian_four{display:none;}
-.accordian_four{border-bottom:1px solid #999;}
-.table-bordered>thead>tr>th{border:1px solid #000 !important;}
-.black_color{color:#000;}
-.boxshadow .main .field__input{
-	border-radius: 0 !important;
-    border: 2px solid #e7cfcf !important;
-}
-/*5 May*/
-.help_and_info_menu{margin:0; padding:0; padding-left:15px;}
-.help_and_info_menu li{margin:0; padding:0; list-style:none; line-height:30px;}
-.help_and_info_menu li a{color:#000; font-family:Arial, Helvetica, sans-serif; border-bottom:2px solid #fff; padding-bottom:1px;}
-.help_and_info_menu li a:hover{border-bottom:2px solid #e7bfbf; text-decoration:none;}
-.size_guide_title{padding:5px 0; font-size:30px; color:#000; margin-bottom:0px; font-weight:bold;}
-.float_left{float:left;}
-.please_note_txt{font-size:16px; color:#000; font-weight:bold; margin:10px 0;}
-ol.inch_radio_btn{margin:0; padding:0;}
-table.inch_centimeter{border:none !important;}
-table.inch_centimeter tr td{border:none !important; padding:0 2px !important;}
-table.inch_centimeter tr th{border:none !important; padding:2px 2px 5px 2px !important; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
-.size_bg_color{background:#e7e7e7; text-align:center; padding:10px 0; text-transform:uppercase;}
-.bust_bg_color{background:#9b9b9b; text-align:center; padding:10px 0; color:#fff; text-transform:uppercase;}
-.size_bg_color2{background:#f7f7f7; text-align:center; padding:8px 0; text-transform:uppercase;}
-.size_bg_color_2_2{background:#e1e1e1; text-align:center; padding:8px 0; text-transform:uppercase;}
-.size_bg_color_2_3{background:#eeeeee; text-align:center; padding:8px 0; text-transform:uppercase;}
-ol.inch_radio_btn li{
-  color: #000;
-  display: inline-block;
-  position: relative;
-  float: left;
-  width: 100%;
-  height: auto;
-  margin-left: -20px;
-  margin-top:-20px;
-}
-
-ol.inch_radio_btn li input[type=radio]{
-  position: absolute;
-  visibility: hidden;
-}
-
-ol.inch_radio_btn li label{
-  display: block;
-  position: relative;
-  font-weight: 300;
-  font-size: 16px;
-  padding: 27px 25px 25px 50px;
-  margin: 3px 0;
-  height: 30px;
-  z-index: 9;
-  cursor: pointer;
-  -webkit-transition: all 0.25s linear;
-}
-
-ol.inch_radio_btn li:hover label{
-	color: #000;
-}
-
-ol.inch_radio_btn li .check{
-  display: block;
-  position: absolute;
-  border: 2px solid #999;
-  border-radius: 100%;
-  height: 20px;
-  width: 20px;
-  top: 30px;
-  left: 20px;
-	z-index: 5;
-	transition: border .25s linear;
-	-webkit-transition: border .25s linear;
-}
-
-ol.inch_radio_btn li:hover .check {
-  border: 2px solid #999;
-}
-
-ol.inch_radio_btn li .check::before {
-	display: block;
-	position: absolute;
-	content: '';
-	border-radius: 100%;
-	height: 12px;
-	width: 12px;
-	top: 2px;
-	left: 2px;
-	margin: auto;
-	transition: background 0.25s linear;
-	-webkit-transition: background 0.25s linear;
-}
-
-ol.inch_radio_btn li input[type=radio]:checked ~ .check {
-  border: 2px solid #999;
-}
-
-ol.inch_radio_btn li input[type=radio]:checked ~ .check::before{
-  background: #e7bfbf;
-}
-
-ol.inch_radio_btn li input[type=radio]:checked ~ label{
-  color: #555;
-}
-
-.custom-img strong {
-    font-size: 13px;
-  color:#000;
-}
-.custom-img strong a {
-    color: #e7bfbf;
-}
-.custom-measure p {
-    font-size: 13px;
-  color:#000;
-}
-.custom-measure {
-    padding-top: 20px;
-}
-.custom-measure {
-    padding-top: 20px;
-}
-.delivery_guide_title {
-    padding: 5px 0;
-    font-size: 30px;
-    color: #000;
-    margin-bottom: 0px;
-    font-weight: bold;
-}
-.cost {
-    margin: 0 0 6px 0;
-    display: inline-block;
-}
-#tab-1,#tab-2{
-	display: none;
-}
-/* Style the tab content */
-.tabcontent {
-    display: none;
-}
-a.tablinks.active {
-    border-bottom: 2px solid #e7bfbf;
-}
-.cost h5,.status h5 {
-    font-size: 15px;
-}
-  .help_and_info_menu li a:hover {
-    cursor:pointer;
-  }
-  .job .head,.pay-order .head,.return-content .head,.inter .head,.pay-opt .head,.shipping .head{
-    font-size: 15.5px;
-}
-.aff .link,.inter .link,.pay-opt .link	 {
-    color: #e7bfbf;
-}
-.shipping .img-wrap{
-	margin:10px 0;
-}
-</style>
-
 <div class="container">
 <div class="row">
 
@@ -264,25 +6,26 @@ a.tablinks.active {
 
 <h4><strong>Help &amp; Info</strong></h4>
 <ul class="help_and_info_menu">
-<li><a  class="tablinks" onclick="opentab(event, 'contact')" >Contact Us</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'payment-option')" >Payment Options</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'ordering')" >Ordering</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'shipping')" >Shipping &amp; Delivery</a></li>
-<li><a  class="tablinks active" onclick="opentab(event, 'size-guide')" >Size Guide</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'story')" >Our Story</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'job')" >Job Opportunities</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'affiliates')" >Affiliates</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'status')" >Order Status</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'order-payment')" >Order &amp; Payment</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'information')" >Delivery Information</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'return')" >Return &amp; Exchanges</a></li>
-<li><a  class="tablinks" onclick="opentab(event, 'international-order')" >International Orders</a></li>
+<li><a href="/pages/contact-us"  class="tablinks"  >Contact Us</a></li>
+<li><a href="/pages/payment-options"  class="tablinks" >Payment Options</a></li>
+<li><a href="/pages/ordering"  class="tablinks" >Ordering</a></li>
+<li><a href="/pages/shipping-delivery"  class="tablinks" >Shipping &amp; Delivery</a></li>
+<li><a href="/pages/size-guide"  class="tablinks active" >Size Guide</a></li>
+<li><a href="/pages/our-story"  class="tablinks" >Our Story</a></li>
+<li><a href="/pages/job-opportunities"  class="tablinks" >Job Opportunities</a></li>
+<li><a  href="/pages/affiliates" class="tablinks" >Affiliates</a></li>
+<li><a href="/pages/order-status"  class="tablinks" >Order Status</a></li>
+<li><a href="/pages/ordering-payment"  class="tablinks" >Order &amp; Payment</a></li>
+<li><a href="/pages/delivery-information"  class="tablinks" >Delivery Information</a></li>
+<li><a href="/pages/returns-exchanges"  class="tablinks" >Return &amp; Exchanges</a></li>
+<li><a href="/pages/international-orders"  class="tablinks" >International Orders</a></li>
 </ul>
 </div>
 </div>
-
-<div class="col-sm-9">
-<div id="size-guide" class="tabcontent">
+  
+  
+  <div class="col-sm-9">
+  <div id="size-guide" class="tabcontent">
 <div class="size_guide_title">Size Guide</div>
 
 <div>
@@ -311,6 +54,7 @@ a.tablinks.active {
 <div class="please_note_txt">Please note all conversions are approximate and may vary by label, brand, or personal preference of fit.</div>
 
 <div>
+<div class="show-size-inches">
 <table class="table table-bordered inch_centimeter">
     <thead>
       <tr>
@@ -416,6 +160,116 @@ a.tablinks.active {
       </tr>
     </tbody>
   </table>
+  </div>
+  <div class="show-size-centimeter" style="display:none;">
+    <table class="table table-bordered inch_centimeter">
+    <thead>
+      <tr>
+        <th width="15%"><div class="size_bg_color">Size</div></th>
+        <th width="15%"><div class="size_bg_color">US/Canada</div></th>
+        <th width="15%"><div class="size_bg_color">UK</div></th>
+        <th width="15%"><div class="bust_bg_color">Bust</div></th>
+        <th width="15%"><div class="bust_bg_color">Natural Waist</div></th>
+        <th width="15%"><div class="bust_bg_color">Drop Waist</div></th>
+        <th width="10%"><div class="bust_bg_color">Hips</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="size_bg_color">XXS</div></td>
+        <td><div class="size_bg_color2">00</div></td>
+        <td><div class="size_bg_color2">2</div></td>
+        <td><div class="size_bg_color2">81.28</div></td>
+        <td><div class="size_bg_color2">60.96</div></td>
+        <td><div class="size_bg_color2">66.675</div></td>
+        <td><div class="size_bg_color2">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color_2_2">XS</div></td>
+        <td><div class="size_bg_color_2_3">00</div></td>
+        <td><div class="size_bg_color_2_3">2</div></td>
+        <td><div class="size_bg_color_2_3">81.28</div></td>
+        <td><div class="size_bg_color_2_3">60.96</div></td>
+        <td><div class="size_bg_color_2_3">66.675</div></td>
+        <td><div class="size_bg_color_2_3">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color_2_2">&nbsp;</div></td>
+        <td><div class="size_bg_color_2_3">00</div></td>
+        <td><div class="size_bg_color_2_3">2</div></td>
+        <td><div class="size_bg_color_2_3">81.28</div></td>
+        <td><div class="size_bg_color_2_3">60.96</div></td>
+        <td><div class="size_bg_color_2_3">66.675</div></td>
+        <td><div class="size_bg_color_2_3">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color">S</div></td>
+        <td><div class="size_bg_color2">00</div></td>
+        <td><div class="size_bg_color2">2</div></td>
+        <td><div class="size_bg_color2">81.28</div></td>
+        <td><div class="size_bg_color2">60.96</div></td>
+        <td><div class="size_bg_color2">66.675</div></td>
+        <td><div class="size_bg_color2">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color">&nbsp;</div></td>
+        <td><div class="size_bg_color2">00</div></td>
+        <td><div class="size_bg_color2">2</div></td>
+        <td><div class="size_bg_color2">81.28</div></td>
+        <td><div class="size_bg_color2">60.96</div></td>
+        <td><div class="size_bg_color2">66.675</div></td>
+        <td><div class="size_bg_color2">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color_2_2">M</div></td>
+        <td><div class="size_bg_color_2_3">00</div></td>
+        <td><div class="size_bg_color_2_3">2</div></td>
+        <td><div class="size_bg_color_2_3">81.28</div></td>
+        <td><div class="size_bg_color_2_3">60.96</div></td>
+        <td><div class="size_bg_color_2_3">66.675</div></td>
+        <td><div class="size_bg_color_2_3">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color_2_2">&nbsp;</div></td>
+        <td><div class="size_bg_color_2_3">00</div></td>
+        <td><div class="size_bg_color_2_3">2</div></td>
+        <td><div class="size_bg_color_2_3">81.28</div></td>
+        <td><div class="size_bg_color_2_3">60.96</div></td>
+        <td><div class="size_bg_color_2_3">66.675</div></td>
+        <td><div class="size_bg_color_2_3">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color">L</div></td>
+        <td><div class="size_bg_color2">00</div></td>
+        <td><div class="size_bg_color2">2</div></td>
+        <td><div class="size_bg_color2">81.28</div></td>
+        <td><div class="size_bg_color2">60.96</div></td>
+        <td><div class="size_bg_color2">66.675</div></td>
+        <td><div class="size_bg_color2">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color">&nbsp;</div></td>
+        <td><div class="size_bg_color2">00</div></td>
+        <td><div class="size_bg_color2">2</div></td>
+        <td><div class="size_bg_color2">81.28</div></td>
+        <td><div class="size_bg_color2">60.96</div></td>
+        <td><div class="size_bg_color2">66.675</div></td>
+        <td><div class="size_bg_color2">86.36</div></td>
+      </tr>
+      <tr>
+        <td><div class="size_bg_color_2_2">XL</div></td>
+        <td><div class="size_bg_color_2_3">00</div></td>
+        <td><div class="size_bg_color_2_3">2</div></td>
+        <td><div class="size_bg_color_2_3">81.28</div></td>
+        <td><div class="size_bg_color_2_3">60.96</div></td>
+        <td><div class="size_bg_color_2_3">66.675</div></td>
+        <td><div class="size_bg_color_2_3">86.36</div></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+  
 </div>
 
 </div>
@@ -435,264 +289,30 @@ a.tablinks.active {
 
 
 </div>
-<div class="clearfix"></div>
-
-<div id="information" class="tabcontent">
-<div class="delivery_guide_title">Delivery Information</div>
-
-<div class="cost">
-	<h5>Delivery Costs</h5>
-	<p>Most orders will be dispatched within a day of ordering (we do not ship Saturdays, Sundays or Bank Holidays), however some orders will take 24-48 hours to process. Orders may ship in multiple packages.</p>	
-</div>
-<div class="status">
-	<h5>Delivery Status</h5>
-	<p>As soon as your order is dispatched we will send you an email with your tracking information. Information about any backordered or cancelled items will be included in a separate email. You may also view your order online by logging into your account and selecting "Order History."</p>		
-</div>
-</div>
-
-  <div id="story" class="tabcontent">
-  	<div class="col-sm-7">
-  		<div class="delivery_guide_title">Our Story</div>
-<div class="story">
-	<p>Back in the 1970's, a young man named Dick Hayne planted a seed in the maze of streets and trees that make up West Philadelphia, Pennsylvania. He opened a store and called it Free People. Free People nurtured the young people who lived there and shopped there, who looked for a little of their own freedom in the clothes they wore.</p>
-	<p>As Dick's store grew from one to two, the name was changed from Free People to Urban Outfitters.</p>
-	<p>In time, his wife Meg came on to tend Urban's private label division, which supported product exclusive to Urban Outfitters. Demand was almost immediate and to meet this overwhelming need, she and Dick decided to create a wholesale line. It was very well-received, so much so that Dick separated the businesses. For a while, the wholesale line took on many personalities: Bulldog, Ecote, Cooperative, Anthropologie, and then in 1984 a new life was breathed into the name Free People. And that's us.</p>
-</div>
-  	</div>
-  	<div class="col-sm-5">
-  		<div class="img-wrap">
-  			<img class="img-responsive" src="https://cdn.shopify.com/s/files/1/1854/4327/files/story.jpg?2525324251646545461">
-  		</div>
-  	</div>
   </div>
   
-  <div id="job" class="tabcontent">
-  	<div class="delivery_guide_title">Job Opportunities</div>
-
-<div class="job">
-	<p class="head">Who We Are</p>
-	<p>
-Free People was the name first given to what would eventually become the URBN Inc. family, and resurfaced in 1984 to identify the brand as a wholesale collection. Today, Free People has grown to include, in addition to wholesale, both a significant retail and online presence. Currently, we operate over 100 stores in the U.S. and Canada, as well as three wholesale showrooms whose teams have brought Free People to over 1,200 specialty boutiques and department stores across the globe. In all phases of Free People, we look to inspire our customers, our girls – the sweet and sultry, dreamy and tom-girl - with our assortment of apparel and accessories.</p>
-
-<p class="head">Working at I Saw It First</p>
-<p>
-Here at Free People we strive to create a soulful culture and that involves committed, passionate employees. We foster this culture through hiring and retaining smart, creative people who through communication and collaboration are able to deliver the story of our brand. With that in mind, some of the experiences that we look for in our prospective employees and interns include:</p>
-
-<p>
- - Previous leadership roles <br>
- - Extracurricular activities <br>
- - Internship experience <br>
- - Relevant job experience <br>
- - Blogs / Relevant samples of work <br>
- - Fashion experience
-</p>
-
-<p class="head">What We Look for in Employees</p>
-<p>Passion / Happiness / Professionalism / Commitment / Creativity / Hard work / Honesty / Focus/ Loyalty / Spirit / Intelligence / Pride / Curiosity</p>
-
-</div>
-  </div>
-
-
-<div id="affiliates" class="tabcontent">
-	<div class="delivery_guide_title">Affiliates</div>
-<div class="aff">
-	<p>Are you a free spirit who loves to share your style with the blogosphere?</p>
-	<p>Our style friends and fans mean so much to us at Free People. We want to work with you to build the Free People community online. If you have a blog or other website, you can add a banner or link back to us at FreePeople.com/uk. There is an easy sign-up process through Commission Junction. If you are approved, all sales generated from your banners and posts will receive a commission. It's as simple as can be! Post and promote the brand you love and earn a commission on the sales you generate.</p>
-<p><a class="link" href="https://isawitfirst-dubai.myshopify.com/pages/sign-in">Sign up here.</a></p>
-
-</div>
-
-</div>
-
-
-
-<div id="order-payment" class="tabcontent">
-<div class="delivery_guide_title">Order & Payment</div>
-
-<div class="pay-order">
-	<p class="head">Ordering</p>
-	<p>On the Review page during checkout, select the "Place Order" button to complete your purchase. Please review all shipping information carefully. Upon placing your order, a confirmation page will display your order number. A Free People Order Confirmation with your order details will be sent to you by e-mail. You can also check the status of your order by logging into My Account. Click on "Order History" to review order status and to obtain a tracking number.</p>
-</div>
-
-<div class="pay-order">
-	<p class="head">Payment</p>
-	<p>We accept: Visa, Visa Electron, MasterCard, Maestro, American Express, Solo, JCB, PayPal, and Free People Gift Cards issued in GBP.</p>
-</div>
-
-<div class="pay-order">
-	<p class="head">When Will I Be Charged?</p>
-	<p>Upon placing your order, your form of payment will be authorized (not charged). This authorization ensures the funds for the order are available. Once your order has shipped, your form of payment will then be charged. If your order is cancelled for any reason, the authorization will be removed automatically in 5-7 business days. The exact timeframe for removal is determined by you card's issuing bank.</p>
-</div>
-
-<div class="pay-order">
-	<p class="head">Change / Cancel My Order</p>
-	<p>Please call us at +44 (0) 0203 219 8999 or 0800 012 1400 immediately after placing your order to make any changes. There may be some instances where we are unable to modify your order, we apologise for any inconvenience and will do our best to assist you.</p>
-</div>
-
-<div class="pay-order">
-<p>Under the UK Distance Selling Regulations you have 7 working days (from the day after you receive your goods) to cancel the contract for your order with us.
-</p><p>
-In this case we will issue you with a full refund. You will need to return the entire order if you have already received it. Items must be in their original condition and in their original packaging. Items must not to be worn, altered or washed and will be inspected on their return.</p>
-</div>
-</div>
-
-<div id="return" class="tabcontent">
-<div class="delivery_guide_title">Returns & Exchanges</div>
-
-<div class="return-content">
-	<p class="head">Return Policy</p>
-	<p>
-Free People will gladly accept unworn, unwashed or faulty merchandise for return or exchange. For returns received within 30 days of delivery, we’ll credit your original form of payment. If received after 30 days, a Free People e-gift card will be issued.</p>
-</div>
-
-<p>
-If returning swim & intimates or beauty products, please see our policies below. Free People merchandise purchased at independent boutiques and department stores must be returned to the location where purchased. Please contact the individual boutique or store for their return policy.</p>
-
-<p>Returning Merchandise</p>
-<p>We offer two ways to return your Free People items! You can use our free returns portal or your own delivery method. Please note that if you use your own method you are responsible for all delivery costs.</p>
-
-<p>Use our Free & Easy Returns Portal!</p>
-
-<p>Enter you order number and e-mail address to select the items you’d like to return in the portal, then print your free return label and affix it to the box. Be sure to complete the dispatch note and include it with your returned items.</p>
-
-<p>Use your own delivery method</p>
-<p>You can send items back to us at your own expense to the address below using any trackable/insured delivery method. Sorry, we cannot accept COD returns.</p>
-
-<p>Follow the directions on the back of the dispatch note to return merchandise for credit. Pack all items in a secure box or reuse the original packaging and enclose the dispatch note.</p>
-
-<p>I Saw It First Direct </p>
-<p>1 Sparrow Street</p>
-....<br>
-....<br>
-...<br>
-United Kingdom
-</div>
-
-<div id="international-order" class="tabcontent">
-
-<div class="delivery_guide_title">International Orders</div>
-
-<div class="inter">
-		<p class="head">Return Policy</p><p>
-If you would like your order delivered outside of the UK please visit us at <br> https://www.freepeople.com/uk/country/all/countries/ to see a complete list of countries we deliver to.</p>
-</div>
-<div class="inter">
-	<p class="head">Currency</p>
-	<p>freepeople.com/uk prices are displayed and charged in GBP and are inclusive of VAT and import fees.</p>
-</div>
-<div class="inter">
-	<p>If you would like to display another currency, please visit us at https://www.freepeople.com/uk/country/all/countries/. Please note you will be charged in US Dollars when shopping on the US/Global website.</p>
-</div>
-<div class="inter">
-	<p class="head">International Returns</p>
-	<p>For purchases from freepeople.com, please visit <a class="link" href="https://www.freepeople.com/uk/help/returns-exchanges/">https://www.freepeople.com/uk/help/returns-exchanges/</a> for instructions on returning your package.</p>
-</div>
-
-</div>
-
-<div id="payment-option" class="tabcontent">
-<div class="delivery_guide_title">Payment Options</div>
-<div class="pay-opt">
-	<p class="head">Payment</p><p>
-We accept: Visa, Visa Electron, MasterCard, Maestro, American Express, Solo, JCB, PayPal, and Free People Gift Cards issued in GBP.</p>
-</div>
-<div class="pay-opt">
-	<p class="head">Taxes</p><p>
-Prices on freepeople.com/uk are inclusive of VAT.
-Our website calculates VAT automatically. If you are shipping to a VAT exempt location, please <a class="link" href=""> contact us </a>after placing your order and we’ll be happy to adjust your total.</p>
-</div>
-
-</div>
-
-
-<div id="ordering" class="tabcontent">
-<div class="delivery_guide_title">Ordering</div>
-<div class="Ordering">
-<p class="head">Ordering</p>
-<p>On the Review page during checkout, select the "Place Order" button to complete your purchase. Please review all shipping information carefully. Upon placing your order, a confirmation page will display your order number. A Free People Order Confirmation with your order details will be sent to you by e-mail. You can also check the status of your order by logging into My Account. Click on "Order History" to review order status and to obtain a tracking number.</p></div>
-
-
-<div class="Ordering">
-<p class="head">Backorder</p><p>
-We occasionally have merchandise for sale that has not yet been received at our warehouse, or that has sold out and is being restocked. You can still order these items to reserve your favorite color or size. We'll ship it to you when supplies are replenished. The expected ship date for backordered merchandise is listed on the product page and in your Shopping Bag during checkout. We will contact you via email if the item's replenishment date changes. Backordered items cannot be expedited and will ship with standard shipping once they arrive at our warehouse.</p></div>
-
-<div class="Ordering">
-<p class="head">Price Adjustment Policy</p><p>
-Should an item from the website or catalogue be marked down, please contact us within 14 days from the date of dispatch, we will honour a one time price adjustment. Credits will be applied to the original form of payment and will be reflected in 2-4 business days. If you paid with a e-gift card, a new e-gift card will be issued for the amount of the credit. Please <a class="link" href=""> contact us </a>to request a price adjustment.</p></div>
-<p>
-We are unable to process price adjustments for merchandise purchased at our Free People store locations or independent boutiques and department stores. Please contact the store directly for assistance.</p>
-<p>
-Please note, we are unable to offer price adjustments for temporary promotions or discounts. Promotions or discounts cannot be applied retroactively to orders placed before the promotion discount was activated.</p>
-</div>
-
-
-
-<div id="shipping" class="tabcontent">
-<div class="delivery_guide_title">Shipping & Delivery</div>
-
-<div class="shipping">
-	
-<p class="head">Delivery Costs</p>
-<p>Most orders will be dispatched within a day of ordering (we do not ship Saturdays, Sundays or Bank Holidays), however some orders will take 24-48 hours to process. Orders may ship in multiple packages.</p>
-
-<p>We deliver orders to Great Britain (England, Wales, Scotland and Northern Ireland).</p>
-
-
-
-<div class="img-wrap">
-	<img src="https://cdn.shopify.com/s/files/1/1854/4327/files/table-ship.jpg?1611113055640971317" class="img-responsive">
-</div>
-
-
-
-
-<p>Standard shipping orders will be delivered with either Hermes, Royal Mail, or Aramex Couriers. Your Delivery Confirmation Email will tell you which carrier is handling your package and how you can track your package. Faster shipping will be delivered by DHL.</p>
-
-<p>If you would like delivery outside of the regions listed above we deliver orders to more than 100 other countries. Click here to visit us at freepeople.com.</p>
-
-<p class="head">Furniture & Oversized Items</p>
-
-<p>We regret that we are unable to deliver furniture and oversized items outside of the contiguous US. If you would like to order furniture or an oversized item to a US address, please visit us at freepeople.com.</p>
-
-<p class="head">Delivery Status</p>
-
-<p>As soon as your order is dispatched we will send you an email with your tracking information. Information about any backordered or cancelled items will be included in a separate email. You may also view your order online by logging into your account and selecting "Order History."</p>
-</div>
-
+  
+  
+  
+ 
 
 </div>
   
 </div>
 
-</div>
-  
-</div>
-
-
-<script type="text/javascript">
+<script>
   $(document).ready(function(){
-  	document.getElementById('size-guide').style.display = "block";
-  });
-    
-function opentab(evt, selectedTab) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(selectedTab).style.display = "block";
-    evt.currentTarget.className += " active";
+  	$('#centimiters').click(
+function(){
+	$('.show-size-centimeter').show();
+	$('.show-size-inches').hide();
 }
+);
+$('#inches').click(
+function(){
+	$('.show-size-inches').show();
+	$('.show-size-centimeter').hide();
+}
+);
+  });
 </script>
