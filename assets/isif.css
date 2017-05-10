@@ -155,8 +155,10 @@
 
 .page-design-lotd .product-info-block.classic .product-name {
     display: block;
-    font-size: 34px;
-    font-family: HelveticaNeueLTStd-Th;
+    font-size: 43px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #000;
     text-transform: capitalize;
 	text-align: left !important;
 }
@@ -168,7 +170,9 @@
 
 .page-design-lotd .price .special-price {
     font-size: 28px !important;
-    font-family: HelveticaNeueLTStd-Lt;
+    font-family: Arial;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .page-design-lotd .product-description {
@@ -181,17 +185,26 @@
 }
 
 .page-design-lotd .product-info-block.classic .product-options .option-label {
-    font-family: HelveticaNeueLTStd-Bd;
-    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
     min-width: 65px;
+    float: none !important;
+    display: block;
+    text-transform: lowercase;
 }
 
 .page-design-lotd .product-info-block.classic .product-options {
-	padding-left: 0;
+	padding-left: 5px;
+}
+
+.color-list li a span.value {
+    border: none;
 }
 
 .page-design-lotd .color-list li.active img {
-    border: none;
+    /*border: none;*/
 }
 
 .page-design-lotd .size-list li span.value {
@@ -234,9 +247,14 @@
     font-size: 12px;
 }
 
+.color-list li.active span.value, .color-list li:hover span.value {
+    border: none;
+}
+
 .page-design-lotd .color-list li img {
-    width: 22px !important;
-    height: 22px !important;
+    width: 39px !important;
+    height: 39px !important;
+    border: 1px solid #000;
 }
 
 .page-design-lotd .color-list li {
@@ -245,11 +263,14 @@
 
 .page-design-lotd .size-list li span.value {
     height: auto;
-    font-size: 13px;
-    font-family: HelveticaNeueLTStd-Lt;
-    padding: 4px 3px;
-    line-height: 20px;
-    min-width: 26px;
+    font-size: 16px;
+    font-family: Arial;
+    color: #000;
+    padding: 3.5px 0px;
+    font-weight: bold;
+    min-width: 39px;
+    text-align: center;
+    border: 1px solid #000;
 }
 
 .product-page-options-form {
@@ -354,7 +375,11 @@
 }
 
 .page-design-lotd .product-info-block.classic .product-description {
-    border-bottom: 1px solid #d9d9d9;
+    height: 130px;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    font-family: Arial;
 }
 
 .page-design-lotd {
@@ -834,8 +859,8 @@ div.product-info-icon {
 }
 
 .color-list li.active a img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 39px !important;
+    height: 39px !important;
 }
 
 .header-currency {
@@ -1300,9 +1325,9 @@ header.is-sticky .section_below_menu {
 }
 
 html .col-xs-6.collection-text {
-    padding: 30px;
+    padding: 5px 30px 5px 30px;
     min-height: 50px;
-  height: auto !important;
+    height: auto !important;
     overflow: auto;
   	margin: 10px 0;
     font-size: 15px;
@@ -1323,10 +1348,14 @@ html .col-xs-6.collection-text {
 
 ul.list-group {
     /*float: left;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80px;
 }
 
 .list-group li {
-    float: left;
+    float: none;
     padding-right: 30px;
 }
 
@@ -1510,6 +1539,21 @@ form.search-form input.exp-search-input {
     display: block;
 }
 
+.cust-delivery {
+    float: right;
+    text-align: center;
+}
+
+.cust-delivery img, .cust-size-guide img {
+    width: 53px;
+    margin: 4px 0 10px 0;
+}
+
+.cust-size-guide {
+    float: left;
+    text-align: center;
+}
+
 .cust-size-guide:hover {
     color: #efbfbf;
 }
@@ -1615,4 +1659,78 @@ ul.selected-filters li:hover a {
 
 .size-list li.active span.value, .size-list li:hover span.value {
     border-color: #000;
+}
+
+.variant-value {
+    font-family: Arial;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 4px;
+}
+
+.product-description-more {
+    margin-top: -20px;
+    position: absolute;
+    /*width: 100%;*/
+    height: 30px;
+    background:rgba(255, 255, 255, 0.65);
+    display: table;
+}
+
+.product-description-more a {
+    display: table;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 6px 30px;
+    font-family: Arial;
+    margin: 0 auto;
+}
+
+.product-description-more.active {
+    margin-top: 5px;
+    position: static;
+    float: none;
+    display: block;
+}
+
+.delivery-and-size {
+    display: table;
+    width: 100%;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.product-page-icons {
+    margin-top: 60px;
+}
+
+.product-page-icons li img {
+    width: 42px !important;
+    opacity: 1 !important;
+}
+
+.product-page-icons li {
+    width: 24.8%;
+    float: left;
+}
+
+.product-page-icons li a {
+    display: table;
+    margin: 0 auto;
+}
+
+.related-products-main {
+    width: 48%;
+}
+
+.related-products-main .image {
+    width: 100%;
+}
+
+.related-products-main .image img {
+    width: 100%;
 }

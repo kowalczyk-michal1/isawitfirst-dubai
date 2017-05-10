@@ -467,6 +467,10 @@
 
 
             $('a',$ul).click(function(e){
+                var newName = $(this).data('value');
+                $(this).parent().parent().parent().find(".variant-value").text(newName.toString().replace("-", " "));
+
+
                 $('li',$(this).parent()).removeClass('active');
                 $('li.active.absent-option',$ul).each(function(){
                     $(this).removeClass('active').siblings().not('.absent-option').first().addClass('active');

@@ -93,7 +93,21 @@
             {% assign name_attr = 'contact.form.phone' | t | handle %}
             <input class="input-lg"  type="tel" id="ContactFormPhone" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
-            <textarea  class="input-lg" rows="10" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+  <input class="input-lg cust-order"  type="text" id="ContactFormOrder" name="contact[order]" placeholder="Order number (if applicable)"  value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+  <select class="input-lg cust-select" id="contactFormQuestionType" name="contact[question type]" >
+    <option>What does your enquiry relate to?</option>
+    <option>Delivery </option>
+    <option>Returns and Refunds</option>
+    <option>Order Issues</option>
+    <option>Payment</option>
+    <option>Product or Availability</option>
+    <option>Something else</option>
+  </select>
+    
+   
+  <textarea  class="input-lg" rows="10" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
             <div><button class="btn btn-lg cust-contact" type="submit">{{ 'contact.form.send' | t }}</button></div>
             <div class="required-text">* Required Fields</div>

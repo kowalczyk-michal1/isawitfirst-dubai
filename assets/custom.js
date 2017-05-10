@@ -97,3 +97,25 @@ function loadVerticalCarousel(init = true) {
 
     $("#vertical-carousel .slick-next").css("top", ""+verticalNextArrow+"px");
 }
+
+$(document).ready(function() {
+    $( ".product-desc-show-more" ).on( "click", function() {
+
+        if ($(".product-description-more").hasClass("active")) {
+            $(".product-description").css({
+                "height": "130px"
+            });
+
+            $(".product-desc-show-more").text("SHOW MORE");
+            $(".product-description-more").removeClass("active");
+        } else {
+            $(".product-description").css({
+                "height": "auto"
+            });
+
+            $(".product-desc-show-more").text("HIDE");
+            $(".product-description-more").addClass("active");
+        }
+        return false;
+    });
+});

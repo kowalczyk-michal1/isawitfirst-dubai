@@ -21168,8 +21168,10 @@ ol.inch_radio_btn li input[type=radio]:checked ~ label{
 }
 
 .custom-img strong {
-    font-size: 13px;
-  color:#000;
+font-size: 14px;
+    color: #000;
+    text-align: center;
+    display: block;
 }
 .custom-img strong a {
     color: #e7bfbf;
@@ -21278,7 +21280,8 @@ p.sub-head {
 
 .order-status-form input,
 .custom-contact-form input,
-.custom-contact-form textarea{
+.custom-contact-form textarea,
+.custom-contact-form .cust-select{
 
     border: 1px solid #e7bfbf;
     padding: 5px 15px;
@@ -21334,4 +21337,10 @@ background: #EFBFBF !important;
    font-family: arial!important;
     font-weight: bold;
     color: #000;
+}
+#ContactFormOrder,#contactFormQuestionType {
+    color: #777;
+}
+#contactFormQuestionType {
+   padding-top:0;
 }

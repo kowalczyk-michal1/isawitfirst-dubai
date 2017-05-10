@@ -164,12 +164,33 @@
                                 <div class="product-description">
                                     {{ product.description | replace: '[i]', '<div class="product-info-icon"><span class="product-info-icon"></span></div>' }}
                                 </div>
+
+                                <div class="col-md-9 product-description-more">
+                                    <a class="product-desc-show-more" href="#">SHOW MORE</a>
+                                </div>
                             {% endif %}
 
                         </form>
 
-                        <div class="buy-related-products">
-                            {% include 'buy-related-products' %}
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="delivery-and-size">
+                                    {% include 'cust-size-guide' %}
+
+                                    {% include 'cust-delivery' %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-9">
+                                <ul class="social-icon product-page-icons">
+                                    <li><a href=""><img src="//cdn.shopify.com/s/files/1/1854/4327/t/3/assets/facebook-icon.png?8594228755598705661"></a></li>
+                                    <li><a href=""><img src="//cdn.shopify.com/s/files/1/1854/4327/t/3/assets/instagram-icon.png?8594228755598705661"></a></li>
+                                    <li><a href=""><img src="//cdn.shopify.com/s/files/1/1854/4327/t/3/assets/twitter-icon.png?8594228755598705661"></a></li>
+                                    <li><a href=""><img src="//cdn.shopify.com/s/files/1/1854/4327/t/3/assets/envelope.png"></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -494,9 +515,19 @@
 </script>
 
 <div class="row">
-    <div class="block fullwidth">
-        {% if settings.product_related_enable %}
-            {% include 'related-products-isif' %}
-        {% endif %}
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <div class="block">
+                {% if settings.product_related_enable %}
+                    {% include 'related-products-isif' %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="block">
+                {% include 'buy-related-products' %}
+            </div>
+        </div>
     </div>
 </div>

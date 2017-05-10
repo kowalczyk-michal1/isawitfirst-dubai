@@ -244,6 +244,7 @@ li.hovered:hover body:not(.touch) .sub-menu {
 }
 /* megacolumns */
 .megamenu-categories .col {
+  float: left;
   position: relative;
   padding: 0 15px;
   width: 100%;
@@ -786,4 +787,10 @@ ul.category-links.menu-hj5 li {
   flex-direction: column;
   flex-wrap: wrap;
   height: 205px;
+}
+
+.menu-shop-by {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
 }
