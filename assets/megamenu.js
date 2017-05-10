@@ -16,6 +16,7 @@
 						 maxH = el.offset().top + el.outerHeight(true);
 					}
 					el.css({'max-height': maxH + 'px'});
+                  //  $(this).find(".category-links").css({'max-height': maxH + 'px'})
 				})
 				$('.slick-initialized', $menu).slick('setPosition');
 			}

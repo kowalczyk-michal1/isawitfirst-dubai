@@ -772,3 +772,18 @@ ul.category-links.menu-hj5 li {
 .megamenu ul li.active .sub-menu a, .megamenu ul li .sub-menu a:hover {
   font-weight: normal !important;
 }
+
+.mega-dropdown .sub-menu .category-links li {
+  float: none !important;
+  /*display:inline-block;*/
+  /*-webkit-column-count: 3;*/
+  /*-moz-column-count: 3;*/
+  /*column-count: 3;*/
+}
+
+.mega-dropdown .sub-menu .category-links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 205px;
+}

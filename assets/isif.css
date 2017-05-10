@@ -560,16 +560,17 @@
 
 ul.selected-filters {
     display: table;
+    margin-bottom: 25px !important;
 }
 
 ul.selected-filters li {
     background: #c5c5c5;
-    padding: 15px 15px 15px 15px;
+    padding: 11px;
     border: 1px solid #c5c5c5;
     margin: 5px;
     display: block;
     min-width: 52px;
-    font-size: 15px;
+    font-size: 12px;
     width: auto;
     float: left;
 }
@@ -583,11 +584,11 @@ ul.selected-filters li a {
 }
 
 ul.selected-filters li a .remove {
-    /*display: table;*/
-    display: none;
+    display: table;
+    /*display: none;*/
     position: absolute;
-    top: 0px;
-    right:0;
+    top: 4px;
+    right: 2px;
     margin-top: -12px;
     margin-right: -3px;
     font-family: HelveticaNeueLTStd-Bd;
@@ -1304,7 +1305,7 @@ html .col-xs-6.collection-text {
   height: auto !important;
     overflow: auto;
   	margin: 10px 0;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .collections-showhide.collections-left-side {
@@ -1320,13 +1321,18 @@ html .col-xs-6.collection-text {
   	margin-top: 20px;
 }
 
+ul.list-group {
+    /*float: left;*/
+}
+
 .list-group li {
     float: left;
-  padding-right: 15px;
+    padding-right: 30px;
 }
 
 .list-group li a {
-  color: black;
+    color: black;
+    font-size: 14px;
 }
 
 
@@ -1545,6 +1551,9 @@ form.search-form input.exp-search-input {
 
 ul.category-list li a:not(.clear):hover, ul.category-list li a:not(.clear).active, ul.category-list li.active a, .sidebar-block .block-title:hover span  {
     color: #000;
+}
+
+.sidebar-block .block-title:hover span {
     text-decoration: underline;
 }
 
@@ -1575,4 +1584,35 @@ ul.social-icon li:last-child a img, ul.social-icon li:first-child a img {
 
 .lotd-collection-description ul.list-group li a {
     text-decoration: underline !important;
+}
+
+ul.selected-filters li {
+    border: 1px solid #e6b7ba;
+    background: #e7bfc1;
+}
+
+ul.selected-filters li a {
+    color: #000;
+    font-family: HelveticaNeueLTStd-Bd;
+}
+
+ul.selected-filters li:hover {
+    background: #000;
+    border: 1px solid #000;
+}
+
+ul.selected-filters li:hover a {
+    color: #fff !important;
+}
+
+.selected-filters li i.icon {
+    font-weight: bold !important;
+}
+
+.block-content li .clear {
+    display: none !important;
+}
+
+.size-list li.active span.value, .size-list li:hover span.value {
+    border-color: #000;
 }
