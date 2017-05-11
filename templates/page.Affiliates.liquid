@@ -6,34 +6,21 @@
 
 <h4><strong>Help &amp; Info</strong></h4>
 <ul class="help_and_info_menu">
-<li><a href="/pages/contact-us"  class="tablinks"  >Contact Us</a></li>
-<li><a href="/pages/payment-options"  class="tablinks" >Payment Options</a></li>
-<li><a href="/pages/ordering"  class="tablinks" >Ordering</a></li>
-<li><a href="/pages/shipping-delivery"  class="tablinks" >Shipping &amp; Delivery</a></li>
-<li><a href="/pages/size-guide"  class="tablinks" >Size Guide</a></li>
-<li><a href="/pages/our-story"  class="tablinks" >Our Story</a></li>
-<li><a href="/pages/job-opportunities"  class="tablinks" >Job Opportunities</a></li>
-<li><a  href="/pages/affiliates" class="tablinks active" >Affiliates</a></li>
-<li><a href="/pages/order-status"  class="tablinks" >Order Status</a></li>
-<li><a href="/pages/ordering-payment"  class="tablinks" >Order &amp; Payment</a></li>
-<li><a href="/pages/delivery-information"  class="tablinks" >Delivery Information</a></li>
-<li><a href="/pages/returns-exchanges"  class="tablinks" >Return &amp; Exchanges</a></li>
-<li><a href="/pages/international-orders"  class="tablinks" >International Orders</a></li>
+  
+{% for link in linklists.sidebar-menu.links %} 
+  <li><a class="tablinks" href="{{ link.url }}">{{ link.title }}  </a></li>
+{% endfor %}
+  <script>
+$(function() {
+  $('ul.help_and_info_menu a[href^="/pages/' + location.pathname.split("/")[2] + '"]').addClass('active');
+});
+  </script>
 </ul>
 </div>
 </div>
 
 <div class="col-sm-9">
-  <div id="affiliates" class="tabcontent">
-    <div class="delivery_guide_title">Affiliates</div>
-    <div class="aff">
-      <p>Are you a free spirit who loves to share your style with the blogosphere?</p>
-      <p>Our style friends and fans mean so much to us at Free People. We want to work with you to build the Free People community online. If you have a blog or other website, you can add a banner or link back to us at FreePeople.com/uk. There is an easy sign-up process through Commission Junction. If you are approved, all sales generated from your banners and posts will receive a commission. It's as simple as can be! Post and promote the brand you love and earn a commission on the sales you generate.</p>
-      <p><a class="link" href="/pages/sign-in">Sign up here.</a></p>
-
-    </div>
-
-  </div>
+{{page.content}}     
 </div>
 
 </div>
