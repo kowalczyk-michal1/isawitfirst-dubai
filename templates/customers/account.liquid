@@ -1,13 +1,31 @@
 <div class="block">
   <div class="container">
-    <div class="title center">
+    <!--<div class="title center">
       <h1>{{ 'customer.account.title' | t }}</h1>
     </div>
-  </div>
+  </div>-->
 </div>
 
-<div class="grid">
-  <div class="form-card">
+<div class="row grid">
+  <div class="col-xs-12 account_title" style="padding: 0 135px; margin-top: 50px;">
+  	<h4><strong>MY ACCOUNT</strong></h4>
+  </div>
+  <div class="col-md-3" style="padding-left:122px;">
+    <div style="margin-top:20px;">
+    <ul class="help_and_info_menu">
+      <li><a href=""  class="tablinks active"  >Account information</a></li>
+      <li><a href=""  class="tablinks" >Subscriptions</a></li>
+      <li><a href=""  class="tablinks" >Order history</a></li>
+      <li><a href=""  class="tablinks" >Address book</a></li>
+      <li><a href=""  class="tablinks" >Payment method</a></li>
+      <br>
+      <br>
+      <li><a href=""  class="tablinks" >Sign out</a></li>
+    </ul>
+    </div>
+  </div>
+  
+  <div class="col-md-8 form-card">
   <div class="grid__item two-thirds medium-down--one-whole">
 
     <h4>{{ 'customer.orders.title' | t }}</h4>

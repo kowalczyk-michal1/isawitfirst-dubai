@@ -98,6 +98,23 @@ function loadVerticalCarousel(init = true) {
     $("#vertical-carousel .slick-next").css("top", ""+verticalNextArrow+"px");
 }
 
+function productPageSocial() {
+    $(".product-page-icons").css("margin-top", "0px");
+
+    var imageHeight = $(".page-design-lotd .main-image").height();
+    var contentHeight = $(".product-info-block").height();
+
+    var result = imageHeight - contentHeight;
+
+
+
+    if (result > 0) {
+        $(".product-page-icons").css("margin-top", ""+result+"px");
+    } else {
+        $(".product-page-icons").css("margin-top", "5px");
+    }
+}
+
 $(document).ready(function() {
     $( ".product-desc-show-more" ).on( "click", function() {
 
@@ -116,6 +133,9 @@ $(document).ready(function() {
             $(".product-desc-show-more").text("HIDE");
             $(".product-description-more").addClass("active");
         }
+
+        productPageSocial();
+
         return false;
     });
 });

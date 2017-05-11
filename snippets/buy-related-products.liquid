@@ -54,7 +54,7 @@
             var start = 0;
             for (var i=0; i<recommendations.length; i++) {
                 jQuery.getJSON(recommendations[i] + '.js', function(product) {
-                    list.append('<div class="related-products-main"><div class="image"><a href="' + product.url +'"><img src="' + product.images[0].replace(/(\.jpg|\.png|\.jpeg|\.gif)/, '_large$1') + '" /></a></div><div class="buy-related-products-title"><a href="' + product.url + '">' + product.title + '</a></div><span class="money">' + Shopify.formatMoney(product.price, "{{ money_format }}") + '</span></div>');
+                    list.append(' <div class="product-item large"><div class="product-item-inside"><div class="product-item-info"><div class="product-item-photo"><a href="' + product.url +'"><img src="' + product.images[0].replace(/(\.jpg|\.png|\.jpeg|\.gif)/, '_2048x2048$1') + '" /></a></div><div class="product-item-details"><div class="product-item-name"><a href="' + product.url + '">' + product.title + '</a></div><div class="price-box"><span class="price-container"><span class="price-wrapper "><span class="special-price">' + Shopify.formatMoney(product.price, "{{ money_format }}") + '</span></span></span></div></div></div></div></div>');
 
                 });
             }

@@ -30,7 +30,7 @@
             {% assign option_names = option_names | split:'<>' | uniq %}
             {% assign color_image = color_image | split:'<>' | uniq %}
             <div class="product-size {{ product_options }} option-{{ option | handle }}">
-                <span class="option-label">{{ option }}: <span class="variant-value {{ option | handle | downcase | escape }}-variant">{{ selected_value }}</span></span>
+                <span class="option-label">{{ option | downcase }}: <span class="variant-value {{ option | handle | downcase | escape }}-variant">{{ selected_value }}</span></span>
                 <div class="select-wrapper-sm">
                     <select class="form-control input-sm size-variants">
                         {% for name in option_names %}

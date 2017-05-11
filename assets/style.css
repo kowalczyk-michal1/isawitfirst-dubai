@@ -13532,7 +13532,7 @@ h2.blog-title a:hover {
   font-weight: bold;
 }
 .total-price td {
-  width: 50%;
+  width: 0%; /*was 50%*/
   padding: 0 0 0 10px;
   text-align: right;
 }
@@ -20947,7 +20947,7 @@ body.page-cart .price span,body.page-cart .qty-input span,body.page-cart .subtot
 .size_guide_accordian{width:100%; border-top:1px solid #999; color: #000; padding:10px 0; text-transform:uppercase; font-size:11px; font-weight:bold; background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat; cursor:pointer;}
 .size_guide_accordian_up_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/up_arr.png?10114004713734943297)98% 12px no-repeat;}
 .size_guide_accordian_down_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat;}
-tbody > tr > td{font-size:12px !important; color:#000; font-weight:bold; border:1px solid #000 !important; padding: 5px 5px !important;}
+tbody > tr > td{font-size:12px !important; color:#000; font-weight:bold; /*border:1px solid #000 !important;*/ padding: 5px 5px !important;}
 .left_right_border_none{border-left:1px solid #fff !important; border-right:1px solid #fff !important; height:20px;}
 #accordian_two{display:none;}
 #accordian_three{display:none;}
@@ -21061,7 +21061,7 @@ p{color:#000;}
 .size_guide_accordian{width:100%; border-top:1px solid #999;  padding:10px 0; text-transform:uppercase; font-size:11px; font-weight:bold; background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat; cursor:pointer;}
 .size_guide_accordian_up_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/up_arr.png?10114004713734943297)98% 12px no-repeat;}
 .size_guide_accordian_down_arrow{background:url(https://cdn.shopify.com/s/files/1/1854/4327/files/down_ar.png?10114004713734943297)98% 12px no-repeat;}
-tbody > tr > td{font-size:12px !important; font-weight:bold; border:1px solid #000 !important; padding: 5px 5px !important;}
+tbody > tr > td{font-size:20px !important; font-weight:bold; /*border:1px solid #000 !important*/ padding: 5px 5px !important;}
 .left_right_border_none{border-left:1px solid #fff !important; border-right:1px solid #fff !important; height:20px;}
 #accordian_two{display:none;}
 #accordian_three{display:none;}
@@ -21160,7 +21160,7 @@ ol.inch_radio_btn li input[type=radio]:checked ~ .check {
 }
 
 ol.inch_radio_btn li input[type=radio]:checked ~ .check::before{
-  background: #e7bfbf;
+  background: #f8bcbe;
 }
 
 ol.inch_radio_btn li input[type=radio]:checked ~ label{

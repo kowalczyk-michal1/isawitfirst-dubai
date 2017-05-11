@@ -1075,14 +1075,46 @@ html .col-xs-6.collection-text {
     color: #191919;
     font-size: 12px;
 }
-.secondary a span {
-    color: #fff;
+
+
+/*.secondary a {
+    color: #fff !important;
+    font-size: 12px;
+}*/
+
+.header-link .secondary a span {
+	color: #FFFFFF !important;
+}
+
+.secondary a:hover {
+    color: #000;
     font-size: 12px;
 }
 
-.btn-alt:hover, .btn-alt .icon i:hover {
+.header-link .secondary:hover{
+	background: white !important;
+    color: #000 !important;
+    font-size: 12px;
+}
+
+.secondary:hover i {
+    color: #000;
+}
+
+.secondary:hover .btn-alt span,  .secondary:hover .btn-alt i {
+	color: #000000 !important;
+}
+.secondary .btn-alt span, .secondary .btn-alt i {
+	color: #FFFFFF !important;
+}
+
+.header-link .secondary .btn-alt:hover, .btn-alt .icon i:hover {
     background-color: white;
   	color: #000;
+}
+
+.secondary .btn i.icon, .btn-primary i.icon, button.action i.icon {
+  color: white; 
 }
 
 .secondary .btn i.icon, .btn-primary i.icon, button.action i.icon {

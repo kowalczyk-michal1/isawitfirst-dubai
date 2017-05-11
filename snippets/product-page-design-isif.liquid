@@ -162,7 +162,15 @@
 
                             {% if product.description %}
                                 <div class="product-description">
-                                    {{ product.description | replace: '[i]', '<div class="product-info-icon"><span class="product-info-icon"></span></div>' }}
+                                    <div class="col-md-9">
+                                        <div class="product-description-title">
+                                            Product Details
+                                        </div>
+
+                                        {{ product.description | replace: '[i]', '<div class="product-info-icon"><span class="product-info-icon"></span></div>' }}
+
+                                        <div class="product-sku">PRODUCT-SKU <span>{{ product.selected_or_first_available_variant.sku }}</span></div>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-9 product-description-more">
@@ -493,6 +501,8 @@
 
 <script type="text/javascript">
     $(function() {
+        productPageSocial();
+
         loadVerticalCarousel();
 
         $( window ).resize(function() {
