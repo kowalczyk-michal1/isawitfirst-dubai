@@ -69,12 +69,43 @@
             </div>
 
         </div>
+        <div class="btn-mobile mobile-version">
 
+             <a href="javascript:toggleFiltersMobile();" class="mobile-filter-btn">Filter</a>
+
+             <a href="javascript:sortByMobile();" class="mobile-sort-btn">Sort By</a>
+
+
+
+        </div>
         <div class="col-sm-12">
     {% if collection_left_sidebar == 1 %}
 
         {% assign left_col='col-md-10' %}
         <!-- Left column -->
+        <div class="sort-mobile-show mobile-version">
+            <div class="sort-mobile-content">
+                {% include 'collection-filter-current' %}
+                {% include 'collection-filter-categories' %}
+                {% for i in (1..10) %}
+                    {% include 'collection-filter-group' filter:i %}
+                {% endfor %}
+
+                <a href="javascript:sortByMobile();" class="close-filters-mobile">close</a>
+            </div>
+        </div>
+
+        <div class="filter-mobile-show mobile-version">
+            <div class="filter-mobile-content">
+                {% include 'collection-filter-current' %}
+                {% include 'collection-filter-categories' %}
+                {% for i in (1..10) %}
+                    {% include 'collection-filter-group' filter:i %}
+                {% endfor %}
+
+                <a href="javascript:toggleFiltersMobile();" class="close-filters-mobile">close</a>
+            </div>
+        </div>
         <div class="col-md-2 filter-col {% unless collection_filter_ajax == 1 %}no-ajax-filter{% endunless %} {% if collection_filter_fixed == 1 %}fixed{% endif %} aside">
             <div class="filter-container">
                 <div class="fstart"></div>
@@ -84,7 +115,7 @@
                             <div class="title">{{ 'general.theme.filters' | t }}</div>
                             <a href="#" class="filter-col-toggle"></a>
                         </div>
-                        <div class="filter-col-content mCustomScrollbar" data-mcs-theme="minimal-dark">
+                        <div class="filter-col-content">
 
                             {% include 'collection-filter-current' %}
                             {% include 'collection-filter-categories' %}

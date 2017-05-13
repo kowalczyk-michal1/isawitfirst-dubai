@@ -184,8 +184,12 @@
 			slidespeed = 250;
 
 		$('.block-content', $collapsed).each(function() {
-			if ($(this).parent().is('.open')){
-				$(this).slideDown(0);
+			if ($(document).width() > 480) {
+                if ($(this).parent().is('.open')) {
+                    $(this).slideDown(0);
+                }
+            } else {
+                $(this).parent().removeClass('open');
 			}
 		})
 
@@ -209,6 +213,7 @@
 		var $collapsed = this,
 			slidespeed = 250;
 		$('.block-content', $collapsed).each(function() {
+
 			if ($(this).parent().is('.open')){
 				$(this).slideDown(0);
 			}

@@ -20929,6 +20929,7 @@ body.page-cart .btn {
   border: 1px solid #000;
   min-height: 43px;
   line-height: 42px;
+  text-transform:uppercase!important;
 }
 body.page-cart h1 {
   color:#000;
@@ -21385,23 +21386,52 @@ background: #EFBFBF !important;
 }
 
 
-
 .cust-same .btn.btn-alt {
-    display: block;
-    width: 100%;
-    margin-bottom: 8px; 
-	background: #000;
-    border: 1px solid #000;  
+  display: block;
+  width: 100%;
+  margin-bottom: 8px; 
+  background: #000;
+  border: 1px solid #000;  
 }
 .cust-same .btn.btn-alt:hover {
-    width: 100%;
-    margin-bottom: 8px;
-    background: #e7bfbf!important;
-	border: 1px solid #e7bfbf;
-	text-decoration:none;
+  width: 100%;
+  margin-bottom: 8px;
+  background: #e7bfbf!important;
+  border: 1px solid #e7bfbf;
+  text-decoration:none;
 }
 
-.cust-same .btn.btn-alt span,.cust-same .btn.btn-alt:hover span{
-	color:#fff!important;
+.cust-same .btn.btn-alt span{
+  color:#fff!important;
   font-weight:bold;
+}
+.cust-same .btn.btn-alt:hover span{
+  color:#000!important;
+  font-weight:bold;
+}
+.cust-empty p strong {
+  position: relative;
+  padding: 5px 0;
+  font-size: 30px;
+  color: #000;
+  margin-bottom: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+.cust-empty {
+  text-align: center;
+  line-height: 25px;
+  margin:10px auto;
+}
+.cust-empty .btn {
+  width: 80%!important;
+  background: #000!important;
+  border: 1px solid #000!important; 
+  margin-top: 12px;
+}
+
+.cust-empty .btn:hover {
+  background: #e7bfbf!important;
+  border: 1px solid #e7bfbf!important;
+  text-decoration:none;
 }

@@ -1847,11 +1847,11 @@ span.option-label {
 }
 
 .mobile-version {
-    display: none;
+    display: none !important;
 }
 
 .desktop-version {
-    display: block;
+    display: block !important;
 }
 
 /*RESPONSIVE FOR MOBILE*/
@@ -1860,11 +1860,11 @@ span.option-label {
 @media screen and (max-width: 480px) {
 
     .mobile-version {
-        display: block;
+        display: block !important;
     }
 
     .desktop-version {
-        display: none;
+        display: none !important;
     }
 
 
@@ -2045,6 +2045,186 @@ span.option-label {
     }
 
     /*COLLECTION PAGE*/
+
+    .collections-showhide {
+        display: none !important;
+    }
+
+    /*CART PAGE*/
+
+    .page-cart .page-main > .block:first-child {
+        padding-top: 0;
+    }
+
+    .page-cart .title.center h1 {
+        background: #f0d7d0;
+        padding-top: 38px;
+        padding-bottom: 7px;
+    }
+
+    .page-cart .title.center h1:after {
+        content: none;
+    }
+
+    .page-cart .title.center h1:before {
+        content: ' ';
+        background: url(cart.png);
+        background-size: 100% 100%;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        margin-top: -32px;
+        left: 50%;
+        margin-left: -14px;
+    }
+
+    .page-cart .subtotal {
+        position: static;
+        float: right;
+        width: 66%;
+    }
+
+    .page-cart .qty-changer, .page-cart .price {
+        display: none !important;
+    }
+
+    .page-cart .name a,
+    .page-cart .cart-mobile-size,
+    .page-cart .cart-mobile-colour,
+    .page-cart .cart-mobile-qty,
+    .page-cart .subtotal,
+    .page-cart .subtotal span {
+        color: #545454 !important;
+        font-weight: bold !important;
+        font-family: Arial;
+        text-transform: uppercase;
+        font-size: 13.5px !important;
+    }
+
+    .page-cart .name a {
+        font-size: 14.5px !important;
+    }
+
+    .cart-table .table-row .name {
+        width: 89% !important;
+        float: none !important;
+    }
+
+    body.page-cart .subtotal span {
+        font-weight: bold !important;
+    }
+
+    .page-cart .cart-mobile-size,
+    .page-cart .cart-mobile-colour,
+    .page-cart .cart-mobile-qty {
+        margin-bottom: 15px;
+    }
+
+    .page-cart .name small {
+        display: none;
+    }
+
+    .page-cart .subtotal {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        display: block !important;
+        float: none !important;
+        left: auto;
+        bottom: auto;
+        width: auto !important;
+        text-align: right;
+        margin-top: 60px;
+    }
+
+    .table-footer {
+        display: none !important;
+    }
+
+    .total-price {
+        background: #f0d7d0;
+        max-width: 100% !important;
+    }
+
+    .total-price .total td:first-child {
+        text-align: left !important;
+    }
+
+    .cart-action button {
+        width: 100% !important;
+        text-transform: lowercase !important;
+    }
+
+    .page-cart #shipping-calculator,
+    .page-cart .col-sm-6.col-md-4{
+        display: none;
+    }
+
+    .btn-mobile {
+        display: table !important;
+        width: 100%;
+    }
+
+    .filter-mobile-show, .sort-mobile-show {
+        display: none !important;
+        position: absolute;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .filter-mobile-content, .sort-mobile-content {
+        width: 220px;
+        height: 100%;
+        background: #fff;
+    }
+
+    .sort-mobile-content {
+        float: right;
+    }
+
+    .filter-mobile-content .sidebar-block .block-title {
+        font-size: 14px !important;
+    }
+
+    .show-content-mobile {
+        display: block !important;
+    }
+
+    .close-filters-mobile {
+        display: block;
+        width: 90%;
+        margin: 15px auto;
+        background: #000;
+        text-align: center;
+        font-size: 18px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        color: #fff;
+    }
+
+    .mobile-filter-btn {
+        width: calc(50% - 1px);
+        padding: 8px 0px;
+        border-top: 1px solid silver;
+        border-right: 1px solid silver;
+        border-bottom: 1px solid silver;
+        text-align: center;
+        color: #000;
+        display: inline-block;
+        float:left;
+    }
+
+    .mobile-sort-btn {
+        width: 50%;
+        padding: 8px 0px;
+        border-top: 1px solid silver;
+        border-bottom: 1px solid silver;
+        text-align: center;
+        color: #000;
+        display: inline-block;
+        float: right;
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -2063,4 +2243,9 @@ span.option-label {
     .custom-logo img {
         width: 100px;
     }
+}
+
+
+.sidebar-block ul.color-list {
+    float: none !important;
 }

@@ -174,4 +174,15 @@ function bannerChanger() {
     setTimeout(function(){bannerChanger()}, 6 * 1000);
 }
 
+
 setTimeout(function(){bannerChanger()}, 6 * 1000);
+
+function toggleFiltersMobile() {
+    $(".filter-mobile-show").toggleClass("show-content-mobile");
+    $(".sort-mobile-show").removeClass("show-content-mobile");
+}
+
+function sortByMobile() {
+    $(".filter-mobile-show").removeClass("show-content-mobile");
+    $(".sort-mobile-show").toggleClass("show-content-mobile");
+}
