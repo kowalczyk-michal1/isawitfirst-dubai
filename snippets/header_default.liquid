@@ -15,37 +15,64 @@
 
 
 <header class="page-header {{ header_box }} variant-{{ variant_header }} {% unless template == 'index' and settings.home_page contains 3   %}{% unless page contains 3  %}{{ settings.sticky }} {{ settings.sticky_color }} {{ settings.sticky_behavior }} {% endunless %}{% endunless %} {{ dark }} {{ settings.sticky_style }}">
-    
-   <div class="cust-section-top bg-white">
-     <div class="container">
-       <div class="row">
-    	 <div class="col-sm-4">
-     	 {% include 'header-search' %}	
-     </div>
-     <div class="col-sm-8">
-     	{% include 'header-cart' %}
-    <div class="header-links wishlist">
-                {% include 'wishlist' %}
+
+    <div class="mobile-version">
+        <div class="cust-section-second bg-white">
+            <div class="mobile-header-left">
+               <div class="menu-toggle mobile-toggle-icon"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+                <a href="/search" class="mobile-header-search">{{ "search_1.png" | asset_url | img_tag: "" }}</a>
             </div>
-            <div class="header-links login">
-                {% include 'header-login-form' %}
+
+            <div class="mobile-header-right">
+                <a href="/pages/sign-in" class="mobile-header-user">{{ "user-outline.png" | asset_url | img_tag: "" }}</a>
+                <a href="/cart">
+                    <i class="icon"><span class="cart-count-mobile">{{ cart.item_count }}</span><img class="mt-4 header-isif-cart" src=" {{ 'cart.png' | asset_url }}" ></i>
+                </a>
             </div>
-          <div class="header-links">
-                {% include 'header-multilanguages-redirect' %}
-                {% include 'header-languages' %}
-                {% include 'currency-picker' %}
+
+            <div class="custom-logo">
+                <a href="https://isawitfirst-dubai.myshopify.com/">
+                    <img src="{{ 'logo.png' | asset_url }}" class="sticky-logo"  alt='{{ shop.name }}' />
+                </a>
             </div>
-     </div>
-     </div>
-     </div>
-  </div>
-  
-     <div class="cust-section-second bg-white">
-       <div class="custom-logo">
-         <a href="https://isawitfirst-dubai.myshopify.com/">
-         <img src="{{ 'logo.png' | asset_url }}" class="sticky-logo"  alt='{{ shop.name }}' />
-       </a>
-       </div>
+        </div>
+    </div>
+
+    <div class="desktop-version">
+       <div class="cust-section-top bg-white">
+         <div class="container">
+           <div class="row">
+             <div class="col-sm-4">
+                 <div class="menu-toggle mobile-toggle-icon"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
+             {% include 'header-search' %}
+         </div>
+         <div class="col-sm-8">
+            {% include 'header-cart' %}
+        <div class="header-links wishlist">
+                    {% include 'wishlist' %}
+                </div>
+                <div class="header-links login">
+                    {% include 'header-login-form' %}
+                </div>
+              <div class="header-links">
+                    {% include 'header-multilanguages-redirect' %}
+                    {% include 'header-languages' %}
+                    {% include 'currency-picker' %}
+                </div>
+         </div>
+         </div>
+         </div>
+      </div>
+
+
+         <div class="cust-section-second bg-white">
+           <div class="custom-logo">
+             <a href="https://isawitfirst-dubai.myshopify.com/">
+             <img src="{{ 'logo.png' | asset_url }}" class="sticky-logo"  alt='{{ shop.name }}' />
+           </a>
+           </div>
+         </div>
+    </div>
   
   <div class="navbar">
         <div class="container">

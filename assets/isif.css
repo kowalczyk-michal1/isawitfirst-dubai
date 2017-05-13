@@ -1841,3 +1841,226 @@ span.option-label {
 .page-design-lotd .color-list, .page-design-lotd .size-list {
     margin-left: 0 !important;
 }
+
+.mobile-toggle-icon {
+    display: none;
+}
+
+.mobile-version {
+    display: none;
+}
+
+.desktop-version {
+    display: block;
+}
+
+/*RESPONSIVE FOR MOBILE*/
+
+
+@media screen and (max-width: 480px) {
+
+    .mobile-version {
+        display: block;
+    }
+
+    .desktop-version {
+        display: none;
+    }
+
+
+    /*HEADER*/
+
+    .mobile-toggle-icon {
+        display: inline-block;
+        z-index: 1;
+        position: static;
+        bottom: auto;
+    }
+
+    .menu-toggle .icon-menu {
+        color: #000 !important;
+    }
+
+    .navbar {
+        min-height: 0px !important;
+    }
+
+    .navbar .header-logo {
+        display: none;
+    }
+
+    .navbar .menu-toggle {
+        display: none;
+    }
+
+    .navbar:after {
+        content: none;
+    }
+
+    .section_below_menu {
+        display: block;
+    }
+
+    .section_below_menu .sbm_middle_column, .section_below_menu .sbm_right_column {
+        display: none;
+    }
+
+    .section_below_menu .sbm_left_column, .section_below_menu .sbm_middle_column, .section_below_menu .sbm_right_column {
+        width: 100%;
+        float: none;
+        background: #c1c1c1;
+    }
+
+    .section_below_menu .sbm_middle_column {
+        background: #c2c4c6;
+    }
+
+    .section_below_menu .sbm_right_column {
+        background: #d1d3d4;
+    }
+
+
+    .sbm_left_column a, .sbm_middle_column a, .sbm_right_column a {
+        background: transparent;
+        padding: 12px 0;
+    }
+
+    .custom-logo img {
+        margin-bottom: 0;
+        margin-top: 8px;
+        width: 210px;
+    }
+
+    .custom-logo {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .mobile-header-left {
+        float: left;
+    }
+
+    .mobile-header-search img {
+        width: 23px;
+        margin-top: -21px;
+    }
+
+    .mobile-header-right {
+        float: right;
+        padding-top: 6px;
+    }
+
+    .mobile-header-user img {
+        width: 23px;
+    }
+
+    .mobile-header-right .header-isif-cart {
+        width: 24px;
+        height: 24px;
+        margin-top: 2px;
+        opacity: 1;
+    }
+
+    .cart-count-mobile {
+        position: absolute;
+        color: #000;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left: 8px;
+        font-weight: bold;
+    }
+
+    .mainSlider {
+        margin-top: 0 !important;
+    }
+
+    .back-to-top-mobile, .back-to-top-mobile:focus, .back-to-top-mobile:hover {
+        background: #e7bfbf;
+        color: #000;
+    }
+
+    .page-header.sticky.is-sticky .navbar {
+        height: 0;
+    }
+
+    .page-header.sticky.is-sticky .mobile-version {
+        padding-bottom: 5px;
+        background: #fff;
+    }
+
+
+
+
+    /*FOOTER*/
+
+    .custom-receive-news input.btn.cust-btn {
+        background-color: #e7bfbf;
+        width: 12% !important;
+    }
+
+    .custom-receive-news input.form-control.cust-text1 {
+        width: 87% !important;
+    }
+
+    footer.variant4 .footer-middle {
+        padding-bottom: 0 !important;
+    }
+
+    .copyright li {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+
+    /*HOME PAGE CONTENT*/
+
+    #home_default_section_2 .container .slick-next, #home_default_section_2 .container .slick-prev {
+        top: 80vw !important;
+    }
+
+
+    /*PRODUCT PAGE*/
+
+    .page-design-lotd .product-previews-carousel .slick-next, .page-design-lotd .product-previews-carousel .slick-prev {
+        background-color: #e9c5c5;
+        height: 32px;
+    }
+
+    .page-design-lotd .product-previews-carousel .slick-next:before, .page-design-lotd .product-previews-carousel .slick-prev:before {
+        color: #000;
+    }
+
+    .page-design-lotd .product-description-more a {
+        width: 160px;
+        margin-left: calc(25% + 75px);
+    }
+
+    .cust-size-guide {
+        margin-left: 5%;
+    }
+
+    .cust-delivery {
+        margin-right: 5%;
+    }
+
+    /*COLLECTION PAGE*/
+}
+
+@media screen and (max-width: 350px) {
+    .custom-logo img {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .custom-logo img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .custom-logo img {
+        width: 100px;
+    }
+}

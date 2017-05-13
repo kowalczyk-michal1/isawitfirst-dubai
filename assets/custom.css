@@ -1150,3 +1150,35 @@ body #home_default_section_2 .container .slick-next {
     right: -40px;
 }
 
+.table-unbordered th {
+	font-weight: bold;
+  	color: #000;
+}
+
+.table-unbordered td {
+	font-weight: 100;
+}
+
+.table-unbordered th,
+.table-unbordered td {
+	text-align: center;
+  	font-size: 14px !important;
+  	width: 10% !important;
+  	padding: 26px !important;
+}
+
+.right-side {
+	width: 97.5%;
+}
+
+.table-unbordered>thead>tr>th {
+    border: none !important;
+}
+
+.table-bordered {
+	border: none !important;
+}
+
+.table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #f1f1f1;
+}

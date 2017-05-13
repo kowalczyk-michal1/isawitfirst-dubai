@@ -8,6 +8,11 @@
             <div class="">
                 <div class="">
     			<div class="col-md-7 col-lg-7">
+
+                    <div class="col-md-5 col-lg-5 custom-receive-news mobile-version">
+                        {% include 'footer_newsletter' %}
+                    </div>
+
     			<div class="col-md-4 col-lg-4">
                         <div class="footer-block  collapsed-mobile">
                                {{ settings.footer_2_col_1 }}   
@@ -27,19 +32,10 @@
                     <div class="col-md-3 col-lg-3">
                     </div>
     				</div>
-    			<div class="col-md-5 col-lg-5 custom-receive-news">
-                  <div class="ques-wrap">
-    			<h2><strong>want some love mail?</strong></h2>
-                    <div class="our-online-team"><strong>receive news on the latest trends &amp; deals </strong></div>
-               
-                    <div class="custom-form-wrap">
-                <form>
-                    <input class="form-control cust-text1" type="text" name="email" placeholder="Your email address">
-                    <input class="btn cust-btn" type="submit" name="submit" value="">
-                    <span class="right_arrow"></span>
-                    </form></div>
-                  </div>
-    			</div>
+
+                    <div class="col-md-5 col-lg-5 custom-receive-news desktop-version">
+                     {% include 'footer_newsletter' %}
+                    </div>
     				
     				
     				

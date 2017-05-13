@@ -7561,5 +7561,237 @@
         "label": "Product Options - Active Background"
       }
     ]
+  },
+  {
+    "name": "Size Guide",
+    "settings": [
+      {
+        "type": "header",
+        "content": "UK"
+      },
+      {
+        "type": "text",
+        "id": "XXS",
+        "label": "XXS",
+        "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "XS1",
+        "label": "XS",
+        "default": "4"
+      },
+      {
+        "type": "text",
+        "id": "XS2",
+        "label": "XS",
+        "default": "6"
+      },
+      {
+        "type": "text",
+        "id": "S1",
+        "label": "S",
+        "default": "8"
+      },
+      {
+        "type": "text",
+        "id": "S2",
+        "label": "S",
+        "default": "10"
+      },
+      {
+        "type": "text",
+        "id": "M1",
+        "label": "M",
+        "default": "12"
+      },
+      {
+        "type": "text",
+        "id": "M2",
+        "label": "M",
+        "default": "14"
+      },
+      {
+        "type": "text",
+        "id": "L1",
+        "label": "L",
+        "default": "16"
+      },
+      {
+        "type": "text",
+        "id": "L2",
+        "label": "L",
+        "default": "18"
+      },
+      {
+        "type": "text",
+        "id": "XL",
+        "label": "XL",
+        "default": "20"
+      },
+      {
+        "type": "header",
+        "content": "AUS\/NZ"
+      },
+      {
+        "type": "text",
+        "id": "au-XXS",
+        "label": "XXS",
+        "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "au-XS1",
+        "label": "XS"
+      },
+      {
+        "type": "text",
+        "id": "au-XS2",
+        "label": "XS"
+      },
+      {
+        "type": "text",
+        "id": "au-S1",
+        "label": "S"
+      },
+      {
+        "type": "text",
+        "id": "au-S2",
+        "label": "S"
+      },
+      {
+        "type": "text",
+        "id": "au-M1",
+        "label": "M"
+      },
+      {
+        "type": "text",
+        "id": "au-M2",
+        "label": "M"
+      },
+      {
+        "type": "text",
+        "id": "au-L1",
+        "label": "L"
+      },
+      {
+        "type": "text",
+        "id": "au-L2",
+        "label": "L"
+      },
+      {
+        "type": "text",
+        "id": "au-XL",
+        "label": "XL"
+      },
+      {
+        "type": "header",
+        "content": "US\/CANADA"
+      },
+      {
+        "type": "text",
+        "id": "us-XXS",
+        "label": "XXS"
+      },
+      {
+        "type": "text",
+        "id": "us-XS1",
+        "label": "XS"
+      },
+      {
+        "type": "text",
+        "id": "us-XS2",
+        "label": "XS"
+      },
+      {
+        "type": "text",
+        "id": "us-S1",
+        "label": "S"
+      },
+      {
+        "type": "text",
+        "id": "us-S2",
+        "label": "S"
+      },
+      {
+        "type": "text",
+        "id": "us-M1",
+        "label": "M"
+      },
+      {
+        "type": "text",
+        "id": "us-M2",
+        "label": "M"
+      },
+      {
+        "type": "text",
+        "id": "us-L1",
+        "label": "L"
+      },
+      {
+        "type": "text",
+        "id": "us-L2",
+        "label": "L"
+      },
+      {
+        "type": "text",
+        "id": "us-XL",
+        "label": "XL"
+      },
+      {
+        "type": "header",
+        "content": "EUROPE"
+      },
+      {
+        "type": "text",
+        "id": "eu-XXS",
+        "label": "XXS"
+      },
+      {
+        "type": "text",
+        "id": "eu-XS1",
+        "label": "XS"
+      },
+      {
+        "type": "text",
+        "id": "eu-XS2",
+        "label": "XS"
+      },
+      {
+        "type": "text",
+        "id": "eu-S1",
+        "label": "S"
+      },
+      {
+        "type": "text",
+        "id": "eu-S2",
+        "label": "S"
+      },
+      {
+        "type": "text",
+        "id": "eu-M1",
+        "label": "M"
+      },
+      {
+        "type": "text",
+        "id": "eu-M2",
+        "label": "M"
+      },
+      {
+        "type": "text",
+        "id": "eu-L1",
+        "label": "L"
+      },
+      {
+        "type": "text",
+        "id": "eu-L2",
+        "label": "L"
+      },
+      {
+        "type": "text",
+        "id": "eu-XL",
+        "label": "XL"
+      }
+    ]
   }
 ]

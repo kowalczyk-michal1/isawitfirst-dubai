@@ -6,290 +6,321 @@
 
 <h4><strong>Help &amp; Info</strong></h4>
 <ul class="help_and_info_menu">
-<li><a href="/pages/contact-us"  class="tablinks"  >Contact Us</a></li>
-<li><a href="/pages/payment-options"  class="tablinks" >Payment Options</a></li>
-<li><a href="/pages/ordering"  class="tablinks" >Ordering</a></li>
-<li><a href="/pages/shipping-delivery"  class="tablinks" >Shipping &amp; Delivery</a></li>
-<li><a href="/pages/size-guide"  class="tablinks active" >Size Guide</a></li>
-<li><a href="/pages/our-story"  class="tablinks" >Our Story</a></li>
-<li><a href="/pages/job-opportunities"  class="tablinks" >Job Opportunities</a></li>
-<li><a  href="/pages/affiliates" class="tablinks" >Affiliates</a></li>
-<li><a href="/pages/order-status"  class="tablinks" >Order Status</a></li>
-<li><a href="/pages/ordering-payment"  class="tablinks" >Order &amp; Payment</a></li>
-<li><a href="/pages/delivery-information"  class="tablinks" >Delivery Information</a></li>
-<li><a href="/pages/returns-exchanges"  class="tablinks" >Return &amp; Exchanges</a></li>
-<li><a href="/pages/international-orders"  class="tablinks" >International Orders</a></li>
+  
+{% for link in linklists.sidebar-menu.links %} 
+  <li><a class="tablinks" href="{{ link.url }}">{{ link.title }}  </a></li>
+{% endfor %}
+  <script>
+$(function() {
+  $('ul.help_and_info_menu a[href="/pages/' + location.pathname.split("/")[2] + '"]').addClass('active');
+});
+  </script>
 </ul>
 </div>
 </div>
   
   
-  <div class="col-sm-9">
-  <div id="size-guide" class="tabcontent">
+<div class="col-sm-9">
+<div>
 <div class="size_guide_title">Size Guide</div>
 
-<div>
-
-<div class="float_left">
-<ol class="inch_radio_btn">
-<li>
-<input type="radio" id="inches" name="selector" checked>
-<label for="inches">Inches</label>    
-<div class="check"><div class="inside"></div></div>
-</li>            
-</ol>
-</div>
-
-<div class="float_left">
-<ol class="inch_radio_btn">
-<li>
-<input type="radio" id="centimiters" name="selector">
-<label for="centimiters">Centimeters</label>    
-<div class="check"><div class="inside"></div></div>
-</li>            
-</ol>
-</div>
-<div class="clearfix"></div>
-
-<div class="please_note_txt">Please note all conversions are approximate and may vary by label, brand, or personal preference of fit.</div>
-
-<div>
-<div class="show-size-inches">
-<table class="table table-bordered inch_centimeter">
-    <thead>
-      <tr>
-        <th width="15%"><div class="size_bg_color">Size</div></th>
-        <th width="15%"><div class="size_bg_color">US/Canada</div></th>
-        <th width="15%"><div class="size_bg_color">UK</div></th>
-        <th width="15%"><div class="bust_bg_color">Bust</div></th>
-        <th width="15%"><div class="bust_bg_color">Natural Waist</div></th>
-        <th width="15%"><div class="bust_bg_color">Drop Waist</div></th>
-        <th width="10%"><div class="bust_bg_color">Hips</div></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><div class="size_bg_color">XXS</div></td>
-        <td><div class="size_bg_color2">00</div></td>
-        <td><div class="size_bg_color2">2</div></td>
-        <td><div class="size_bg_color2">32"</div></td>
-        <td><div class="size_bg_color2">24"</div></td>
-        <td><div class="size_bg_color2">26.25"</div></td>
-        <td><div class="size_bg_color2">34"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">XS</div></td>
-        <td><div class="size_bg_color_2_3">0</div></td>
-        <td><div class="size_bg_color_2_3">4</div></td>
-        <td><div class="size_bg_color_2_3">33"</div></td>
-        <td><div class="size_bg_color_2_3">25"</div></td>
-        <td><div class="size_bg_color_2_3">27.25"</div></td>
-        <td><div class="size_bg_color_2_3">35"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">&nbsp;</div></td>
-        <td><div class="size_bg_color_2_3">2</div></td>
-        <td><div class="size_bg_color_2_3">6</div></td>
-        <td><div class="size_bg_color_2_3">34"</div></td>
-        <td><div class="size_bg_color_2_3">26"</div></td>
-        <td><div class="size_bg_color_2_3">28.25"</div></td>
-        <td><div class="size_bg_color_2_3">36"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">S</div></td>
-        <td><div class="size_bg_color2">4</div></td>
-        <td><div class="size_bg_color2">8</div></td>
-        <td><div class="size_bg_color2">35"</div></td>
-        <td><div class="size_bg_color2">27"</div></td>
-        <td><div class="size_bg_color2">29.25"</div></td>
-        <td><div class="size_bg_color2">37"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">&nbsp;</div></td>
-        <td><div class="size_bg_color2">6</div></td>
-        <td><div class="size_bg_color2">10</div></td>
-        <td><div class="size_bg_color2">36"</div></td>
-        <td><div class="size_bg_color2">28"</div></td>
-        <td><div class="size_bg_color2">30.25"</div></td>
-        <td><div class="size_bg_color2">38"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">M</div></td>
-        <td><div class="size_bg_color_2_3">8</div></td>
-        <td><div class="size_bg_color_2_3">12</div></td>
-        <td><div class="size_bg_color_2_3">37"</div></td>
-        <td><div class="size_bg_color_2_3">29"</div></td>
-        <td><div class="size_bg_color_2_3">31.25"</div></td>
-        <td><div class="size_bg_color_2_3">39"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">&nbsp;</div></td>
-        <td><div class="size_bg_color_2_3">10</div></td>
-        <td><div class="size_bg_color_2_3">14</div></td>
-        <td><div class="size_bg_color_2_3">38"</div></td>
-        <td><div class="size_bg_color_2_3">30"</div></td>
-        <td><div class="size_bg_color_2_3">32.25"</div></td>
-        <td><div class="size_bg_color_2_3">40"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">L</div></td>
-        <td><div class="size_bg_color2">12</div></td>
-        <td><div class="size_bg_color2">16</div></td>
-        <td><div class="size_bg_color2">39"</div></td>
-        <td><div class="size_bg_color2">31"</div></td>
-        <td><div class="size_bg_color2">33.25"</div></td>
-        <td><div class="size_bg_color2">41"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">&nbsp;</div></td>
-        <td><div class="size_bg_color2">14</div></td>
-        <td><div class="size_bg_color2">18</div></td>
-        <td><div class="size_bg_color2">40"</div></td>
-        <td><div class="size_bg_color2">32"</div></td>
-        <td><div class="size_bg_color2">34.25"</div></td>
-        <td><div class="size_bg_color2">42"</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">XL</div></td>
-        <td><div class="size_bg_color_2_3">16</div></td>
-        <td><div class="size_bg_color_2_3">20</div></td>
-        <td><div class="size_bg_color_2_3">41"</div></td>
-        <td><div class="size_bg_color_2_3">33"</div></td>
-        <td><div class="size_bg_color_2_3">35.25"</div></td>
-        <td><div class="size_bg_color_2_3">43"</div></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  <div class="show-size-centimeter" style="display:none;">
-    <table class="table table-bordered inch_centimeter">
-    <thead>
-      <tr>
-        <th width="15%"><div class="size_bg_color">Size</div></th>
-        <th width="15%"><div class="size_bg_color">US/Canada</div></th>
-        <th width="15%"><div class="size_bg_color">UK</div></th>
-        <th width="15%"><div class="bust_bg_color">Bust</div></th>
-        <th width="15%"><div class="bust_bg_color">Natural Waist</div></th>
-        <th width="15%"><div class="bust_bg_color">Drop Waist</div></th>
-        <th width="10%"><div class="bust_bg_color">Hips</div></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><div class="size_bg_color">XXS</div></td>
-        <td><div class="size_bg_color2">00</div></td>
-        <td><div class="size_bg_color2">2</div></td>
-        <td><div class="size_bg_color2">{{ 32 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 24 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 26.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 34 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">XS</div></td>
-        <td><div class="size_bg_color_2_3">0</div></td>
-        <td><div class="size_bg_color_2_3">4</div></td>
-        <td><div class="size_bg_color_2_3">{{ 33 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 27.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 35 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">&nbsp;</div></td>
-        <td><div class="size_bg_color_2_3">2</div></td>
-        <td><div class="size_bg_color_2_3">6</div></td>
-        <td><div class="size_bg_color_2_3">{{ 34 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 26 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 28.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 36 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">S</div></td>
-        <td><div class="size_bg_color2">4</div></td>
-        <td><div class="size_bg_color2">8</div></td>
-        <td><div class="size_bg_color2">{{ 35 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 27 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 29.25 | times: 2.54 | format: "c" }}</div></td>
-        <td><div class="size_bg_color2">{{ 37 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">&nbsp;</div></td>
-        <td><div class="size_bg_color2">6</div></td>
-        <td><div class="size_bg_color2">10</div></td>
-        <td><div class="size_bg_color2">{{ 36 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 28 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 30.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 38 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">M</div></td>
-        <td><div class="size_bg_color_2_3">8</div></td>
-        <td><div class="size_bg_color_2_3">12</div></td>
-        <td><div class="size_bg_color_2_3">{{ 37 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 29 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 31.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 39 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">&nbsp;</div></td>
-        <td><div class="size_bg_color_2_3">10</div></td>
-        <td><div class="size_bg_color_2_3">14</div></td>
-        <td><div class="size_bg_color_2_3">{{ 38 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 30 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 32.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 40 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">L</div></td>
-        <td><div class="size_bg_color2">12</div></td>
-        <td><div class="size_bg_color2">16</div></td>
-        <td><div class="size_bg_color2">{{ 39 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 31 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 33.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 41 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color">&nbsp;</div></td>
-        <td><div class="size_bg_color2">14</div></td>
-        <td><div class="size_bg_color2">18</div></td>
-        <td><div class="size_bg_color2">{{ 40 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 32 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 34.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color2">{{ 42 | times: 2.54 }}</div></td>
-      </tr>
-      <tr>
-        <td><div class="size_bg_color_2_2">XL</div></td>
-        <td><div class="size_bg_color_2_3">16</div></td>
-        <td><div class="size_bg_color_2_3">20</div></td>
-        <td><div class="size_bg_color_2_3">{{ 41 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 33 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 35.25 | times: 2.54 }}</div></td>
-        <td><div class="size_bg_color_2_3">{{ 43 | times: 2.54 }}</div></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
+  <div>
+                  <div class="float_left">
+                    <ol class="inch_radio_btn">
+                      <li>
+                        <input type="radio" id="inches" name="selector" value="inch" checked>
+                        <label for="inches">Inches</label>
+                        <div class="check">
+                          <div class="inside"></div>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="float_left">
+                    <ol class="inch_radio_btn">
+                      <li>
+                        <input type="radio" id="centimiters" name="selector" value="centimiter">
+                        <label for="centimiters">Centimeters</label>
+                        <div class="check">
+                          <div class="inside"></div>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="please_note_txt">Please note all conversions are approximate and may vary by label, brand, or personal preference of fit.</div>
+                  <div>
+                    <div class="inches_size">
+                      <table class="table table-bordered inch_centimeter">
+                        <thead>
+                          <tr>
+                            <th width="15%"><div class="size_bg_color">Size Inches</div></th>
+                            <th width="15%"> <div class="size_bg_color padding_0_px">
+                                <select class="country_dropdown_list" id="select_country_for_size">
+                                  <option value="UK">UK</option>
+                                  <option value="US / CANADA">US / CANADA</option>
+                                  <option value="AUS / NZ">AUS / NZ</option>
+                                  <option value="EUROPE">EUROPE</option>
+                                </select>
+                              </div></th>
+                            <th width="15%"><div class="bust_bg_color">Bust</div></th>
+                            <th width="15%"><div class="bust_bg_color">Natural Waist</div></th>
+                            <th width="15%"><div class="bust_bg_color">Drop Waist</div></th>
+                            <th width="10%"><div class="bust_bg_color">Hips</div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><div class="size_bg_color" >XXS</div></td>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.XXS }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-XXS }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-XXS }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-XXS }}</div></td>
+                            <td><div class="size_bg_color2">32"</div></td>
+                            <td><div class="size_bg_color2">24"</div></td>
+                            <td><div class="size_bg_color2">26.25"</div></td>
+                            <td><div class="size_bg_color2">34"</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_row">XS</td>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.XS1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-XS1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-XS1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-XS1 }}</div></td>
+                            <td><div class="size_bg_color_2_3">33"</div></td>
+                            <td><div class="size_bg_color_2_3">25"</div></td>
+                            <td><div class="size_bg_color_2_3">27.25"</div></td>
+                            <td><div class="size_bg_color_2_3">35"</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.XS2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-XS2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-XS2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-XS2 }}</div></td>
+                            <td><div class="size_bg_color_2_3">34"</div></td>
+                            <td><div class="size_bg_color_2_3">26"</div></td>
+                            <td><div class="size_bg_color_2_3">28.25"</div></td>
+                            <td><div class="size_bg_color_2_3">36"</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_2_row">S</td>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.S1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-S1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-S1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-S1 }}</div></td>
+                            <td><div class="size_bg_color2">35"</div></td>
+                            <td><div class="size_bg_color2">27"</div></td>
+                            <td><div class="size_bg_color2">29.25"</div></td>
+                            <td><div class="size_bg_color2">37"</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.S2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-S2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-S2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-S2 }}</div></td>
+                            <td><div class="size_bg_color2">36"</div></td>
+                            <td><div class="size_bg_color2">28"</div></td>
+                            <td><div class="size_bg_color2">30.25"</div></td>
+                            <td><div class="size_bg_color2">38"</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_row">M</td>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.M1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-M1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-M1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-M1 }}</div></td>
+                            <td><div class="size_bg_color_2_3">37"</div></td>
+                            <td><div class="size_bg_color_2_3">29"</div></td>
+                            <td><div class="size_bg_color_2_3">31.25"</div></td>
+                            <td><div class="size_bg_color_2_3">39"</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.M2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-M2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-M2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-M2 }}</div></td>
+                            <td><div class="size_bg_color_2_3">38"</div></td>
+                            <td><div class="size_bg_color_2_3">30"</div></td>
+                            <td><div class="size_bg_color_2_3">32.25"</div></td>
+                            <td><div class="size_bg_color_2_3">40"</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_2_row">L</td>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.L1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-L1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-L1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-L1 }}</div></td>
+                            <td><div class="size_bg_color2">39"</div></td>
+                            <td><div class="size_bg_color2">31"</div></td>
+                            <td><div class="size_bg_color2">33.25"</div></td>
+                            <td><div class="size_bg_color2">41"</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.L2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-L2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-L2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-L2 }}</div></td>
+                            <td><div class="size_bg_color2">40"</div></td>
+                            <td><div class="size_bg_color2">32"</div></td>
+                            <td><div class="size_bg_color2">34.25"</div></td>
+                            <td><div class="size_bg_color2">42"</div></td>
+                          </tr>
+                          <tr>
+                            <td><div class="size_bg_color_2_2">XL</div></td>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.XL }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-XL }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-XL }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-XL }}</div></td>
+                            <td><div class="size_bg_color_2_3">41"</div></td>
+                            <td><div class="size_bg_color_2_3">33"</div></td>
+                            <td><div class="size_bg_color_2_3">35.25"</div></td>
+                            <td><div class="size_bg_color_2_3">43"</div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="centimiter_size">
+                      <table class="table table-bordered inch_centimeter">
+                        <thead>
+                          <tr>
+                            <th width="15%"><div class="size_bg_color">Size Inches</div></th>
+                            <th width="15%"> <div class="size_bg_color padding_0_px">
+                                <select class="country_dropdown_list" id="select_country_for_size_with_centimeter">
+                                  <option value="UK">UK</option>
+                                  <option value="US / CANADA">US / CANADA</option>
+                                  <option value="AUS / NZ">AUS / NZ</option>
+                                  <option value="EUROPE">EUROPE</option>
+                                </select>
+                              </div></th>
+                            <th width="15%"><div class="bust_bg_color">Bust</div></th>
+                            <th width="15%"><div class="bust_bg_color">Natural Waist</div></th>
+                            <th width="15%"><div class="bust_bg_color">Drop Waist</div></th>
+                            <th width="10%"><div class="bust_bg_color">Hips</div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><div class="size_bg_color" >XXS</div></td>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.XXS }}</div></td>
+    						<td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-XXS }}</div></td>
+    						<td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-XXS }}</div></td>
+    						<td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-XXS }}</div></td>
+                            <td><div class="size_bg_color2">81.3 CM</div></td>
+                            <td><div class="size_bg_color2">61.0 CM</div></td>
+                            <td><div class="size_bg_color2">66.7 CM</div></td>
+                            <td><div class="size_bg_color2">86.4 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_row">XS</td>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.XS1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-XS1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-XS1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-XS1 }}</div></td>
+                            <td><div class="size_bg_color_2_3">83.8 CM</div></td>
+                            <td><div class="size_bg_color_2_3">63.5 CM</div></td>
+                            <td><div class="size_bg_color_2_3">69.2 CM</div></td>
+                            <td><div class="size_bg_color_2_3">88.9 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.XS2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-XS2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-XS2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-XS2 }}</div></td>
+                            <td><div class="size_bg_color_2_3">86.4 CM</div></td>
+                            <td><div class="size_bg_color_2_3">66.0 CM</div></td>
+                            <td><div class="size_bg_color_2_3">71.8 CM</div></td>
+                            <td><div class="size_bg_color_2_3">91.4 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_2_row">S</td>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.S1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-S1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-S1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-S1 }}</div></td>
+                            <td><div class="size_bg_color2">88.9 CM</div></td>
+                            <td><div class="size_bg_color2">68.6 CM</div></td>
+                            <td><div class="size_bg_color2">74.3 CM</div></td>
+                            <td><div class="size_bg_color2">94.0 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.S2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-S2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-S2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-S2 }}</div></td>
+                            <td><div class="size_bg_color2">91.4 CM</div></td>
+                            <td><div class="size_bg_color2">71.1 CM</div></td>
+                            <td><div class="size_bg_color2">76.8 CM</div></td>
+                            <td><div class="size_bg_color2">96.5 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_row">M</td>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.M1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-M1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-M1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-M1 }}</div></td>
+                            <td><div class="size_bg_color_2_3">94.0 CM</div></td>
+                            <td><div class="size_bg_color_2_3">73.7 CM</div></td>
+                            <td><div class="size_bg_color_2_3">79.4 CM</div></td>
+                            <td><div class="size_bg_color_2_3">99.1 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.M2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-M2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-M2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-M2 }}</div></td>
+                            <td><div class="size_bg_color_2_3">96.5 CM</div></td>
+                            <td><div class="size_bg_color_2_3">76.2 CM</div></td>
+                            <td><div class="size_bg_color_2_3">81.9 CM</div></td>
+                            <td><div class="size_bg_color_2_3">101.6 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2" class="size_cell_2_2_row">L</td>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.L1 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-L1 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-L1 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-L1 }}</div></td>
+                            <td><div class="size_bg_color2">99.1 CM</div></td>
+                            <td><div class="size_bg_color2">78.7 CM</div></td>
+                            <td><div class="size_bg_color2">84.5 CM</div></td>
+                            <td><div class="size_bg_color2">104.1 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td class="size_country_uk"><div class="size_bg_color2">{{ settings.L2 }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color2">{{ settings.us-L2 }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color2">{{ settings.au-L2 }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color2">{{ settings.eu-L2 }}</div></td>
+                            <td><div class="size_bg_color2">101.6 CM</div></td>
+                            <td><div class="size_bg_color2">81.3 CM</div></td>
+                            <td><div class="size_bg_color2">87.0 CM</div></td>
+                            <td><div class="size_bg_color2">106.7 CM</div></td>
+                          </tr>
+                          <tr>
+                            <td><div class="size_bg_color_2_2">XL</div></td>
+                            <td class="size_country_uk"><div class="size_bg_color_2_3">{{ settings.XL }}</div></td>
+                            <td class="size_country_us_canada"><div class="size_bg_color_2_3">{{ settings.us-XL }}</div></td>
+                            <td class="size_country_aus_nz"><div class="size_bg_color_2_3">{{ settings.au-XL }}</div></td>
+                            <td class="size_country_europe"><div class="size_bg_color_2_3">{{ settings.eu-XL }}</div></td>
+                            <td><div class="size_bg_color_2_3">104.1 CM</div></td>
+                            <td><div class="size_bg_color_2_3">83.8 CM</div></td>
+                            <td><div class="size_bg_color_2_3">59.5 CM</div></td>
+                            <td><div class="size_bg_color_2_3">109.2 CM</div></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
   
-  
-</div>
-
-</div>
-
-<div class="col-sm-5 custom-img"><img class="img-responsive" src="https://cdn.shopify.com/s/files/1/1854/4327/files/image.jpg?14402141290854078753" width="473" height="402" alt="size">
-<strong>Question about size? Why don’t you <a href="https://isawitfirst-dubai.myshopify.com/pages/contact-us">contact us</a>?</strong>
-</div>
+<div class="col-sm-5 custom-img"><img class="img-responsive" src="https://cdn.shopify.com/s/files/1/1854/4327/files/image.jpg?14402141290854078753" width="473" height="402" alt="size" /> <strong>Question about size? Why don’t you <a href="#">contact us</a>?</strong></div>
 <div class="col-sm-7 custom-measure">
 <h4><strong>Measurements Should be taken directly on your body</strong></h4>
-
-<p>Bust<br>Measure under your arms at the fullest part of your bust. Keep the tape level.</p>
-<p>Natural Waist<br>Measure around your natural waistline, keeping the tape comfortably loose. This is the narrowest part of the body between the ribs and the hips.</p>
-<p>Drop Waist<br>Measure 1 1/2 inches below your natural waistline.</p>
-<p>Hips<br>Stand with your feet together and measure around the fullest part of your hips.</p>
-
+<p>Bust<br />Measure under your arms at the fullest part of your bust. Keep the tape level.</p>
+<p>Natural Waist<br />Measure around your natural waistline, keeping the tape comfortably loose. This is the narrowest part of the body between the ribs and the hips.</p>
+<p>Drop Waist<br />Measure 1 1/2 inches below your natural waistline.</p>
+<p>Hips<br />Stand with your feet together and measure around the fullest part of your hips.</p>
 </div>
-
-
 </div>
-  </div>
+</div>
   
   
   
@@ -300,19 +331,85 @@
   
 </div>
 
-<script>
-  $(document).ready(function(){
-  	$('#centimiters').click(
-function(){
-	$('.show-size-centimeter').show();
-	$('.show-size-inches').hide();
-}
-);
-$('#inches').click(
-function(){
-	$('.show-size-inches').show();
-	$('.show-size-centimeter').hide();
-}
-);
-  });
-</script>
+<script>// <![CDATA[
+$(document).ready(function(e) {
+	//Select Inch and Centimeter Start
+	
+	$('input:radio[name="selector"]').change(function(){
+			if($(this).val() === 'inch'){
+			   $(".centimiter_size").hide();
+			   $(".inches_size").show();
+			}
+			else if ($(this).val() === 'centimiter'){
+			   $(".centimiter_size").show();
+			   $(".inches_size").hide();
+			}
+		});
+	
+	//Select Inch and Centimeter End
+	
+	//Select Country Size With Inches Start
+    $("#select_country_for_size").change(function(){
+		var country = ($("#select_country_for_size option:selected").text());
+		if(country == "US / CANADA")
+		{
+			$("tr td.size_country_uk").hide();
+			$("tr td.size_country_aus_nz").hide();
+			$("tr td.size_country_europe").hide();
+			$("tr td.size_country_us_canada").show();
+		}
+		else if(country == "UK"){
+			$("tr td.size_country_uk").show();
+			$("tr td.size_country_aus_nz").hide();
+			$("tr td.size_country_europe").hide();
+			$("tr td.size_country_us_canada").hide();
+		}
+		else if(country == "AUS / NZ"){
+			$("tr td.size_country_uk").hide();
+			$("tr td.size_country_aus_nz").show();
+			$("tr td.size_country_europe").hide();
+			$("tr td.size_country_us_canada").hide();
+		}
+		else if(country == "EUROPE"){
+			$("tr td.size_country_uk").hide();
+			$("tr td.size_country_aus_nz").hide();
+			$("tr td.size_country_europe").show();
+			$("tr td.size_country_us_canada").hide();
+		}
+	});
+	//Select Country Size With Inches End
+	
+	
+	//Select Country Size With Centimeters Start
+    $("#select_country_for_size_with_centimeter").change(function(){
+		var country = ($("#select_country_for_size_with_centimeter option:selected").text());
+		if(country == "US / CANADA")
+		{
+			$("tr td.size_country_uk").hide();
+			$("tr td.size_country_aus_nz").hide();
+			$("tr td.size_country_europe").hide();
+			$("tr td.size_country_us_canada").show();
+		}
+		else if(country == "UK"){
+			$("tr td.size_country_uk").show();
+			$("tr td.size_country_aus_nz").hide();
+			$("tr td.size_country_europe").hide();
+			$("tr td.size_country_us_canada").hide();
+		}
+		else if(country == "AUS / NZ"){
+			$("tr td.size_country_uk").hide();
+			$("tr td.size_country_aus_nz").show();
+			$("tr td.size_country_europe").hide();
+			$("tr td.size_country_us_canada").hide();
+		}
+		else if(country == "EUROPE"){
+			$("tr td.size_country_uk").hide();
+			$("tr td.size_country_aus_nz").hide();
+			$("tr td.size_country_europe").show();
+			$("tr td.size_country_us_canada").hide();
+		}
+	});
+	//Select Country Size With Centimeters End
+
+});
+// ]]></script>

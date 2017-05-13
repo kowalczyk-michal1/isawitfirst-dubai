@@ -25,8 +25,9 @@
         </div>
         <div class="action-cart">
             <a  class="btn  btn-alt" title="{{ 'general.theme.go_to_checkout' | t }}" href="/checkout"> <span>{{ 'general.theme.go_to_checkout' | t }}</span> </a>
-            <a  class="btn" title="{{ 'general.theme.view_and_edit_cart' | t }}" href="/cart"> <span>{{ 'general.theme.view_and_edit_cart' | t }}</span> </a>
-        </div>
+           <!-- <a  class="btn" title="{{ 'general.theme.view_and_edit_cart' | t }}" href="/cart"> <span>{{ 'general.theme.view_and_edit_cart' | t }}</span> </a>-->
+      <a  class="btn" title="View and edit bag" href="/cart"> <span>View and edit bag</span> </a> 
+      </div>
         <div class="total-cart">
             {% capture text_item_c %}{{ 'general.theme.item_c' | t }}{% endcapture %}
             {% capture text_items_c %}{{ 'general.theme.items_c' | t }}{% endcapture %}

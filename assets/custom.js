@@ -139,3 +139,39 @@ $(document).ready(function() {
         return false;
     });
 });
+
+var countBanners = 1;
+
+function bannerChanger() {
+    var checkWidth =  $(document).width();
+
+    if (checkWidth < 481) {
+        if (countBanners == "1") {
+            $(".sbm_left_column").hide();
+            $(".sbm_middle_column").show();
+            $(".sbm_right_column").hide();
+
+            countBanners = 2;
+        } else if (countBanners == "2") {
+            $(".sbm_left_column").hide();
+            $(".sbm_middle_column").hide();
+            $(".sbm_right_column").show();
+
+            countBanners = 3;
+        } else if (countBanners == "3") {
+            $(".sbm_left_column").show();
+            $(".sbm_middle_column").hide();
+            $(".sbm_right_column").hide();
+
+            countBanners = 1;
+        }
+    } else {
+        $(".sbm_left_column").show();
+        $(".sbm_middle_column").show();
+        $(".sbm_right_column").show();
+    }
+
+    setTimeout(function(){bannerChanger()}, 6 * 1000);
+}
+
+setTimeout(function(){bannerChanger()}, 6 * 1000);
