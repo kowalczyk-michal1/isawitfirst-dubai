@@ -26,7 +26,10 @@
         tag_group=[];
     </script>
 
-
+        <div class="page-title mobile-catalog-title mobile-version">
+                <h1>{{ collection.title }}</h1>
+                <span>{{ collection.all_products_count }} styles</span>
+        </div>
 
         <div class="col-sm-12 view-showhide-icons">
             <div class="collections-showhide">
@@ -85,13 +88,20 @@
         <!-- Left column -->
         <div class="sort-mobile-show mobile-version">
             <div class="sort-mobile-content">
-                {% include 'collection-filter-current' %}
-                {% include 'collection-filter-categories' %}
-                {% for i in (1..10) %}
-                    {% include 'collection-filter-group' filter:i %}
-                {% endfor %}
 
-                <a href="javascript:sortByMobile();" class="close-filters-mobile">close</a>
+
+                        <ul class="sortby-mobile-list">
+                            <li><a href="#" value="manual">{{ 'collections.sorting.featured' | t }}</a></li>
+                            <li><a href="#" value="best-selling">{{ 'collections.sorting.best_selling' | t }}</a></li>
+                            <li><a href="#" value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</a></li>
+                            <li><a href="#" value="price-descending">{{ 'collections.sorting.price_descending' | t }}</a></li>
+                            <li><a href="#" value="created-descending">{{ 'collections.sorting.date_descending' | t }}</a></li>
+                            <li><a href="#" value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</a></li>
+                        </ul>
+
+
+
+                <a href="javascript:sortByMobile(true);" class="close-filters-mobile">close</a>
             </div>
         </div>
 
@@ -103,7 +113,7 @@
                     {% include 'collection-filter-group' filter:i %}
                 {% endfor %}
 
-                <a href="javascript:toggleFiltersMobile();" class="close-filters-mobile">close</a>
+                <a href="javascript:toggleFiltersMobile(true);" class="close-filters-mobile">close</a>
             </div>
         </div>
         <div class="col-md-2 filter-col {% unless collection_filter_ajax == 1 %}no-ajax-filter{% endunless %} {% if collection_filter_fixed == 1 %}fixed{% endif %} aside">
@@ -259,13 +269,13 @@
                 group='colors';
             }
             listing=$('.product-listing', data).html().split('<div class="product-item ').join('<div style="opacity:0" class="product-item ');
-            {% if collection_left_sidebar == 1 %}
-            filters=$('.filter-col-content', data).html()).join('').split('style="display: block;"').join('').split('filter-group-'+group).join('filter-group-'+group+' open');
-            {% endif %}
+
+            filters=$('.filter-col-content', data).html().split('open').join('').split('style="display: block;"').join('').split('filter-group-'+group).join('filter-group-'+group+' open');
+
             $(".product-listing").html(listing);
-            {% if collection_left_sidebar == 1 %}
+
             $(".filter-col-content").html(filters);
-            {% endif %}
+
             $('.breadcrumbs').html($('.breadcrumbs', data).html());
             showProduct(1,'fadeInUp','.product-item');
             viewMode('.view-mode');
@@ -285,8 +295,6 @@
             }
 
             $('*').removeClass('block-loading');
-
-            sortSizes();
         });
     }
 
@@ -349,7 +357,18 @@
                     postAjaxJsInit(url,name,val);
                     e.preventDefault();
                 });
-            }
+
+                $(document).on('click','.sortby-mobile-list li a',function(e){
+                    $(".sortby-mobile-list li a").removeClass("active");
+                    $(this).addClass("active");
+                    name="sort_by";
+                    val=$(this).attr('value');
+                    url=updateURLParameter(window.location.href.replace('#',''), name, val);
+                    $('.sort-by-lotd').addClass('block-loading');
+                    postAjaxJsInit(url,name,val);
+                    e.preventDefault();
+                });
+    }
 
         {% else %}
             $('select[name=sort_by]')

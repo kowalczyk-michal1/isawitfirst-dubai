@@ -177,12 +177,18 @@ function bannerChanger() {
 
 setTimeout(function(){bannerChanger()}, 6 * 1000);
 
-function toggleFiltersMobile() {
+function toggleFiltersMobile(close=false) {
     $(".filter-mobile-show").toggleClass("show-content-mobile");
+    $(".mobile-filter-btn").addClass("active");
+    $(".mobile-sort-btn").removeClass("active");
+    if (close == true) $(".mobile-filter-btn").removeClass("active");
     $(".sort-mobile-show").removeClass("show-content-mobile");
 }
 
-function sortByMobile() {
+function sortByMobile(close=false) {
     $(".filter-mobile-show").removeClass("show-content-mobile");
+    $(".mobile-filter-btn").removeClass("active");
+    $(".mobile-sort-btn").addClass("active");
+    if (close == true) $(".mobile-sort-btn").removeClass("active");
     $(".sort-mobile-show").toggleClass("show-content-mobile");
 }
